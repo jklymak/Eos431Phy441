@@ -1,11 +1,11 @@
 ---
 layout: default
-title: Physics 426 Fluid Mechanics
+title: Eos431/Phy441 Physical Oceanography
 ---
 
-## Physics 426 Fluid Mechanics
+## Physical Oceanography
 
-Spring 2023
+Fall 2023
 
 ![Flow separation behind an airfoil](./figs/Flow_separation.jpg)
 
