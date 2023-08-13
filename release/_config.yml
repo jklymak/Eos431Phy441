@@ -1,0 +1,10 @@
+# In _config.yml
+title: Eos431/Phy441
+author: The Jupyter Book Community
+logo: logo.png
+execute:
+  execute_notebooks: auto
+
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib

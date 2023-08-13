@@ -1,0 +1,7 @@
+# In _toc.yml
+format: jb-book
+root: index
+parts:
+  - caption: Assignments
+    chapters:
+    - file: Test/Test0.ipynb
