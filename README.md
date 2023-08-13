@@ -18,11 +18,9 @@ A fully-rendered HTML version of the book will be built in `site/_build/html/`.
 
 ### Hosting the book
 
-template was created with a GitHub actions workflow file that, once pushed to GitHub, automatically renders and pushes your book to the `gh-pages` branch of your repo and hosts it on GitHub Pages when a push or pull request is made to the main branch.
+This uses an action to push to https://jklymak.github.io/Eos431Phy441/
 
-## Contributors
 
-We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/jklymak/eos431phy441/graphs/contributors).
 
 ## Credits
 
