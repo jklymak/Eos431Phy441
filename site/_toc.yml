@@ -7,9 +7,11 @@ root: index
 chapters:
 - file: texts
 - file: courseproject
+- file: computing/index
+  sections:
+  - file: computing/python_environment
+  - file: computing/run_veros
+  - file: computing/analyze_veros
 - file: assignments/index
   sections:
-  - file: assignments/python_environment
-  - file: assignments/run_veros
-  - file: assignments/analyze_veros
-
+  - file: release/Test/Test0.ipynb

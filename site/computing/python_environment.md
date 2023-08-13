@@ -10,6 +10,39 @@ Mamba (and conda) provide "environments" or "kernels" to run your python-based p
 
 ## Creating your environment
 
+A list of packages is available that should work to create you an environment at <https://jklymak.github.io/Eos431Phy441/eos431environment.yml>.  To use this file you simply do:
+
+```
+mamba env create -f eos431environment.yml
+mamba env list
+```
+
+should return something like:
+
+```
+eos431                 /Users/jklymak/mambaforge/envs/eos431
+```
+
+To use this environment, you can do
+
+```
+mamba activate eos431
+```
+
+## Running jupyter notebooks
+
+You are encouraged to use [jupyter](https://jupyter.org) notebooks for your data analysis and to hand in for your assignments.  You may be used to other ways to do this, but I usually use the command line:
+
+```
+mamba activate eos431
+jupyter lab &
+```
+
+which should open a jupyterlab interface in your browser.
+
+
+
+
 
 
 

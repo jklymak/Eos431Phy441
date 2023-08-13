@@ -1,13 +1,6 @@
 # Assignments
 
-## Setting up computing
-
-Assignments will be largely based on analyzing numerical results created using a python-based "general circulation model" [veros](https://veros.readthedocs.io/en/latest/). You will create the model output on your own machines and analyze it.
-
-- [Installing python and tools](python_environment)
-- [Setting up and running Veros](run_veros)
-- [Analyzing model output](analyze_veros)
-
-
-
-
+Most assignments (except the first and last) consist of two parts.  The first
+is a quantitative analysis of the model output for the (approximately) two-week
+block.  The second is a qualitative "first look" and a bit of thinking about
+the model output for the next block.
