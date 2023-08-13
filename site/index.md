@@ -9,7 +9,7 @@ title: Physical Oceanography
 width: 600px
 name: kuroshio-fig
 ----
-Kuroshio current in the North Pacific.
+Kuroshio current in the North Pacific (credit: [Wikimedia](https://commons.wikimedia.org/wiki/File:Kuroshio_SST.png))
 ```
 
 
