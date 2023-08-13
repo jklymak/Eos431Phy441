@@ -4,6 +4,15 @@ title: Physical Oceanography
 
 # Eos431/Phy441 -- Physical Oceanography
 
+```{figure} images/Kuroshio_SST.png
+---
+width: 600px
+name: kuroshio-fig
+----
+Kuroshio current in the North Pacific.
+```
+
+
 __Fall 2023__
 
   - Instructor: [Jody Klymak](http://web.uvic.ca/~jklymak)
