@@ -25,6 +25,6 @@ Mostly
 
 ## Grading
 
-## Assignments
+## [Assignments](assignments/index)
 
 ## [Course Project](courseproject)

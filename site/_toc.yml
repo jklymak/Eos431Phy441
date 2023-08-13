@@ -7,3 +7,9 @@ root: index
 chapters:
 - file: texts
 - file: courseproject
+- file: assignments/index
+  sections:
+  - file: assignments/python_environment
+  - file: assignments/run_veros
+  - file: assignments/analyze_veros
+
