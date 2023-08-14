@@ -39,7 +39,9 @@ repository:
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
   use_issues_button: true
-  use_repository_button: true
+  use_repository_button: false
+  favicon: favicon.ico
+
 
 parse:
   myst_enable_extensions:
