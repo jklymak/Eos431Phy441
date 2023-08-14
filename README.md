@@ -20,6 +20,8 @@ A fully-rendered HTML version of the book will be built in `site/_build/html/`.
 
 This uses an action to push to https://jklymak.github.io/Eos431Phy441/
 
+OK, action doesn't work because the raw data for answer keys to make it work can't be stored on Github.  SO instead, build locally as above, and then use `ghp-import -n -p -f _build/html`.  Note that this needs to be pip installed.  See https://jupyterbook.org/en/stable/publish/gh-pages.html
+
 
 
 ## Credits

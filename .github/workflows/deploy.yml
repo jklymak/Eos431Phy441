@@ -6,7 +6,8 @@ on:
   # Trigger the workflow on push to main branch
   push:
     branches:
-      - main
+      - kerfuffle
+      # garbage branch to stop trigger.
 
 # This job installs dependencies, build the book, and pushes it to `gh-pages`
 jobs:
