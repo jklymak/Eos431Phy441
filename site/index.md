@@ -9,7 +9,7 @@ title: Physical Oceanography
 width: 600px
 name: kuroshio-fig
 ----
-Kuroshio current in the North Pacific (credit: [Wikimedia](https://commons.wikimedia.org/wiki/File:Kuroshio_SST.png))
+Kuroshio current in the North Pacific from estimates of sea surface temperature (credit: [Wikimedia](https://commons.wikimedia.org/wiki/File:Kuroshio_SST.png).)
 ```
 
 
@@ -30,7 +30,7 @@ __Fall 2023__
 
 ## [Texts](texts)
 
-Mostly
+Mostly [Cushman-Roisin and Beckers, 2011](https://www-sciencedirect-com.ezproxy.library.uvic.ca/bookseries/international-geophysics/vol/101/suppl/C) available electronically from the UVic library.  You can also purchase a copy depending on preference.  See <texts> for other suggested texts.
 
 ## Grading
 

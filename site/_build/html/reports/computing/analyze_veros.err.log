@@ -1,0 +1,48 @@
+Traceback (most recent call last):
+  File "/Users/jklymak/mambaforge/envs/veros/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/jklymak/mambaforge/envs/veros/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/jklymak/mambaforge/envs/veros/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/jklymak/mambaforge/envs/veros/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/jklymak/mambaforge/envs/veros/lib/python3.8/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Users/jklymak/mambaforge/envs/veros/lib/python3.8/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/jklymak/mambaforge/envs/veros/lib/python3.8/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# ignore this "xmode" magic; it just makes the Error message _much_ shorter below
+%xmode Minimal
+
+with xr.open_dataset('example.snapshot.nc') as ds:
+    # time is 370 minutes, or just a bit off from 6 h where we have data:
+    ds = ds.isel(yt=0, yu=0).sel(Time=np.timedelta64(6*60+10, 'm'))
+    
+------------------
+
+----- stdout -----
+Exception reporting mode: Minimal
+------------------
+
+[0;31mKeyError[0m[0;31m:[0m 22200000000000
+
+
+During handling of the above exception, another exception occurred:
+
+[0;31mKeyError[0m[0;31m:[0m Timedelta('0 days 06:10:00')
+
+
+The above exception was the direct cause of the following exception:
+
+[0;31mKeyError[0m[0;31m:[0m Timedelta('0 days 06:10:00')
+
+
+The above exception was the direct cause of the following exception:
+
+[0;31mKeyError[0m[0;31m:[0m "not all values found in index 'Time'. Try setting the `method` keyword argument (example: method='nearest')."
+
+

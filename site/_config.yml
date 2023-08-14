@@ -24,6 +24,11 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
+# In _config.yml
+sphinx:
+  config:
+    bibtex_reference_style: author_year
+
 # Information about where the book exists on the web
 repository:
   url: https://github.com/jklymak/Eos431Phy441  # Online location of your book
