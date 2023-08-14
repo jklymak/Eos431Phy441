@@ -14,4 +14,4 @@ chapters:
   - file: computing/analyze_veros
 - file: assignments/index
   sections:
-  - file: release/Test/Test0.ipynb
+  - file: release/Assign0/Assignment0.ipynb
