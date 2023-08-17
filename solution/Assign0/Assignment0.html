@@ -61,11 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'release/Assign0/Assignment0Key';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'solution/Assign0/Assignment0';</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Assign0: dense flow over an obstacle" href="Assignment0.html" />
+    <link rel="prev" title="Assign0: dense flow over an obstacle" href="../../release/Assign0/Assignment0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -166,8 +166,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="Assignment0.html">Assign0: dense flow over an obstacle</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Assign0: dense flow over an obstacle</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../release/Assign0/Assignment0.html">Assign0: dense flow over an obstacle</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Key</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -213,7 +215,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/jklymak/Eos431Phy441/issues/new?title=Issue%20on%20page%20%2Frelease/Assign0/Assignment0Key.html&body=Your%20issue%20content%20here." target="_blank"
+<a href="https://github.com/jklymak/Eos431Phy441/issues/new?title=Issue%20on%20page%20%2Fsolution/Assign0/Assignment0.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button"
    title="Open an issue"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -239,7 +241,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/release/Assign0/Assignment0Key.ipynb" target="_blank"
+      <li><a href="../../_sources/solution/Assign0/Assignment0.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -358,7 +360,7 @@ document.write(`
 <p>For this assignment you will run and plot some data from a Veros simulation.  Once you have the model running, please answer the questions below, and hand your Notebook in using Brightspace.</p>
 <section id="run-the-model">
 <h2>Run the model<a class="headerlink" href="#run-the-model" title="Permalink to this heading">#</a></h2>
-<p>The model setup file to use is <a class="reference download internal" download="" href="../../_downloads/e12a7f54a8a1c02e5a113835c1d2ce3d/hydraulic.py"><span class="xref download myst">./hydraulic.py</span></a>.  If you have <a class="reference internal" href="../../computing/run_veros.html#run-veros"><span class="std std-ref">set up veros</span></a> on your machine and you have activated the environment (<code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">activate</span> <span class="pre">eos431</span></code>) then you should be able to do:</p>
+<p>The model setup file to use is <a class="reference download internal" download="" href="../../_downloads/1efcaace76ae96fbe89e81415a1f4778/hydraulic.py"><span class="xref download myst">./hydraulic.py</span></a>.  If you have <a class="reference internal" href="../../computing/run_veros.html#run-veros"><span class="std std-ref">set up veros</span></a> on your machine and you have activated the environment (<code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">activate</span> <span class="pre">eos431</span></code>) then you should be able to do:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">veros</span> <span class="n">run</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">overwrite</span> <span class="n">hydraulic</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
@@ -452,6 +454,10 @@ document.write(`
 <section id="q1-3-hovmoller-diagram">
 <h2>Q1.3 Hovmoller diagram:<a class="headerlink" href="#q1-3-hovmoller-diagram" title="Permalink to this heading">#</a></h2>
 <p>If you did the above properly, you selected a given Time for each frame.  This time choose a certain depth, and plot the velocity as function of <code class="docutils literal notranslate"><span class="pre">xu</span></code> on the x axis and <code class="docutils literal notranslate"><span class="pre">Time</span></code> on the y axis.  This is called a <a class="reference external" href="https://en.wikipedia.org/wiki/Hovm%C3%B6ller_diagram">Hovmoller diagram</a> and is a very useful way to see signals propagating.  Do a couple of interesting depths.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Time in Veros is stored as <code class="docutils literal notranslate"><span class="pre">np.timedelta64</span></code> which is time since the model run started in nanoseconds.  Matplotlib doesn’t plot this very well, but does a nice job with datetimes, so suggest converting to datetime64 by adding an arbitrary starting date: <code class="docutils literal notranslate"><span class="pre">ds['Time']</span> <span class="pre">=</span> <span class="pre">ds.Time</span> <span class="pre">+</span> <span class="pre">np.datetime64('2023-01-01')</span></code></p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;hydraulic.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds0</span><span class="p">:</span>
@@ -500,7 +506,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./release/Assign0"
+            path: "./solution/Assign0"
         },
         predefinedOutput: true
     }
@@ -519,7 +525,7 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Assignment0.html"
+       href="../../release/Assign0/Assignment0.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
