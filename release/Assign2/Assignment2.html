@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Assignment 1: &#8212; Physical Oceanography</title>
+    <title>Assignment 2: &#8212; Physical Oceanography</title>
   
   
   
@@ -63,11 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'release/Assign1/Assignment1';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'release/Assign2/Assignment2';</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Assignment 0: dense flow over an obstacle" href="../Assign0/Assignment0.html" />
+    <link rel="prev" title="Assignment 1:" href="../Assign1/Assignment1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,7 +169,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Assignment 1:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assign1/Assignment1.html">Assignment 1:</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Assignment 2:</a></li>
 </ul>
 </li>
 </ul>
@@ -215,7 +216,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/jklymak/Eos431Phy441/issues/new?title=Issue%20on%20page%20%2Frelease/Assign1/Assignment1.html&body=Your%20issue%20content%20here." target="_blank"
+<a href="https://github.com/jklymak/Eos431Phy441/issues/new?title=Issue%20on%20page%20%2Frelease/Assign2/Assignment2.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button"
    title="Open an issue"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -241,7 +242,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/release/Assign1/Assignment1.ipynb" target="_blank"
+      <li><a href="../../_sources/release/Assign2/Assignment2.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -323,7 +324,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Assignment 1:</h1>
+    <h1>Assignment 2:</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -333,15 +334,15 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-continuity-in-a-box">Q1.1  continuity in a box</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-calculate-the-transport-in-a-layer">Q1.2 Calculate the transport in a “layer”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-x-momentum-budget-pointwise">Q1.3 x-momentum budget (pointwise!)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-4-describe">Q1.4 Describe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-5-internal-versus-external-pressure">Q1.5 Internal versus external pressure</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-5-continued">Q1.5 continued</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-stress-with-no-rotation">Q1.1  Stress with no rotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-geostrophic-balance-interior">Q1.2 Geostrophic balance (interior)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-ekman-balance">Q1.3 Ekman balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-4-ekman-spiral">Q1.4 Ekman spiral</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-wind-driven-basin-qualitative">Q2: Wind-driven basin: Qualitative</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-1-plot-the-wind-stress-as-a-function-of-y">Q2.1: plot the wind stress as a function of y</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2">Q2.2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-channel-flow-qualitative">Q2: Channel flow Qualitative</a></li>
 </ul>
             </nav>
         </div>
@@ -353,18 +354,14 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="assignment-1">
-<span id="id1"></span><h1>Assignment 1:<a class="headerlink" href="#assignment-1" title="Permalink to this heading">#</a></h1>
-<p>For this assignment you will do quantiative analysis for the flow over an obstacle (see <a class="reference internal" href="../Assign0/Assignment0.html#assignment0"><span class="std std-ref">Assignment 0: dense flow over an obstacle</span></a>), and a qualitative analysis of rotating channel flow.</p>
-<section id="q1-1-continuity-in-a-box">
-<h2>Q1.1  continuity in a box<a class="headerlink" href="#q1-1-continuity-in-a-box" title="Permalink to this heading">#</a></h2>
-<p>Using the simulated data set you produced in <a class="reference internal" href="../Assign0/Assignment0.html#assignment0"><span class="std std-ref">Assignment 0: dense flow over an obstacle</span></a>:</p>
-<p>Consider a single time step in the simulation.  Define a largish box in your model domain with the sides defined at two values of x, and the top defined by one value of z.  The bottom can be defined as the sea floor.  Show that the net flow into the box is close to zero. You can express the flow in terms of <span class="math notranslate nohighlight">\(m^2\,s^{-1}\)</span> or <span class="math notranslate nohighlight">\(m^3\,s^{-1}\)</span>, but given that the flow is 2-D <span class="math notranslate nohighlight">\(m^2\,s^{-1}\)</span> probably makes more sense.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Remember that you can do something like <code class="docutils literal notranslate"><span class="pre">ds</span> <span class="pre">=</span> <span class="pre">ds.sel(xt=slice(-50,</span> <span class="pre">50),</span> <span class="pre">xu=slice(-50,</span> <span class="pre">50))</span></code> to get the data just between -50 and +50 km.  And then repeat for the z direction to define your volume.  Check that your shape is correct by doing something like <code class="docutils literal notranslate"><span class="pre">display(ds)</span></code>.</p>
-<p>For the vertical direction, w and u are offset from one another, with w on the bottom of the cell, so you want one more zw value than zt value in your final shape.  You can do this using either <code class="docutils literal notranslate"><span class="pre">sel</span></code> or <code class="docutils literal notranslate"><span class="pre">isel</span></code> and taking care with the limits.  For instance I ended up with dimensions <code class="docutils literal notranslate"><span class="pre">...,</span> <span class="pre">zt:</span> <span class="pre">57,</span> <span class="pre">zw:</span> <span class="pre">58,</span> <span class="pre">...</span></code>.  If you are careful with this, your answer will be closer than if sloppy.</p>
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment-2">
+<span id="id1"></span><h1>Assignment 2:<a class="headerlink" href="#assignment-2" title="Permalink to this heading">#</a></h1>
+<p>For this assignment you will do quantiative analysis of the channel flow (see <a class="reference internal" href="../Assign1/Assignment1.html#assignment-1"><span class="std std-ref">Assignment 1:</span></a>), and a qualitative analysis of flow in a basin under wind stress curl.</p>
+<section id="q1-1-stress-with-no-rotation">
+<h2>Q1.1  Stress with no rotation<a class="headerlink" href="#q1-1-stress-with-no-rotation" title="Permalink to this heading">#</a></h2>
+<p>For the simulation with no rotation (<code class="docutils literal notranslate"><span class="pre">channelnof</span></code>), plot a profile of the x-momentum stress that is transmitted in the vertical direction at a point in the middle of the channel.  Do this at something like 12 h into the simulation.</p>
+<p>What is the net acceleration of the water parcel due to this stress profile?</p>
+<p>Recall that the surface stress is equal to <span class="math notranslate nohighlight">\(\tau_w = 0.2 \ \mathrm{N\,m^{-2}}\)</span>, and the vertical viscosity is <span class="math notranslate nohighlight">\(\kappa = 10^{-3}\ \mathrm{m^2\,s^{-1}}\)</span>.  What will the velocity and stress profile look like at steady state (flow no longer accelerating), or is there a steady state?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -401,15 +398,17 @@ document.write(`
 </div>
 </div>
 </div>
+<p>This flow is not in steady state yet.  Steady state would be a linear profile of velocity with <span class="math notranslate nohighlight">\(\nu \partial u / \partial z = \tau_w / \rho\)</span> so <span class="math notranslate nohighlight">\(u(z=0) = 10 \ \mathrm{m\,s^{-1}}\)</span>.  This would lead to a constant stress through the water column As it is, the flow is faster above than below, and the stress is higher with increasing z, so momentum is converging with depth and <span class="math notranslate nohighlight">\(\partial u / \partial t&gt;0\)</span>.</p>
+<p>Note that the time scale for this to be in steady state is <span class="math notranslate nohighlight">\(T\approx H^2 / \kappa \approx 28\)</span> days, so we would have to run the simulation for considerably longer to see the steady state behaviour.</p>
 </section>
-<section id="q1-2-calculate-the-transport-in-a-layer">
-<h2>Q1.2 Calculate the transport in a “layer”<a class="headerlink" href="#q1-2-calculate-the-transport-in-a-layer" title="Permalink to this heading">#</a></h2>
-<p>Consider all water colder than 12 degrees and plot its transport as a function of x along the channel.  Do this for one time step (though bonus grades for also doing it as a Hovmoller diagram).</p>
+<section id="q1-2-geostrophic-balance-interior">
+<h2>Q1.2 Geostrophic balance (interior)<a class="headerlink" href="#q1-2-geostrophic-balance-interior" title="Permalink to this heading">#</a></h2>
+<p>For the f-plane simulation (<code class="docutils literal notranslate"><span class="pre">channelfplane</span></code>) show that the interior of the flow (away from the Ekman layers) is approximately in geostrophic balance with the surface flow.  Note that <span class="math notranslate nohighlight">\(f=10^{-4}\ \mathrm{rad\,s^{-1}}\)</span>.  I did this by comparing the size of <span class="math notranslate nohighlight">\(u\)</span> with the size of <span class="math notranslate nohighlight">\((g/f) \partial  \eta / \partial x\)</span> across the whol y-z cross-section.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p>You can make a version of the data set with u=0 for water warmer than 12 degrees by doing <code class="docutils literal notranslate"><span class="pre">ds['ucold']</span> <span class="pre">=</span> <span class="pre">ds.u.where(ds.temp.values&lt;=12,</span> <span class="pre">0)</span></code>. The first argument is the condition, the second is the values to fill in <code class="docutils literal notranslate"><span class="pre">ds.ucold</span></code> if the condition is False. Don’t forget to use <code class="docutils literal notranslate"><span class="pre">fillna</span></code> to take care of the NaN’s in the data…</p>
+<p>Remember that the surface pressure, <span class="math notranslate nohighlight">\(g\eta\)</span>, is given by <code class="docutils literal notranslate"><span class="pre">psi</span></code> in veros.</p>
 </div>
-<p>Discuss your result.  Is the transport constant?  If not, why do you think it is not constant?</p>
+<p>Desceribe where in the water column the geostrophic balance is poor.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -431,20 +430,13 @@ document.write(`
 </div>
 <p>YOUR ANSWER HERE</p>
 </section>
-<section id="q1-3-x-momentum-budget-pointwise">
-<h2>Q1.3 x-momentum budget (pointwise!)<a class="headerlink" href="#q1-3-x-momentum-budget-pointwise" title="Permalink to this heading">#</a></h2>
-<p>The 2_D x-momentum budget for a non-rotating fluid is:</p>
-<div class="math notranslate nohighlight">
-\[ 
-\frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + w\frac{\partial u}{\partial z} = - \frac{1}{\rho} \frac{\partial p}{\partial x}  + \nu_z \frac{\partial^2 u}{\partial z^2} + \nu_x \frac{\partial^2 u}{\partial x^2}
-\]</div>
-<p>In the model, <span class="math notranslate nohighlight">\(P\)</span> is given by <code class="docutils literal notranslate"><span class="pre">ds.p_hydro</span> <span class="pre">+</span> <span class="pre">ds.psi</span></code>.  The vertical viscosity is <span class="math notranslate nohighlight">\(\nu_z=4\times10^{-4} \ \mathrm{m^2\,s^{-1}}\)</span> and the horizontal is
-<span class="math notranslate nohighlight">\(\nu_x = 10\ \mathrm{m^2\,s^{-1}}\)</span>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>In the real world viscosity doesn’t depend on the direction.  In the model, the viscosity parameterizes unresolved turbulence.  Given that the horizontal scales are much larger than the vertical, the model works better if the horizontal viscsity is larger than the vertical.</p>
+<section id="q1-3-ekman-balance">
+<h2>Q1.3 Ekman balance<a class="headerlink" href="#q1-3-ekman-balance" title="Permalink to this heading">#</a></h2>
+<p>Plot as a time-series and demonstrate that the Ekman Transport reaches the expected value in the upper part of the water column and that there is an equal and opposite Ekman transport in the bottom boundary layer.  You can do this with y at the center of the channel.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The tendency would be to use <code class="docutils literal notranslate"><span class="pre">integrate</span></code> to do the integral.  However a lot of the Ekman transport is in the first grid cell, and the trapezoid rule does a poor job at the boundary.  Suggest you use <code class="docutils literal notranslate"><span class="pre">sum</span></code> instead (and multiply by the correct dz for each cell).</p>
 </div>
-<p>For one timestep, calculate these terms at each point in the model and compare.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -465,21 +457,9 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="q1-4-describe">
-<h2>Q1.4 Describe<a class="headerlink" href="#q1-4-describe" title="Permalink to this heading">#</a></h2>
-<p>Describe the breakdown of terms in the x-momentum budget.  Focus in particular over obstacle, though the unsteady behaviour far from the obstacle is useful to think about as well.</p>
-<ul class="simple">
-<li><p>Where is the flow almost in “steady state”?</p></li>
-<li><p>What are the dominant terms in the momentum budget?  Write out an approximate balance that would explain most of the balance.</p></li>
-<li><p>Are the left- and right-hand terms <em>exactly</em> in balance.  Any ideas why they are or are not.</p></li>
-<li><p>Explain the sense of the the largest terms in terms of the structure of the flow (eg does the structure of the terms make sense with respect to the flow?).</p></li>
-</ul>
-<p>YOUR ANSWER HERE</p>
-</section>
-<section id="q1-5-internal-versus-external-pressure">
-<h2>Q1.5 Internal versus external pressure<a class="headerlink" href="#q1-5-internal-versus-external-pressure" title="Permalink to this heading">#</a></h2>
-<p>Similar to the above, compare the external pressure due to surface tilt (<code class="docutils literal notranslate"><span class="pre">psi</span></code>) to the internal pressure (<code class="docutils literal notranslate"><span class="pre">p_hydro</span></code>) at a given depth, preferably one that goes through the overflowing water.</p>
-<p>First, make a Hovmoller diagram of the surface pressure.  Try and describe what you see - any idea what causes this?</p>
+<section id="q1-4-ekman-spiral">
+<h2>Q1.4 Ekman spiral<a class="headerlink" href="#q1-4-ekman-spiral" title="Permalink to this heading">#</a></h2>
+<p>Show that the velocity in the upper and lower Ekman layers follow the Ekman spiral solution in the upper ocean and near the sea floor.  Also add the two Ekman layer solutions together and compare to the observed profile.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -499,11 +479,14 @@ document.write(`
 </div>
 </div>
 </div>
-<p>YOUR ANSWER HERE</p>
-<section id="q1-5-continued">
-<h3>Q1.5 continued<a class="headerlink" href="#q1-5-continued" title="Permalink to this heading">#</a></h3>
-<p>We need to do some smoothing to try and ignore the effect shown above, so average the data by 4 or 6 timesteps.  Then compare the internal to the surface pressure gradient at a depth that includes the overflow.</p>
-<p>Compare and contrast the two pressure signals.  Does the pressure gradients make sense with respect to the direction that water flows?  How many centimeters of surface defelection would you expect to see for the given external pressure gradient?</p>
+</section>
+<section id="q2-wind-driven-basin-qualitative">
+<h2>Q2: Wind-driven basin: Qualitative<a class="headerlink" href="#q2-wind-driven-basin-qualitative" title="Permalink to this heading">#</a></h2>
+<p>In this simulation an 80x80km 200-m deep basin is used.  Wind is blown on it so that it blows strongest to the west at the south side of the box, and strongest to the east atthe top of the box, so <span class="math notranslate nohighlight">\(\tau_x^w = -0.1 \cos\left(\pi \frac{y}{y_{max}}\right)\)</span>.  There are two runs, where <span class="math notranslate nohighlight">\(f=f_0 = 10^{-4}\ \mathrm{rad \, s^{-1}}\)</span>, and a second where f increases towards the north: <span class="math notranslate nohighlight">\(f = f_0 + \left( 10^{-9} \left( ms \right)^{-1} \right) y\)</span></p>
+<p>To make the simulation output, please run <code class="docutils literal notranslate"><span class="pre">basinfplane.py</span></code> and <code class="docutils literal notranslate"><span class="pre">basinbetaplane.py</span></code>.</p>
+<section id="q2-1-plot-the-wind-stress-as-a-function-of-y">
+<h3>Q2.1: plot the wind stress as a function of y<a class="headerlink" href="#q2-1-plot-the-wind-stress-as-a-function-of-y" title="Permalink to this heading">#</a></h3>
+<p>Note that this is stored in <code class="docutils literal notranslate"><span class="pre">ds.surface_taux</span></code> (and <code class="docutils literal notranslate"><span class="pre">ds.surface_tauy</span></code>).  Describe a) what direction youd expect the Ekman transport to be at <span class="math notranslate nohighlight">\(y=40\ \mathrm{km}\)</span> and at <span class="math notranslate nohighlight">\(y=130\ \mathrm{km}\)</span> b) describe what must happen between these two “latitudes” given these Ekman transports.  c) What direction is the water being “torqued” (twisted)?  d) hwo do you think the water will move in this flow given that it will be close to geostrophic balance.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -525,17 +508,11 @@ document.write(`
 </div>
 <p>YOUR ANSWER HERE</p>
 </section>
-</section>
-<section id="q2-channel-flow-qualitative">
-<h2>Q2: Channel flow Qualitative<a class="headerlink" href="#q2-channel-flow-qualitative" title="Permalink to this heading">#</a></h2>
-<p>In this simulation, we have a 50-m deep channel with quite steep sides 20 km apart in the y-direction.  The flow starts at rest when a wind stress of <span class="math notranslate nohighlight">\(\tau=0.2\,\mathrm{N\,m^{-2}}\)</span> is applied in the positive x direction at time = 0.  This is called a spin-up problem.  We will do two simulations, one with rotation <span class="math notranslate nohighlight">\(f=10^{-4}\ \mathrm{rad\, s^{-1}}\)</span> and the other without.</p>
-<p>Note that this problem has no variability in the x direction (though there is definitely x-direction velocities!), so we don’t use much resolution in the x direction.</p>
-<p>Run <code class="docutils literal notranslate"><span class="pre">channelnof.py</span></code> and <code class="docutils literal notranslate"><span class="pre">channelfplane.py</span></code> and plot the outputs:</p>
-<ul class="simple">
-<li><p>plot some represntative time steps of the channel crosssections (y versus z) for each run.</p></li>
-<li><p>choose a time step at the end of the simulation and one location and plot u on the x-axis and v on the y-axis with a dot for each depth.  This is called a “hodogram”.</p></li>
-<li><p>what are the differences between the solution with rotation ansd the solution without rotation?</p></li>
-</ul>
+<section id="q2-2">
+<h3>Q2.2<a class="headerlink" href="#q2-2" title="Permalink to this heading">#</a></h3>
+<p>Plot four or so snapshots of <code class="docutils literal notranslate"><span class="pre">basinfplane</span></code> and <code class="docutils literal notranslate"><span class="pre">basinbetaplane</span></code> and compare and contrast the behaviour over time.  I suggest plotting <code class="docutils literal notranslate"><span class="pre">psi</span></code> which is the sea surface pressure anomally <span class="math notranslate nohighlight">\(g\eta\)</span> using contours, overtop of pcolor of the north-south velocity <span class="math notranslate nohighlight">\(v\)</span>.</p>
+<p>Note that there is an Ekman layer, so <span class="math notranslate nohighlight">\(v(z=0)\)</span> is interesting, but a bit misleading for the over-all circulation.  <code class="docutils literal notranslate"><span class="pre">ds.v.mean(dim='zt')</span></code> is a useful pcolor to make, or you could choose a depth out of the Ekman layer.</p>
+<p>What are the similarities and differences between the two simulations?  Which one looks more like the real ocean?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -555,26 +532,8 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
-<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># YOUR CODE HERE</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
-
-<span class="ne">NotImplementedError</span>: 
-</pre></div>
-</div>
-</div>
-</div>
 <p>YOUR ANSWER HERE</p>
+</section>
 </section>
 </section>
 
@@ -591,7 +550,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./release/Assign1"
+            path: "./release/Assign2"
         },
         predefinedOutput: true
     }
@@ -610,12 +569,12 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Assign0/Assignment0.html"
+       href="../Assign1/Assignment1.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Assignment 0: dense flow over an obstacle</p>
+        <p class="prev-next-title">Assignment 1:</p>
       </div>
     </a>
 </div></div>
@@ -636,15 +595,15 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-continuity-in-a-box">Q1.1  continuity in a box</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-calculate-the-transport-in-a-layer">Q1.2 Calculate the transport in a “layer”</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-x-momentum-budget-pointwise">Q1.3 x-momentum budget (pointwise!)</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-4-describe">Q1.4 Describe</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-5-internal-versus-external-pressure">Q1.5 Internal versus external pressure</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-5-continued">Q1.5 continued</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-stress-with-no-rotation">Q1.1  Stress with no rotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-geostrophic-balance-interior">Q1.2 Geostrophic balance (interior)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-ekman-balance">Q1.3 Ekman balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-4-ekman-spiral">Q1.4 Ekman spiral</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-wind-driven-basin-qualitative">Q2: Wind-driven basin: Qualitative</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-1-plot-the-wind-stress-as-a-function-of-y">Q2.1: plot the wind stress as a function of y</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2">Q2.2</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-channel-flow-qualitative">Q2: Channel flow Qualitative</a></li>
 </ul>
   </nav></div>
 
