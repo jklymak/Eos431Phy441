@@ -15,4 +15,8 @@ chapters:
 - file: assignments/index
   sections:
   - file: release/Assign0/Assignment0.ipynb
-  - file: release/Assign0/Assignment0Key.ipynb
+    #sections:
+    #- file: solution/Assign0/Assignment0.ipynb
+    #  title: Key
+  - file: release/Assign1/Assignment1.ipynb
+  - file: release/Assign2/Assignment2.ipynb
