@@ -23,6 +23,11 @@ __Fall 2023__
 
 ## Course Objectives
 
+- Better understand geophysical fluid dynamics
+- Practice data presentation and interpretation
+- Practice data analysis, including numerical skills
+- Practice written and oral presentation of ideas and concepts
+
 ## Schedule
 
 - one
@@ -36,4 +41,4 @@ Mostly [Cushman-Roisin and Beckers, 2011](https://www-sciencedirect-com.ezproxy.
 
 ## [Assignments](assignments/index)
 
-## [Course Project](courseproject)
+## [Course Project](project/index)

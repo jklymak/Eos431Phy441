@@ -16,8 +16,8 @@ The science carried out in the proposal should be relatively detailed. You will 
 
 My colleagues at Scripps and UW have been kind enough to share a proposal they wrote based on modelling results from a GRL paper. This was a major proposal to the US National Science Foundation for almost $3M. Of course it underwent very critical peer review, and was written by two of the brightest oceanographers in the field. So, it is much more polished than what I would expect from you (or even myself!). However, it gives a good idea of what is involved.
 
-- [GRL paper](./pdfs/MacKinnon_Winters_05a.pdf)
-- [IWAP Proposal](./pdfs/IwapProposal.pdf)
+- [GRL paper](../pdfs/MacKinnon_Winters_05a.pdf)
+- [IWAP Proposal](../pdfs/IwapProposal.pdf)
 
 ### Late policy for milestones and project
 
@@ -27,11 +27,28 @@ As for the rest of the course, 10% per day including weekends.  If you require a
 
 ### Choose a "recent" paper
 
+Grading: 2= good; 1=marginal; 0=unacceptable
+
 The first task it to choose a recent short paper in physical oceanography from *Science*, *Nature*, or *Geophysical Research Letters*. All three are available in the library and online from UVic.
 
-[A list of possible papers](./ProjectPossiblePapers)
+[A list of possible papers](./papers)
 
 This list is by no-means exhaustive. If you have a paper that you think appropriate please check with me (sooner rather than later).
 
 Please let me know as soon as you have chosen a paper. I will not allow multiple folks to do the same paper, so first-come, first-served. There is (will be) a list of papers chosen by folks here.
 
+#### URLs to search:
+
+Nature: <http://nature.com>
+Science: <http://sciencemag.org/>
+Geophysical Research Letters: <http://www.agu.org/journals/gl/>
+
+You can get PDFs from all these journals if you are on a UVic subnet, or using a proxy server (<https://www.uvic.ca/library/use/connect/index.php>). It would help me if you could try to submit URLs to the PDF files.
+
+Please note, avoid paleo-oceanography and climate studies. These are important and interesting subjects, but not the focus of this class. Papers should be based on observations, models, or theories of how the ocean is now, or at least in the recent past.
+
+At the this point you should turn in (via Brightspace):
+
+your paper author, year, title, journal, volume, pages.
+
+###

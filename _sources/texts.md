@@ -7,9 +7,10 @@ Most of the course is accessible from  [Cushman-Roisin and Beckers, 2011](https:
 - {cite:t}`vallis06`
 - {cite:t}`vallis17`
 - Stewart
-- Kundhu and Cohen
-- Pond and Picard
+- Kundu and Cohen
+- Pond and Pickard
 
 
 ```{bibliography}
+:filter: docname in docnames
 ```
