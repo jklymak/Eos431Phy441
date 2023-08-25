@@ -1,3 +1,4 @@
+(project)=
 # Course Project
 
 ## Outline
@@ -23,7 +24,9 @@ My colleagues at Scripps and UW have been kind enough to share a proposal they w
 
 As for the rest of the course, 10% per day including weekends.  If you require an academic concession please contact the instructor.
 
+(milestone1)=
 ## Milestones
+
 
 ### Choose a "recent" paper
 

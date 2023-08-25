@@ -1,3 +1,4 @@
+(assignments)=
 # Assignments
 
 Most assignments (except the first and last) consist of two parts.  The first
