@@ -39,6 +39,6 @@ Mostly [Cushman-Roisin and Beckers, 2011](https://www-sciencedirect-com.ezproxy.
 
 ## Grading
 
-## [Assignments](assignments/index)
-
-## [Course Project](project/index)
+- 50% [Assignments](assignments/index)
+- 45% [Course project](project/index)
+- 5% Participation
