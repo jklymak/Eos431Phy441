@@ -27,6 +27,7 @@ As for the rest of the course, 10% per day including weekends.  If you require a
 ## Milestones
 
 
+
 (milestone1)=
 ### Milestone1: Choose a "recent" paper
 

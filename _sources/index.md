@@ -30,8 +30,8 @@ __Fall 2023__
 
 ## Schedule
 
-- one
-- two
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsXfZWS6bEAlcr7JjZBvQ_aLIImhPL2A0hOomNbgjELG5snPKgtbGTGGGjujbHAQi-opGILojRYFq7/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width=800; height=500></iframe>
+
 
 ## [Texts](texts)
 
