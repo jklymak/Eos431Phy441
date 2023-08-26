@@ -42,3 +42,7 @@ Mostly [Cushman-Roisin and Beckers, 2011](https://www-sciencedirect-com.ezproxy.
 - 50% [Assignments](assignments/index)
 - 45% [Course project](project/index)
 - 5% Participation
+
+## Computing
+
+This course has a relatively heavy computing component, so please spend time setting your computing environment up.  See {ref}`computing` for more details.  Note their is a (modest) computing assignment due the first Tuesday of class.
