@@ -6,5 +6,7 @@ is a quantitative analysis of the model output for the (approximately) two-week
 block.  The second is a qualitative "first look" and a bit of thinking about
 the model output for the next block.
 
+Assignments are scheduled and handed in on {ref}`brightspace`
+
 ```{tableofcontents}
 ```
