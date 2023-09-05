@@ -161,6 +161,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Texts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="project/index.html">Course Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="project/papers.html">Possible papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project/talkrubric.html">Talk rubric</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="computing/index.html">Computing: Veros</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -171,8 +172,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="assignments/index.html">Assignments</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="release/Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="release/Assign1/Assignment1.html">Assignment 1:</a></li>
-<li class="toctree-l2"><a class="reference internal" href="release/Assign2/Assignment2.html">Assignment 2:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release/Assign1/Assignment1.html">Assignment 1: Flow over an obstacle and channel flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release/Assign2/Assignment2.html">Assignment 2: Wind-driven channel flow and basin-scale flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release/Assign3/Assignment3.html">Assignment 3: Basin-scale flows and waves</a></li>
 </ul>
 </li>
 </ul>
@@ -342,28 +344,40 @@ document.write(`
 <h1>Texts<a class="headerlink" href="#texts" title="Permalink to this heading">#</a></h1>
 <p>Most of the course is accessible from  <a class="reference external" href="https://www-sciencedirect-com.ezproxy.library.uvic.ca/bookseries/international-geophysics/vol/101/suppl/C">Cushman-Roisin and Beckers, 2011</a> available electronically from the UVic library.  You can also purchase a copy depending on preference.</p>
 <ul class="simple">
-<li><p><span id="id1">Gill [<a class="reference internal" href="#id11" title="A. E. Gill. Atmosphere-Ocean Dynamics. Academic, 1982.">1982</a>]</span></p></li>
-<li><p><span id="id2">Pedlosky [<a class="reference internal" href="#id12" title="Joseph Pedlosky. Geophysical Fluid Dynamics. Springer New York, 1987. URL: https://doi.org/10.1007%2F978-1-4612-4650-3, doi:10.1007/978-1-4612-4650-3.">1987</a>]</span></p></li>
-<li><p><span id="id3">Vallis [<a class="reference internal" href="#id14" title="Geoffrey K Vallis. Atmospheric and oceanic fluid dynamics: fundamentals and large-scale circulation. Cambridge University Press, 2006.">2006</a>]</span></p></li>
-<li><p><span id="id4">Vallis [<a class="reference internal" href="#id13" title="Geoffrey K. Vallis. Atmospheric and Oceanic Fluid Dynamics. Cambridge University Press, jun 2017. URL: https://doi.org/10.1017%2F9781107588417, doi:10.1017/9781107588417.">2017</a>]</span></p></li>
-<li><p>Stewart</p></li>
-<li><p>Kundu and Cohen</p></li>
-<li><p>Pond and Pickard</p></li>
+<li><p><span id="id1">Gill [<a class="reference internal" href="#id14" title="A. E. Gill. Atmosphere-Ocean Dynamics. Academic, 1982.">1982</a>]</span>: On reserve</p></li>
+<li><p><span id="id2">Pedlosky [<a class="reference internal" href="#id15" title="Joseph Pedlosky. Geophysical Fluid Dynamics. Springer New York, 1987. URL: https://doi.org/10.1007%2F978-1-4612-4650-3, doi:10.1007/978-1-4612-4650-3.">1987</a>]</span>: On reserve</p></li>
+<li><p><a class="reference external" href="https://www-cambridge-org.ezproxy.library.uvic.ca/core/product/41379BDDC4257CBE11143C466F6428A4"><span id="id3">Vallis [<a class="reference internal" href="#id17" title="Geoffrey K Vallis. Atmospheric and oceanic fluid dynamics: fundamentals and large-scale circulation. Cambridge University Press, 2006.">2006</a>]</span></a></p></li>
+<li><p><a class="reference external" href="https://www-cambridge-org.ezproxy.library.uvic.ca/core/books/atmospheric-and-oceanic-fluid-dynamics/41379BDDC4257CBE11143C466F6428A4"><span id="id4">Vallis [<a class="reference internal" href="#id16" title="Geoffrey K. Vallis. Atmospheric and Oceanic Fluid Dynamics. Cambridge University Press, jun 2017. URL: https://doi.org/10.1017%2F9781107588417, doi:10.1017/9781107588417.">2017</a>]</span></a></p></li>
+<li><p><a class="reference external" href="https://open.umn.edu/opentextbooks/textbooks/20"><span id="id5">Stewart [<a class="reference internal" href="#id56" title="Robert H Stewart. Introduction to physical oceanography. Robert H. Stewart, 2008.">2008</a>]</span></a></p></li>
+<li><p><a class="reference external" href="https://learning-oreilly-com.ezproxy.library.uvic.ca/library/view/fluid-mechanics-4th/9780123737359/chapter-02.html"><span id="id6">Kundu <em>et al.</em> [<a class="reference internal" href="#id55" title="Pijush K Kundu, Ira M Cohen, and D Dowling. Fluid mechanics, 4th Edition. Elsevier, 2008.">2008</a>]</span></a></p></li>
+<li><p><span id="id7">Pond and Pickard [<a class="reference internal" href="#id54" title="Stephen Pond and George L Pickard. Introductory dynamical oceanography. Gulf Professional Publishing, 1983.">1983</a>]</span>: On reserve</p></li>
 </ul>
-<div class="docutils container" id="id5">
-<div class="citation" id="id11" role="doc-biblioentry">
+<div class="docutils container" id="id8">
+<div class="citation" id="id14" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">Gil82</a><span class="fn-bracket">]</span></span>
 <p>A. E. Gill. <em>Atmosphere-Ocean Dynamics</em>. Academic, 1982.</p>
 </div>
-<div class="citation" id="id12" role="doc-biblioentry">
+<div class="citation" id="id55" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">KCD08</a><span class="fn-bracket">]</span></span>
+<p>Pijush K Kundu, Ira M Cohen, and D Dowling. <em>Fluid mechanics, 4th Edition</em>. Elsevier, 2008.</p>
+</div>
+<div class="citation" id="id15" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">Ped87</a><span class="fn-bracket">]</span></span>
 <p>Joseph Pedlosky. <em>Geophysical Fluid Dynamics</em>. Springer New York, 1987. URL: <a class="reference external" href="https://doi.org/10.1007%2F978-1-4612-4650-3">https://doi.org/10.1007%2F978-1-4612-4650-3</a>, <a class="reference external" href="https://doi.org/10.1007/978-1-4612-4650-3">doi:10.1007/978-1-4612-4650-3</a>.</p>
 </div>
-<div class="citation" id="id14" role="doc-biblioentry">
+<div class="citation" id="id54" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">PP83</a><span class="fn-bracket">]</span></span>
+<p>Stephen Pond and George L Pickard. <em>Introductory dynamical oceanography</em>. Gulf Professional Publishing, 1983.</p>
+</div>
+<div class="citation" id="id56" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">Ste08</a><span class="fn-bracket">]</span></span>
+<p>Robert H Stewart. <em>Introduction to physical oceanography</em>. Robert H. Stewart, 2008.</p>
+</div>
+<div class="citation" id="id17" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">Val06</a><span class="fn-bracket">]</span></span>
 <p>Geoffrey K Vallis. <em>Atmospheric and oceanic fluid dynamics: fundamentals and large-scale circulation</em>. Cambridge University Press, 2006.</p>
 </div>
-<div class="citation" id="id13" role="doc-biblioentry">
+<div class="citation" id="id16" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">Val17</a><span class="fn-bracket">]</span></span>
 <p>Geoffrey K. Vallis. <em>Atmospheric and Oceanic Fluid Dynamics</em>. Cambridge University Press, jun 2017. URL: <a class="reference external" href="https://doi.org/10.1017%2F9781107588417">https://doi.org/10.1017%2F9781107588417</a>, <a class="reference external" href="https://doi.org/10.1017/9781107588417">doi:10.1017/9781107588417</a>.</p>
 </div>
