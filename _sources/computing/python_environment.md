@@ -11,7 +11,7 @@ Mamba (and conda) provide "environments" or "kernels" to run your python-based p
 
 ## Creating your environment
 
-A list of packages is available that should work to create you an environment at <https://jklymak.github.io/Eos431Phy441/computings/eos431environment.yml>.  To use this file you simply do:
+A list of packages is available that should work to create you an environment at [eos431environment.yml](./eos431environment.yml).  To use this file you simply do:
 
 ```
 mamba env create -f eos431environment.yml

@@ -1,0 +1,16 @@
+name: eos431
+dependencies:
+  - pip
+  - numpy
+  - xarray
+  - netcdf4
+  - hdf5
+  - dask
+  - scipy
+  - matplotlib
+  - jupyter
+  - jupyterlab
+  - mpi
+  - mpi4py
+  - pip:
+    - veros
