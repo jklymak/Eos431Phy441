@@ -357,12 +357,12 @@ document.write(`
 <section id="install-mamba-or-conda">
 <h2>Install Mamba (or conda)<a class="headerlink" href="#install-mamba-or-conda" title="Permalink to this heading">#</a></h2>
 <p>If you don’t already have it (or conda), install mamba from <a class="reference external" href="https://github.com/conda-forge/miniforge#mambaforge">mambaforge</a> appropriate for you computer architecture.</p>
-<p>If you have conda it should work well, but make sure that your default channel is <a class="reference external" href="https://conda-forge.org/docs/user/introduction.html#how-can-i-install-packages-from-conda-forge">conda-forge</a>. However, note that mamba usually faster.</p>
+<p>If you have conda it should work well, but make sure that your default channel is <a class="reference external" href="https://conda-forge.org/docs/user/introduction.html#how-can-i-install-packages-from-conda-forge">conda-forge</a>. However, note that mamba is usually faster.</p>
 <p>Mamba (and conda) provide “environments” or “kernels” to run your python-based programs.  They not only work with python files, but with c- and FORTRAN extensions used in much of scientific computing.  You could use <code class="docutils literal notranslate"><span class="pre">pip</span></code> instead, but you will likely hit roadblocks when dealing with netcdf files.</p>
 </section>
 <section id="creating-your-environment">
 <h2>Creating your environment<a class="headerlink" href="#creating-your-environment" title="Permalink to this heading">#</a></h2>
-<p>A list of packages is available that should work to create you an environment at <a class="reference external" href="https://jklymak.github.io/Eos431Phy441/eos431environment.yml">https://jklymak.github.io/Eos431Phy441/eos431environment.yml</a>.  To use this file you simply do:</p>
+<p>A list of packages is available that should work to create you an environment at <a class="reference external" href="https://jklymak.github.io/Eos431Phy441/computings/eos431environment.yml">https://jklymak.github.io/Eos431Phy441/computings/eos431environment.yml</a>.  To use this file you simply do:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">eos431environment</span><span class="o">.</span><span class="n">yml</span>
 <span class="n">mamba</span> <span class="n">env</span> <span class="nb">list</span>
 </pre></div>
