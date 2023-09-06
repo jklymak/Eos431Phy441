@@ -69,13 +69,12 @@ class ChannelSetup(VerosSetup):
 
         settings.eq_of_state_type = 1
 
-    @veros_routine
+    @veros_routine(dist_safe=False, local_variables=['dxt', 'dyt', 'dzt'])
     def set_grid(self, state):
         vs = state.variables
         settings = state.settings
 
         ddz = 200 / settings.nz
-
 
         if False:
             vs.dxt = update(vs.dxt, at[...], 400)
