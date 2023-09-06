@@ -5,6 +5,7 @@ dependencies:
   - xarray
   - netcdf4
   - hdf5
+  - h5py=*=mpi*
   - dask
   - scipy
   - matplotlib

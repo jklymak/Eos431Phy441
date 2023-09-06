@@ -16,9 +16,11 @@ if __name__ == "__main__":
 
 from veros import VerosSetup, veros_routine
 from veros.variables import allocate, Variable
-from veros.distributed import global_min, global_max
+from veros.distributed import global_min, global_max, proc_index_to_rank, proc_rank_to_index
 from veros.core.operators import numpy as npx, update, at
 from veros.tools.setup import get_stretched_grid_steps
+from veros import runtime_settings as rs, runtime_state as rst
+
 
 
 class ChannelSetup(VerosSetup):
@@ -73,10 +75,10 @@ class ChannelSetup(VerosSetup):
     def set_grid(self, state):
         vs = state.variables
         settings = state.settings
-
+        proc_idx = proc_rank_to_index(rst.proc_rank)
+        print(proc_idx)
         ddz = 200 / settings.nz
-
-
+        print(npx.shape(vs.dxt))
         if False:
             vs.dxt = update(vs.dxt, at[...], 400)
             if True:
