@@ -41,12 +41,12 @@ jupyter lab &
 
 which should open a jupyterlab interface in your browser.
 
-
+(syzygy)=
 ## Working on uvic.syzygy.ca
 
-Some folks are used to working on syzygy.uvic.ca.  My short experience with this is that its pretty slow, and if many folks do it, we are liable to get in trouble.  But if you are really stuck because your computer is too ancient then you can do the install steps above, and then install a kernel to make it available on the syzygy machines.
+Some folks are used to working on <https://uvic.syzygy.ca>.  My short experience with this is that its pretty slow, and if many folks do it, we are liable to get in trouble.  But if you are really stuck because your computer is too ancient then you can do the install steps above, and then install a kernel to make it available on the syzygy machines.
 
-To do this, I did the folowing
+To do this, I did the following
 
 - uploaded [eos431environment.yml](./eos431environment.yml) to syzygy, as above, and put it in a subdirectory.
 - Make an eos431 environment: from a terminal on syzygy, I ran the mamba command above: `mamba env create -f eos431environment.yml`.  At this point everything installed fine for me, so it should work for you as well.
