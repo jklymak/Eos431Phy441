@@ -8,9 +8,11 @@ dependencies:
   - dask
   - scipy
   - matplotlib
+  - ipython
   - jupyter
   - jupyterlab
   - mpi
   - mpi4py
+  - ipympl
   - pip:
     - veros
