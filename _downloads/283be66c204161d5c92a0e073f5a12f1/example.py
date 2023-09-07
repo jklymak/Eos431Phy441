@@ -101,7 +101,7 @@ class ChannelSetup(VerosSetup):
             vs.coriolis_t, at[...], 0e-4
         )
 
-    @veros_routine
+    @veros_routine(dist_safe=False, local_variables=['kbot', 'xt'])
     def set_topography(self, state):
         vs = state.variables
         # depth of deepest cell.  0 is land,  1 is deepest
@@ -117,7 +117,7 @@ class ChannelSetup(VerosSetup):
         vs.kbot = update(vs.kbot, at[:, 0], 0)
         vs.kbot = update(vs.kbot, at[0, :], 0)
 
-    @veros_routine
+    @veros_routine(dist_safe=False, local_variables=['xu', 'xt', 'temp'])
     def set_initial_conditions(self, state):
         vs = state.variables
         settings = state.settings
@@ -148,7 +148,7 @@ class ChannelSetup(VerosSetup):
         settings = state.settings
         diagnostics = state.diagnostics
 
-        diagnostics["snapshot"].output_frequency = 7200
+        diagnostics["snapshot"].output_frequency = 7200 / 2
 
 
     @veros_routine
