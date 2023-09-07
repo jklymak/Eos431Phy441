@@ -86,7 +86,6 @@ class ChannelSetup(VerosSetup):
 
         dx = get_stretched_grid_steps(102-25, 150e3, 400)
         vs.dxt = update(vs.dxt, at[...], npx.hstack((dx[::-1], npx.ones(50)*400, dx)))
-
         vs.dyt = update(vs.dyt, at[...], 1000)
         vs.dzt = update(vs.dzt, at[...], ddz)
 

@@ -356,7 +356,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="assignment-0-dense-flow-over-an-obstacle">
 <span id="assignment0"></span><h1>Assignment 0: dense flow over an obstacle<a class="headerlink" href="#assignment-0-dense-flow-over-an-obstacle" title="Permalink to this heading">#</a></h1>
-<p>For this assignment you will run and plot some data from a Veros simulation.  Once you have the model running, please answer the questions below, and hand your Notebook in using Brightspace.</p>
+<p>For this assignment you will run and plot some data from a Veros simulation.  Once you have the model running, please answer the questions below, and hand your Notebook in using Brightspace <em>as a PDF</em>.</p>
 <section id="run-the-model">
 <h2>Run the model<a class="headerlink" href="#run-the-model" title="Permalink to this heading">#</a></h2>
 <p>The model setup file to use is <a class="reference download internal" download="" href="../../_downloads/e12a7f54a8a1c02e5a113835c1d2ce3d/hydraulic.py"><span class="xref download myst">./hydraulic.py</span></a>.  If you have <a class="reference internal" href="../../computing/run_veros.html#run-veros"><span class="std std-ref">set up veros</span></a> on your machine and you have activated the environment (<code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">activate</span> <span class="pre">eos431</span></code>) then you should be able to do:</p>
@@ -364,7 +364,7 @@ document.write(`
 </pre></div>
 </div>
 <p>or, if you managed to get <code class="docutils literal notranslate"><span class="pre">mpi</span></code> to install and your computer has at least 4 cores:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span> <span class="o">-</span><span class="n">np</span> <span class="mi">4</span> <span class="n">veros</span> <span class="n">run</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">overwrite</span> <span class="n">hydraulic</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="mi">4</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span> <span class="o">-</span><span class="n">np</span> <span class="mi">4</span> <span class="n">veros</span> <span class="n">run</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">overwrite</span> <span class="n">hydraulic</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">n</span> <span class="mi">4</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p>You should see output scroll by like:</p>
@@ -386,12 +386,12 @@ document.write(`
 <p>Note that depending on the speed of your computer this could take a little while to run - after the first 20 iterations, the “time left” indication should be relatively accurate.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Help! my model doesn’t run, or is so painfully slow I can’t wait for it to complete!  Please contact the instructor, preferably on Brightspace</p>
+<p>Help! my model doesn’t run, or is so painfully slow I can’t wait for it to complete!  Please contact the instructor, preferably on Brightspace.</p>
 </div>
 </section>
 <section id="q1-1">
 <h2>Q1.1<a class="headerlink" href="#q1-1" title="Permalink to this heading">#</a></h2>
-<p>Make a plot of the evolution of the flow (u) over time, for at least 2 days (no need to show every time step).  Ideally, contour temperature as well as color velocity.  Please take some care to center your colormaps, and label the axes properly (though if the axes limits are repeated, you need not label <em>all</em> the axes).  Also use some discretion in choosing the xlimits of your plot.</p>
+<p>Make a plot of the evolution of the flow (u) over time, for at least 2 days (no need to show every time step).  Ideally, contour temperature as well as color velocity (I usually use <code class="docutils literal notranslate"><span class="pre">pcolormesh</span></code>).  Please take some care to center your colormaps, and label the axes properly (though if the axes limits are repeated, you need not label <em>all</em> the axes).  Also use some discretion in choosing the xlimits of your plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -442,10 +442,10 @@ document.write(`
 </section>
 <section id="q1-3-hovmoller-diagram">
 <h2>Q1.3 Hovmoller diagram:<a class="headerlink" href="#q1-3-hovmoller-diagram" title="Permalink to this heading">#</a></h2>
-<p>If you did the above properly, you selected a given Time for each frame.  This time choose a certain depth, and plot the velocity as function of <code class="docutils literal notranslate"><span class="pre">xu</span></code> on the x axis and <code class="docutils literal notranslate"><span class="pre">Time</span></code> on the y axis.  This is called a <a class="reference external" href="https://en.wikipedia.org/wiki/Hovm%C3%B6ller_diagram">Hovmoller diagram</a> and is a very useful way to see signals propagating.  Do a couple of interesting depths.</p>
+<p>If you did the above properly, you selected a given <code class="docutils literal notranslate"><span class="pre">Time</span></code> for each frame.  For ths problem, choose a certain depth, and plot the velocity as function of <code class="docutils literal notranslate"><span class="pre">xu</span></code> on the x axis and <code class="docutils literal notranslate"><span class="pre">Time</span></code> on the y axis.  This is called a <a class="reference external" href="https://en.wikipedia.org/wiki/Hovm%C3%B6ller_diagram">Hovmoller diagram</a> and is a very useful way to see signals propagating.  Do a couple of interesting depths.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Time in Veros is stored as <code class="docutils literal notranslate"><span class="pre">np.timedelta64</span></code> which is time since the model run started in nanoseconds.  Matplotlib doesn’t plot this very well, but does a nice job with datetimes, so suggest converting to datetime64 by adding an arbitrary starting date: <code class="docutils literal notranslate"><span class="pre">ds['Time']</span> <span class="pre">=</span> <span class="pre">ds.Time</span> <span class="pre">+</span> <span class="pre">np.datetime64('2023-01-01')</span></code></p>
+<p>Time in Veros is stored as <code class="docutils literal notranslate"><span class="pre">np.timedelta64</span></code> which is time since the model run started in nanoseconds.  Nanoseconds are pretty useless time unit, so convert to something more convenient (I used hours): <code class="docutils literal notranslate"><span class="pre">ds0['Time']</span> <span class="pre">=</span> <span class="pre">ds0.Time</span> <span class="pre">/</span> <span class="pre">np.timedelta64(1,</span> <span class="pre">'h')</span></code></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
