@@ -32,7 +32,7 @@ The first task it to choose a recent short paper in physical oceanography from *
 - [A list of possible papers](./ProjectPossiblePapers) somewhat dated!
 - [Nature "Physical Oceanography" papers](https://www.nature.com/subjects/physical-oceanography/nature) - though be judicious with these.  Some of them are things like cryosphere etc, which are outside our direct interests here.  Ask if in doubt.
 - [Nature Geosciences "Physical Oceanography" papers](https://www.nature.com/subjects/physical-oceanography/ngeo)
-- [Science Magazine possible search link](https://www.science.org/action/doSearch?field1=AllField&text1=Physical+oceanography&field2=AllField&text2=&publication%5B%5D=science&publication%5B%5D=science&publication=&Ppub=&AfterMonth=&AfterYear=2010&BeforeMonth=&BeforeYear=2023) - be sure to look at "Articles" in particular.
+- [Science Magazine possible search link](https://www.science.org/action/doSearch?field1=AllField&text1=Physical+oceanography&field2=AllField&text2=&publication%5B%5D=science&publication%5B%5D=science&publication=&Ppub=&AfterMonth=&AfterYear=2010&BeforeMonth=&BeforeYear=2023) - be sure to look at "Reports" and "Articles" in particular.
 
 
 This list is by no-means exhaustive. If you have a paper that you think appropriate please check with me (sooner rather than later).
