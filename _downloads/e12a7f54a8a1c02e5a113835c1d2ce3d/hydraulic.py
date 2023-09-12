@@ -39,7 +39,7 @@ class ChannelSetup(VerosSetup):
         settings.dt_tracer = settings.dt_mom
         settings.runlen = 3600 * 60
 
-        settings.x_origin = 0.0
+        settings.x_origin = -149.58292914e3
         settings.y_origin = 0.0
 
         settings.coord_degree = False
@@ -97,7 +97,7 @@ class ChannelSetup(VerosSetup):
             vs.coriolis_t, at[...], 0e-4
         )
 
-    @veros_routine
+    @veros_routine(dist_safe=False, local_variables=['xt', 'kbot'])
     def set_topography(self, state):
         vs = state.variables
         # depth of deepest cell.  0 is land,  1 is deepest
@@ -113,18 +113,14 @@ class ChannelSetup(VerosSetup):
         vs.kbot = update(vs.kbot, at[:, 0], 0)
         vs.kbot = update(vs.kbot, at[0, :], 0)
 
-    @veros_routine
+    @veros_routine(dist_safe=False, local_variables=['xt', 'temp'])
     def set_initial_conditions(self, state):
         vs = state.variables
         settings = state.settings
         nx = settings.nx
         tbot = 10
         ttop = 14
-        inx = npx.nonzero(vs.xt > npx.mean(vs.xt))[0]
-        with settings.unlock():
-            settings.x_origin = -npx.mean(vs.xt)
-            vs.xt = update(vs.xt, at[...], vs.xt+settings.x_origin)
-            vs.xu = update(vs.xu, at[...], vs.xu+settings.x_origin)
+        inx = npx.nonzero(vs.xt >0.0)[0]
 
         vs.temp = update(vs.temp, at[:inx[0], :, :, :], tbot)
         vs.temp = update(vs.temp, at[inx[0]:, :, :, :], ttop)
