@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Assign0: dense flow over an obstacle &#8212; Physical Oceanography</title>
+    <title>Assignment 0: dense flow over an obstacle &#8212; Physical Oceanography</title>
   
   
   
@@ -65,6 +65,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Assignment 1: Flow over an obstacle and channel flow" href="../../release/Assign1/Assignment1.html" />
+    <link rel="prev" title="Assignment 0: dense flow over an obstacle" href="../../release/Assign0/Assignment0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -155,7 +157,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../texts.html">Texts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../project/index.html">Course Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../project/papers.html">Possible papers</a></li>
@@ -168,11 +170,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../computing/analyze_veros.html">Analyzing Veros</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../release/Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../release/Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Key</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../release/Assign1/Assignment1.html">Assignment 1: Flow over an obstacle and channel flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../release/Assign2/Assignment2.html">Assignment 2: Wind-driven channel flow and basin-scale flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../release/Assign3/Assignment3.html">Assignment 3: Basin-scale flows and waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release/Assign4/Assignment4.html">Assignment 4: Basin-scale waves and overturning circulation</a></li>
 </ul>
 </li>
 </ul>
@@ -326,7 +332,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Assign0: dense flow over an obstacle</h1>
+    <h1>Assignment 0: dense flow over an obstacle</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -358,9 +364,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="assign0-dense-flow-over-an-obstacle">
-<h1>Assign0: dense flow over an obstacle<a class="headerlink" href="#assign0-dense-flow-over-an-obstacle" title="Permalink to this heading">#</a></h1>
-<p>For this assignment you will run and plot some data from a Veros simulation.  Once you have the model running, please answer the questions below, and hand your Notebook in using Brightspace.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment-0-dense-flow-over-an-obstacle">
+<span id="assignment0"></span><h1>Assignment 0: dense flow over an obstacle<a class="headerlink" href="#assignment-0-dense-flow-over-an-obstacle" title="Permalink to this heading">#</a></h1>
+<p>For this assignment you will run and plot some data from a Veros simulation.  Once you have the model running, please answer the questions below, and hand your Notebook in using Brightspace <em>as a PDF</em>.</p>
 <section id="run-the-model">
 <h2>Run the model<a class="headerlink" href="#run-the-model" title="Permalink to this heading">#</a></h2>
 <p>The model setup file to use is <a class="reference download internal" download="" href="../../_downloads/1efcaace76ae96fbe89e81415a1f4778/hydraulic.py"><span class="xref download myst">./hydraulic.py</span></a>.  If you have <a class="reference internal" href="../../computing/run_veros.html#run-veros"><span class="std std-ref">set up veros</span></a> on your machine and you have activated the environment (<code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">activate</span> <span class="pre">eos431</span></code>) then you should be able to do:</p>
@@ -368,7 +374,7 @@ document.write(`
 </pre></div>
 </div>
 <p>or, if you managed to get <code class="docutils literal notranslate"><span class="pre">mpi</span></code> to install and your computer has at least 4 cores:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span> <span class="o">-</span><span class="n">np</span> <span class="mi">4</span> <span class="n">veros</span> <span class="n">run</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">overwrite</span> <span class="n">hydraulic</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">n</span> <span class="mi">1</span> <span class="mi">4</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpirun</span> <span class="o">-</span><span class="n">np</span> <span class="mi">4</span> <span class="n">veros</span> <span class="n">run</span> <span class="o">--</span><span class="n">force</span><span class="o">-</span><span class="n">overwrite</span> <span class="n">hydraulic</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">n</span> <span class="mi">4</span> <span class="mi">1</span>
 </pre></div>
 </div>
 <p>You should see output scroll by like:</p>
@@ -390,12 +396,12 @@ document.write(`
 <p>Note that depending on the speed of your computer this could take a little while to run - after the first 20 iterations, the “time left” indication should be relatively accurate.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Help! my model doesn’t run, or is so painfully slow I can’t wait for it to complete!  Please contact the instructor, preferably on Brightspace</p>
+<p>Help! my model doesn’t run, or is so painfully slow I can’t wait for it to complete!  Please contact the instructor, preferably on Brightspace.</p>
 </div>
 </section>
 <section id="q1-1">
 <h2>Q1.1<a class="headerlink" href="#q1-1" title="Permalink to this heading">#</a></h2>
-<p>Make a plot of the evolution of the flow (u) over time, for at least 2 days (no need to show every time step).  Ideally, contour temperature as well as color velocity.  Please take some care to center your colormaps, and label the axes properly (though if the axes limits are repeated, you need not label <em>all</em> the axes).  Also use some discretion in choosing the xlimits of your plot.</p>
+<p>Make a plot of the evolution of the flow (u) over time, for at least 2 days (no need to show every time step).  Ideally, contour temperature as well as color velocity (I usually use <code class="docutils literal notranslate"><span class="pre">pcolormesh</span></code>).  Please take some care to center your colormaps, and label the axes properly (though if the axes limits are repeated, you need not label <em>all</em> the axes).  Also use some discretion in choosing the xlimits of your plot.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -411,6 +417,61 @@ document.write(`
 <span class="o">%</span><span class="k">matplotlib</span> widget
 </pre></div>
 </div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;hydraulic.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ds0</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ds0</span><span class="o">.</span><span class="n">xt</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+
+    <span class="n">ds0</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">yt</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">yu</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ds0</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">ds0</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">ds0</span><span class="o">.</span><span class="n">u</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
+Dimensions:            (xt: 200, xu: 200, yt: 4, yu: 4, zt: 90, zw: 90,
+                        tensor1: 2, tensor2: 2, Time: 30)
+Coordinates:
+  * xt                 (xt) float64 -151.3 -147.8 -144.4 ... 144.4 147.8 151.3
+  * xu                 (xu) float64 -149.6 -146.1 -142.7 ... 146.1 149.6 153.1
+  * yt                 (yt) float64 -0.5 0.5 1.5 2.5
+  * yu                 (yu) float64 0.0 1.0 2.0 3.0
+  * zt                 (zt) float64 -198.9 -196.7 -194.4 ... -3.333 -1.111
+  * zw                 (zw) float64 -197.8 -195.6 -193.3 ... -4.444 -2.222 0.0
+  * tensor1            (tensor1) float64 0.0 1.0
+  * tensor2            (tensor2) float64 0.0 1.0
+  * Time               (Time) timedelta64[ns] 01:59:59.999971200 ... 2 days 1...
+Data variables: (12/33)
+    dxt                (xt) float64 ...
+    dxu                (xu) float64 ...
+    dyt                (yt) float64 ...
+    dyu                (yu) float64 ...
+    dzt                (zt) float64 ...
+    dzw                (zw) float64 ...
+    ...                 ...
+    kappaM             (Time, zt, yt, xt) float64 ...
+    kappaH             (Time, zw, yt, xt) float64 ...
+    surface_taux       (Time, yt, xu) float64 ...
+    surface_tauy       (Time, yu, xt) float64 ...
+    forc_rho_surface   (Time, yt, xt) float64 ...
+    psi                (Time, yt, xt) float64 ...
+Attributes:
+    date_created:       2023-09-11T17:10:43.308035
+    veros_version:      1.5.0
+    setup_identifier:   hydraulic
+    setup_description:  
+    setup_settings:     {&quot;identifier&quot;: &quot;hydraulic&quot;, &quot;description&quot;: &quot;&quot;, &quot;nx&quot;: ...
+    setup_file:         /Users/jklymak/Dropbox/Teaching/Eos431Phy441/source/A...
+    setup_code:         #!/usr/bin/env python\n\n&quot;&quot;&quot;\n&quot;&quot;&quot;\n\n__VEROS_VERSION_...
+&lt;xarray.DataArray &#39;xt&#39; ()&gt;
+array(-1.11625923e-09)
+</pre></div>
+</div>
+<img alt="../../_images/5c1f5ae91e4820c8a548cb6ed96a97ca3e0eaa8f3b93e8cf91a32e029d29c458.png" src="../../_images/5c1f5ae91e4820c8a548cb6ed96a97ca3e0eaa8f3b93e8cf91a32e029d29c458.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -433,7 +494,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/66b4165704a5648f2e9d26b1da59ce106061090b6bbfc98a8a40bb8ab0640f03.png" src="../../_images/66b4165704a5648f2e9d26b1da59ce106061090b6bbfc98a8a40bb8ab0640f03.png" />
+<img alt="../../_images/85846eecc980772ad99a3f8a8815912f6e8789d41986d6cf5920c7853c142e33.png" src="../../_images/85846eecc980772ad99a3f8a8815912f6e8789d41986d6cf5920c7853c142e33.png" />
 </div>
 </div>
 </section>
@@ -456,17 +517,17 @@ document.write(`
 </section>
 <section id="q1-3-hovmoller-diagram">
 <h2>Q1.3 Hovmoller diagram:<a class="headerlink" href="#q1-3-hovmoller-diagram" title="Permalink to this heading">#</a></h2>
-<p>If you did the above properly, you selected a given Time for each frame.  This time choose a certain depth, and plot the velocity as function of <code class="docutils literal notranslate"><span class="pre">xu</span></code> on the x axis and <code class="docutils literal notranslate"><span class="pre">Time</span></code> on the y axis.  This is called a <a class="reference external" href="https://en.wikipedia.org/wiki/Hovm%C3%B6ller_diagram">Hovmoller diagram</a> and is a very useful way to see signals propagating.  Do a couple of interesting depths.</p>
+<p>If you did the above properly, you selected a given <code class="docutils literal notranslate"><span class="pre">Time</span></code> for each frame.  For ths problem, choose a certain depth, and plot the velocity as function of <code class="docutils literal notranslate"><span class="pre">xu</span></code> on the x axis and <code class="docutils literal notranslate"><span class="pre">Time</span></code> on the y axis.  This is called a <a class="reference external" href="https://en.wikipedia.org/wiki/Hovm%C3%B6ller_diagram">Hovmoller diagram</a> and is a very useful way to see signals propagating.  Do a couple of interesting depths.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Time in Veros is stored as <code class="docutils literal notranslate"><span class="pre">np.timedelta64</span></code> which is time since the model run started in nanoseconds.  Matplotlib doesn’t plot this very well, but does a nice job with datetimes, so suggest converting to datetime64 by adding an arbitrary starting date: <code class="docutils literal notranslate"><span class="pre">ds['Time']</span> <span class="pre">=</span> <span class="pre">ds.Time</span> <span class="pre">+</span> <span class="pre">np.datetime64('2023-01-01')</span></code></p>
+<p>Time in Veros is stored as <code class="docutils literal notranslate"><span class="pre">np.timedelta64</span></code> which is time since the model run started in nanoseconds.  Nanoseconds are pretty useless time unit, so convert to something more convenient (I used hours): <code class="docutils literal notranslate"><span class="pre">ds0['Time']</span> <span class="pre">=</span> <span class="pre">ds0.Time</span> <span class="pre">/</span> <span class="pre">np.timedelta64(1,</span> <span class="pre">'h')</span></code></p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;hydraulic.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds0</span><span class="p">:</span>
     <span class="c1"># Veros uses timedeltas64 as the time axis.  Matplotlib doesn&#39;t deal with this very well</span>
     <span class="c1"># so convert to a date relative to an arbitrary day:</span>
-    <span class="n">ds0</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">Time</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">)</span>
+    <span class="n">ds0</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">Time</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">timedelta64</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">)</span>
     
     <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;constrained&#39;</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">nn</span><span class="p">,</span> <span class="n">zz</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="o">-</span><span class="mi">45</span><span class="p">,</span> <span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">130</span><span class="p">]):</span>
@@ -482,7 +543,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/f0c8bee27e43ff71b4d6193d9074d82ee9b40ee12c8bab30048e9506fbd17819.png" src="../../_images/f0c8bee27e43ff71b4d6193d9074d82ee9b40ee12c8bab30048e9506fbd17819.png" />
+<img alt="../../_images/dd07f1374d0e0cc0300227cc2e9799509f0669c35cc2f1f9210c58dc829ddc3d.png" src="../../_images/dd07f1374d0e0cc0300227cc2e9799509f0669c35cc2f1f9210c58dc829ddc3d.png" />
 </div>
 </div>
 </section>
@@ -527,6 +588,24 @@ document.write(`
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../../release/Assign0/Assignment0.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Assignment 0: dense flow over an obstacle</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../release/Assign1/Assignment1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 1: Flow over an obstacle and channel flow</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Assignment 3: Basin-scale flows and waves &#8212; Physical Oceanography</title>
+    <title>Assignment 4: Basin-scale waves and overturning circulation &#8212; Physical Oceanography</title>
   
   
   
@@ -63,12 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'release/Assign3/Assignment3';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'release/Assign4/Assignment4';</script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Assignment 4: Basin-scale waves and overturning circulation" href="../Assign4/Assignment4.html" />
-    <link rel="prev" title="Assignment 2: Wind-driven channel flow and basin-scale flow" href="../Assign2/Assignment2.html" />
+    <link rel="prev" title="Assignment 3: Basin-scale flows and waves" href="../Assign3/Assignment3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,8 +178,8 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Assign1/Assignment1.html">Assignment 1: Flow over an obstacle and channel flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Assign2/Assignment2.html">Assignment 2: Wind-driven channel flow and basin-scale flow</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Assignment 3: Basin-scale flows and waves</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Assign4/Assignment4.html">Assignment 4: Basin-scale waves and overturning circulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assign3/Assignment3.html">Assignment 3: Basin-scale flows and waves</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Assignment 4: Basin-scale waves and overturning circulation</a></li>
 </ul>
 </li>
 </ul>
@@ -226,7 +225,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/jklymak/Eos431Phy441/issues/new?title=Issue%20on%20page%20%2Frelease/Assign3/Assignment3.html&body=Your%20issue%20content%20here." target="_blank"
+<a href="https://github.com/jklymak/Eos431Phy441/issues/new?title=Issue%20on%20page%20%2Frelease/Assign4/Assignment4.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button"
    title="Open an issue"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -252,7 +251,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/release/Assign3/Assignment3.ipynb" target="_blank"
+      <li><a href="../../_sources/release/Assign4/Assignment4.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -334,7 +333,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Assignment 3: Basin-scale flows and waves</h1>
+    <h1>Assignment 4: Basin-scale waves and overturning circulation</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -344,26 +343,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-ekman-pumping">Q1.1  Ekman pumping</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-a-determine-depth-of-ekman-layer">Q1.1.a Determine depth of Ekman layer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1b-vertical-velocity">Q1.1b  Vertical velocity.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1c-compare-w-ekman-pumping">Q1.1c Compare w/ Ekman Pumping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-super-inertial-poincarre-waves">Q1.1  Super-inertial Poincarre waves.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-a-determine-the-wavelength-and-frequency-of-waves">Q1.1.a Determine the wavelength and frequency of waves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2a-kelvin-wave">Q1.2a  Kelvin wave</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2b-kelvin-wave-assumptions">Q1.2b Kelvin wave assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2c-geostrophic-balance">Q1.2c geostrophic balance?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-sverdrup-transport">Q1.2 Sverdrup transport</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2b-now-plot-what-this-transport-looks-like-as-a-function-of-x-and-y">Q1.2b Now plot what this transport looks like as a function of x and y</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-rossby-waves">Q1.2 Rossby waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-1-expected-wavelengths">Q1.2.1 expected wavelengths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-2-hovmoller-diagram">Q1.2.2 Hovmoller diagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-3-group-speed">Q1.2.3 Group speed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-4-compare-dq-dt-to-q">Q1.2.4 Compare dq/dt to q</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-western-boundary-current">Q1.3 Western boundary current</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-a">Q1.3.a</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-b-if-return-current-on-other-side">Q1.3.b if return current on other side?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-c-east-west-flow">Q1.3.c East/west flow</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-planetary-waves-qualitative">Q2 Planetary waves: Qualitative</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-1-poincarre-versus-kelvin-waves">Q2.1 Poincarre versus Kelvin waves.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2-rossby-waves">Q2.2 Rossby waves</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2b-hovmoller">Q2.2b Hovmoller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-overturning-circulation-qualitative">Q2 Overturning Circulation: Qualitative</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-1-plot-the-forcing">Q2.1 Plot the forcing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2-overturning-as-a-function-of-mixing-strength">Q2.2 Overturning as a function of mixing strength</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-3-overturning-as-function-of-time">Q2.3 Overturning as function of time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-4-hosing-experiment-and-stop">Q2.4 Hosing experiment and stop…</a></li>
 </ul>
 </li>
 </ul>
@@ -377,15 +375,15 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="assignment-3-basin-scale-flows-and-waves">
-<span id="assignment-3"></span><h1>Assignment 3: Basin-scale flows and waves<a class="headerlink" href="#assignment-3-basin-scale-flows-and-waves" title="Permalink to this heading">#</a></h1>
-<p>For this assignment you will do quantiative analysis of the basin flow (see <a class="reference internal" href="../Assign2/Assignment2.html#assignment-2"><span class="std std-ref">Assignment 2: Wind-driven channel flow and basin-scale flow</span></a>), and a qualitative analysis of planetary-scale waves in a basin.</p>
-<section id="q1-1-ekman-pumping">
-<h2>Q1.1  Ekman pumping<a class="headerlink" href="#q1-1-ekman-pumping" title="Permalink to this heading">#</a></h2>
-<p>For both the f- and beta-plane simulations (<code class="docutils literal notranslate"><span class="pre">basinfplane</span></code> and <code class="docutils literal notranslate"><span class="pre">basinbetaplane</span></code>) there should be a convergence of fluid towards the central latitude of the basin.  Show that, in steady state, this fluid is being pushed downwards at a rate expected by the wind forcing.</p>
-<section id="q1-1-a-determine-depth-of-ekman-layer">
-<h3>Q1.1.a Determine depth of Ekman layer<a class="headerlink" href="#q1-1-a-determine-depth-of-ekman-layer" title="Permalink to this heading">#</a></h3>
-<p>Plot cross sections of <code class="docutils literal notranslate"><span class="pre">v(x,</span> <span class="pre">z)</span></code> at a couple of locations north and south of the central value of y, and estimate how deep the Ekman layer is. Compare with the theoretical Ekman depth.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment-4-basin-scale-waves-and-overturning-circulation">
+<span id="assignment-4"></span><h1>Assignment 4: Basin-scale waves and overturning circulation<a class="headerlink" href="#assignment-4-basin-scale-waves-and-overturning-circulation" title="Permalink to this heading">#</a></h1>
+<p>For this assignment you will do quantiative analysis of basin-scale waves (see <a class="reference internal" href="../Assign3/Assignment3.html#assignment-3"><span class="std std-ref">Assignment 3: Basin-scale flows and waves</span></a>), and a qualitative analysis of overturning circulations.</p>
+<section id="q1-1-super-inertial-poincarre-waves">
+<h2>Q1.1  Super-inertial Poincarre waves.<a class="headerlink" href="#q1-1-super-inertial-poincarre-waves" title="Permalink to this heading">#</a></h2>
+<section id="q1-1-a-determine-the-wavelength-and-frequency-of-waves">
+<h3>Q1.1.a Determine the wavelength and frequency of waves<a class="headerlink" href="#q1-1-a-determine-the-wavelength-and-frequency-of-waves" title="Permalink to this heading">#</a></h3>
+<p>From the <code class="docutils literal notranslate"><span class="pre">poincarre12.py</span></code> simulation, estimate the wavelength and frequency of the waves produced.</p>
+<p>Estimate the phase speed and compare to theory.  Estimate the group speed and compare to theory.  Recall that <span class="math notranslate nohighlight">\(f=10^{-4} \ \mathrm{rad\,s^{-1}}\)</span>, and that the high-frequency wave speed is given by <span class="math notranslate nohighlight">\(\sqrt{\frac{g'h_1 h_2}{h_1 + h_2}}\)</span>, where <span class="math notranslate nohighlight">\(h_1 = 60 \ \mathrm{m}\)</span>, <span class="math notranslate nohighlight">\(h_2 = 140\ \mathrm{m}\)</span>, and <span class="math notranslate nohighlight">\(g' = 0.2 g / 1000 = 1.96\times10^{-3}\ \mathrm{m\,s^{-2}}\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
@@ -435,14 +433,9 @@ document.write(`
 </div>
 <p>YOUR ANSWER HERE</p>
 </section>
-<section id="q1-1b-vertical-velocity">
-<h3>Q1.1b  Vertical velocity.<a class="headerlink" href="#q1-1b-vertical-velocity" title="Permalink to this heading">#</a></h3>
-<p>Plot structure of w at base of Ekman layer, and comment on the structure.</p>
-<div class="admonition hint">
-<p class="admonition-title">Hint</p>
-<p>Beware not to let the colour limits focus too much on the sides of the basin.</p>
-</div>
-<p>Discuss the structure, and note what is happeneing at the sidewalls (why?)</p>
+<section id="q1-2a-kelvin-wave">
+<h3>Q1.2a  Kelvin wave<a class="headerlink" href="#q1-2a-kelvin-wave" title="Permalink to this heading">#</a></h3>
+<p>Do as above, but for the Kelvin wave: <code class="docutils literal notranslate"><span class="pre">Kelvin40.py</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -464,9 +457,10 @@ document.write(`
 </div>
 <p>YOUR ANSWER HERE</p>
 </section>
-<section id="q1-1c-compare-w-ekman-pumping">
-<h3>Q1.1c Compare w/ Ekman Pumping<a class="headerlink" href="#q1-1c-compare-w-ekman-pumping" title="Permalink to this heading">#</a></h3>
-<p>Compare the vertical velocity, say at x=75 km to the expected Ekman pumping velocity for both the f-plane and the beta-plane solutions</p>
+<section id="q1-2b-kelvin-wave-assumptions">
+<h3>Q1.2b Kelvin wave assumptions:<a class="headerlink" href="#q1-2b-kelvin-wave-assumptions" title="Permalink to this heading">#</a></h3>
+<p>Check the assumptions of Kelvin wave theory.  How large is the along-sidewall velocity versus cross-sidewall?<br />
+What happens when the wave reaches a corner?  What is the Rossby radius and how does it compare to the observed signals?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -488,10 +482,9 @@ document.write(`
 </div>
 <p>YOUR ANSWER HERE</p>
 </section>
-</section>
-<section id="q1-2-sverdrup-transport">
-<h2>Q1.2 Sverdrup transport<a class="headerlink" href="#q1-2-sverdrup-transport" title="Permalink to this heading">#</a></h2>
-<p>Fro the beta plane, calculate the vertically transport across the middle latitude as a function of x, and compare to the Sverdrup transport.</p>
+<section id="q1-2c-geostrophic-balance">
+<h3>Q1.2c geostrophic balance?<a class="headerlink" href="#q1-2c-geostrophic-balance" title="Permalink to this heading">#</a></h3>
+<p>Calculate the north-south geostrophic flow and compare to the flow in the Kelvin waves in the upper layer.  Comment on any difference.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -512,8 +505,14 @@ document.write(`
 </div>
 </div>
 <p>YOUR ANSWER HERE</p>
-<section id="q1-2b-now-plot-what-this-transport-looks-like-as-a-function-of-x-and-y">
-<h3>Q1.2b Now plot what this transport looks like as a function of x and y<a class="headerlink" href="#q1-2b-now-plot-what-this-transport-looks-like-as-a-function-of-x-and-y" title="Permalink to this heading">#</a></h3>
+</section>
+</section>
+<section id="q1-2-rossby-waves">
+<h2>Q1.2 Rossby waves<a class="headerlink" href="#q1-2-rossby-waves" title="Permalink to this heading">#</a></h2>
+<section id="q1-2-1-expected-wavelengths">
+<h3>Q1.2.1 expected wavelengths<a class="headerlink" href="#q1-2-1-expected-wavelengths" title="Permalink to this heading">#</a></h3>
+<p>We ran three simulations for Rossby waves T=200, 300 and 400 h.  Considering just phase propagation in x, along the center of the model domain, what are the expected x-direction wavelengths?  Recall that the water depth is 2000 m, and that <span class="math notranslate nohighlight">\(\beta = 10^{-11}\ \mathrm{m\,s^{-1}}\)</span>.</p>
+<p>YOUR ANSWER HERE</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -535,12 +534,9 @@ document.write(`
 </div>
 <p>YOUR ANSWER HERE</p>
 </section>
-</section>
-<section id="q1-3-western-boundary-current">
-<h2>Q1.3 Western boundary current<a class="headerlink" href="#q1-3-western-boundary-current" title="Permalink to this heading">#</a></h2>
-<section id="q1-3-a">
-<h3>Q1.3.a<a class="headerlink" href="#q1-3-a" title="Permalink to this heading">#</a></h3>
-<p>Plot the Sverdrup transport due to the north/south bottom stress, bearing in mind that it is quadratic with <span class="math notranslate nohighlight">\(\tau_b^y/\rho = -C_D v|v|\)</span>, where <span class="math notranslate nohighlight">\(C_D = 10^{-1}\)</span>. (This is actually an approximation - it should be <span class="math notranslate nohighlight">\(\tau_b^y/\rho = -C_D v|\mathbf{u}|\)</span>, but the x-direction velocity is relatively modest).  Compare to the volumn transport as you did above and comment.</p>
+<section id="q1-2-2-hovmoller-diagram">
+<h3>Q1.2.2 Hovmoller diagram<a class="headerlink" href="#q1-2-2-hovmoller-diagram" title="Permalink to this heading">#</a></h3>
+<p>Show using a Hovmoller diagram for all three Rossby wave simulations that the shorter wavelengths are close to expected.  Comment on the energy propagating to the left.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -562,28 +558,13 @@ document.write(`
 </div>
 <p>YOUR ANSWER HERE</p>
 </section>
-<section id="q1-3-b-if-return-current-on-other-side">
-<h3>Q1.3.b if return current on other side?<a class="headerlink" href="#q1-3-b-if-return-current-on-other-side" title="Permalink to this heading">#</a></h3>
-<p>Comment on the sense of torque if the return current were on the other side of the basin?</p>
-<p>YOUR ANSWER HERE</p>
-</section>
-<section id="q1-3-c-east-west-flow">
-<h3>Q1.3.c East/west flow<a class="headerlink" href="#q1-3-c-east-west-flow" title="Permalink to this heading">#</a></h3>
-<p>Comment on the sense of the east/west flow in the basin in relation to the net north/south flow.</p>
-<p>YOUR ANSWER HERE</p>
-</section>
-</section>
-<section id="q2-planetary-waves-qualitative">
-<h2>Q2 Planetary waves: Qualitative<a class="headerlink" href="#q2-planetary-waves-qualitative" title="Permalink to this heading">#</a></h2>
-<section id="q2-1-poincarre-versus-kelvin-waves">
-<h3>Q2.1 Poincarre versus Kelvin waves.<a class="headerlink" href="#q2-1-poincarre-versus-kelvin-waves" title="Permalink to this heading">#</a></h3>
-<p>Run <a class="reference download internal" download="" href="../../_downloads/133c32714ddc5b1bbe28fb0d918e8e13/Poincarre12.py"><span class="xref download myst">Poincarre12.py</span></a> and <a class="reference download internal" download="" href="../../_downloads/505af1c0f6f4dc58e7f9b214f28777c0/Kelvin40.py"><span class="xref download myst">Kelvin40.py</span></a>.  They are forced exactly the same way, by a Gaussian-shaped alternation of a wind stress at the east side of the basin. This is run in a 200-m deep ocean, with the upper 60 m at 30 degrees C, and the bottom 140 m at 10 degrees C.</p>
-<p><a class="reference download internal" download="" href="../../_downloads/133c32714ddc5b1bbe28fb0d918e8e13/Poincarre12.py"><span class="xref download myst">Poincarre12.py</span></a> is forced with a 12-h forcing period - note that the Coriolis period is <span class="math notranslate nohighlight">\(T = \frac{2\pi}{f} = 17.45 h\)</span>, so these waves are “super-inertial”.  <a class="reference download internal" download="" href="../../_downloads/505af1c0f6f4dc58e7f9b214f28777c0/Kelvin40.py"><span class="xref download myst">Kelvin40.py</span></a> is forced at 40 h, so these waves are sub-inertial.</p>
-<p>Plot some time snaps of u or v near the surface. Describe the difference between the two forcings.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The dominant response will be “internal waves” where the interface between the 10 and 30 degree water moves up and down.  The buoyancy effect is such that these waves see a reduced gravity of <span class="math notranslate nohighlight">\(g' \approx \frac{\delta \rho}{\rho} g \approx 0.0382 \ \mathrm{m\, s^{-2}}\)</span>.</p>
-</div>
+<section id="q1-2-3-group-speed">
+<h3>Q1.2.3 Group speed<a class="headerlink" href="#q1-2-3-group-speed" title="Permalink to this heading">#</a></h3>
+<p>Calculate the x-direction group speed for both sets of waves in the 400-h simulation and compare to the simulation’s Hovmoller diagram (I did this by just adding to the Hovmoller diagram above and replotting it.</p>
+<p>From</p>
+<div class="math notranslate nohighlight">
+\[ \omega = -\beta_0R^2 \frac{l}{1 + R^2l^2} $$ we can calculate 
+$$c_{gx} = \frac{d\omega}{dl} = \frac{-\beta_0 R^2 + \beta_0 R^4 l^2}{(1 + R^2 l^2)^2}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -605,10 +586,9 @@ document.write(`
 </div>
 <p>YOUR ANSWER HERE</p>
 </section>
-<section id="q2-2-rossby-waves">
-<h3>Q2.2 Rossby waves<a class="headerlink" href="#q2-2-rossby-waves" title="Permalink to this heading">#</a></h3>
-<p>Run <a class="reference download internal" download="" href="../../_downloads/eee107055bc72a89550232ca103cc0eb/Rossby200.py"><span class="xref download myst">Rossby200.py</span></a>, <a class="reference download internal" download="" href="../../_downloads/0c92dcbd1a9deaec66c73a36473ddff8/Rossby300.py"><span class="xref download myst">Rossby300.py</span></a>, <a class="reference download internal" download="" href="../../_downloads/1213a032f86f361ef93fbdb0e3b23ba1/Rossby400.py"><span class="xref download myst">Rossby400.py</span></a>.  These simulations are substantially larger, and have no temperature stratification - the waves excited are on the surface rather than an interface.  If the forcing is slow and large scale, we generate Rossby waves.  Here the wave maker is in the middle of the basin rather than along an edge.</p>
-<p>Compare the response of these three simulations at a few time steps</p>
+<section id="q1-2-4-compare-dq-dt-to-q">
+<h3>Q1.2.4 Compare dq/dt to q<a class="headerlink" href="#q1-2-4-compare-dq-dt-to-q" title="Permalink to this heading">#</a></h3>
+<p>For <code class="docutils literal notranslate"><span class="pre">Rossby400.py</span></code>, calculate the time derivative of the relative vorticity, and compare to the relative vorticity and argue if this make sense for the direction of propagation of the Rossby wave.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -630,10 +610,16 @@ document.write(`
 </div>
 <p>YOUR ANSWER HERE</p>
 </section>
-<section id="q2-2b-hovmoller">
-<h3>Q2.2b Hovmoller<a class="headerlink" href="#q2-2b-hovmoller" title="Permalink to this heading">#</a></h3>
-<p>Its a little hard to see the wave propagation in the above because the waves are so long relative to the basin size.  Plot each simulation using a Hovmoller diagram, probably at the middle value of y (<code class="docutils literal notranslate"><span class="pre">.isel(yt=35,</span> <span class="pre">yu=35)</span></code>).</p>
-<p>Try to interpret this - consider two things - phase speeds are set by the slope of the alternating bands.  Group speed, which is the speed energy is propagating, is set by the slope of increasing amplitude of the waves.  Try to pick these features out of the Hovmoller diagrams.</p>
+</section>
+<section id="q2-overturning-circulation-qualitative">
+<h2>Q2 Overturning Circulation: Qualitative<a class="headerlink" href="#q2-overturning-circulation-qualitative" title="Permalink to this heading">#</a></h2>
+<p>These simulations take a few hours to run on my machine, and I want you to look at a few, so I’ll provide the netcdf files. The simulations are in <a class="reference download internal" download="" href="../../_downloads/adc27dad4194fb73bd41fbdab51969d9/Overturning.py"><span class="xref download myst">Overturning.py</span></a>, and then <a class="reference download internal" download="" href="../../_downloads/9a5699f52bc1feddd487ad4f5cc676e7/Hosing.py"><span class="xref download myst">Hosing.py</span></a> and <a class="reference download internal" download="" href="../../_downloads/91746b705d250aa9385b7bab17b760c0/StopHosing.py"><span class="xref download myst">StopHosing.py</span></a>.  The files are provided in <a class="reference external" href="https://ocean-physics.seos.uvic.ca/~jklymak/Teaching/Eos431/OverturningRuns.zip">OverturningRuns.zip</a> (Note 776 Mb!).</p>
+<p>Physically, the models are solved on a spherical grid so the coordinates are in degrees longitude (<code class="docutils literal notranslate"><span class="pre">xt</span></code>, <code class="docutils literal notranslate"><span class="pre">xu</span></code>) and latitude (<code class="docutils literal notranslate"><span class="pre">yt</span></code>,<code class="docutils literal notranslate"><span class="pre">yu</span></code>).  The “wedge” is 48 degrees in longitude, and from the equator to 72 degrees N in latitude.  There are 18 vertical levels used for these simulations, with the vertical grid spacing between the levels exponentially growing from 113 m to 318 m at the seafloor.</p>
+<p>All the models use the same external forcing of a sin-wave temperature at the surface, going from 28 degrees at the equator to 4 degress at 72 degrees N.</p>
+<p>The models are run with isopycnal lateral diffusion in an attempt to reduce the “Veronis effect”.</p>
+<section id="q2-1-plot-the-forcing">
+<h3>Q2.1 Plot the forcing<a class="headerlink" href="#q2-1-plot-the-forcing" title="Permalink to this heading">#</a></h3>
+<p>Plot the surface temperature for <code class="docutils literal notranslate"><span class="pre">OverturningBeta4e6Coarse.snapshot.nc</span></code>.  How close is it to the forcing described above?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -645,6 +631,111 @@ document.write(`
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># YOUR CODE HERE</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<span class="ne">NotImplementedError</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<p>YOUR ANSWER HERE</p>
+</section>
+<section id="q2-2-overturning-as-a-function-of-mixing-strength">
+<h3>Q2.2 Overturning as a function of mixing strength<a class="headerlink" href="#q2-2-overturning-as-a-function-of-mixing-strength" title="Permalink to this heading">#</a></h3>
+<p>There are 6 runs, each run at a different value of a constant vertical mixing co-efficient.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p><span class="math notranslate nohighlight">\(\kappa\ [m^2\,s^{-1}]\)</span></p></th>
+<th class="head text-left"><p>Runname</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p><span class="math notranslate nohighlight">\(4\times10^{-6}\)</span></p></td>
+<td class="text-left"><p>OverturningBeta4e6Coarse</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><span class="math notranslate nohighlight">\(1 \times 10^{-5}\)</span></p></td>
+<td class="text-left"><p>OverturningBeta1e5Coarse</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><span class="math notranslate nohighlight">\(4\times 10^{-5}\)</span></p></td>
+<td class="text-left"><p>OverturningBeta1e5Coarse</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><span class="math notranslate nohighlight">\(8\times 10^{-5}\)</span></p></td>
+<td class="text-left"><p>OverturningBeta8e5Coarse</p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p><span class="math notranslate nohighlight">\(1\times 10^{-4}\)</span></p></td>
+<td class="text-left"><p>OverturningBeta10e5Coarse</p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p><span class="math notranslate nohighlight">\(4\times 10^{-4}\)</span></p></td>
+<td class="text-left"><p>OverturningBeta4e4Coarse</p></td>
+</tr>
+</tbody>
+</table>
+<p>Plot the a cross-section at the end of the run from south to north with the mean north-south velocity and temprature contoured for at least three of these runs. Discuss the basic sense of the flow, and the differences observed as the mixing is increased.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># YOUR CODE HERE</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<span class="ne">NotImplementedError</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<p>YOUR ANSWER HERE</p>
+</section>
+<section id="q2-3-overturning-as-function-of-time">
+<h3>Q2.3 Overturning as function of time<a class="headerlink" href="#q2-3-overturning-as-function-of-time" title="Permalink to this heading">#</a></h3>
+<p>We can calculate the strength of the overturning circulation ourselves. However, this is done so often in physical oceanography that many models have an overturning diagnostic.</p>
+<p>Using the files like <code class="docutils literal notranslate"><span class="pre">OverturningBeta4e6Coarse.overturning.nc</span></code>, plot the <em>minimum</em> of the overturning strength <em>south</em> of 60 N (the reuslts are less clear north of 60 N) as a function of time.  The correct field in these files to look at is <code class="docutils literal notranslate"><span class="pre">vsf_depth</span></code>.</p>
+<p>How long do these runs take to reach “steady state”?  Which runs are the fastest to get to “steady state”?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># YOUR CODE HERE</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+
+<span class="ne">NotImplementedError</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<p>YOUR ANSWER HERE</p>
+</section>
+<section id="q2-4-hosing-experiment-and-stop">
+<h3>Q2.4 Hosing experiment and stop…<a class="headerlink" href="#q2-4-hosing-experiment-and-stop" title="Permalink to this heading">#</a></h3>
+<p>Thre more runs were made, based on <code class="docutils literal notranslate"><span class="pre">OverturningBeta4e5Coarse</span></code>.  The first was <code class="docutils literal notranslate"><span class="pre">Hosing</span></code>, which adds fresh water north of 50 N.  This is supposed to be like glaciers and sea ice melting.  The rate was approximately 0.1 Sv of fresh water added to the upper ocean.</p>
+<p>The next two were <code class="docutils literal notranslate"><span class="pre">StopHosing</span></code> and <code class="docutils literal notranslate"><span class="pre">StopHosing3</span></code>.  These stop the fresh water flux (all the glaciers have melted.  The first stops after 100 years, and the second stops after 300 years.</p>
+<p>As above, plot a time series of the strength of the overturning circulation for all 4 of these runs versus time.  I found it really useful to <em>also</em> plot the difference between the minimum and maximum salinities in the model.</p>
+<p>Describe what happens to the overturning circulation in the three new runs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NotImplementedError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># YOUR CODE HERE</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 
@@ -671,7 +762,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./release/Assign3"
+            path: "./release/Assign4"
         },
         predefinedOutput: true
     }
@@ -690,22 +781,13 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Assign2/Assignment2.html"
+       href="../Assign3/Assignment3.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Assignment 2: Wind-driven channel flow and basin-scale flow</p>
+        <p class="prev-next-title">Assignment 3: Basin-scale flows and waves</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="../Assign4/Assignment4.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Assignment 4: Basin-scale waves and overturning circulation</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -725,26 +807,25 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-ekman-pumping">Q1.1  Ekman pumping</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-a-determine-depth-of-ekman-layer">Q1.1.a Determine depth of Ekman layer</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1b-vertical-velocity">Q1.1b  Vertical velocity.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1c-compare-w-ekman-pumping">Q1.1c Compare w/ Ekman Pumping</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-super-inertial-poincarre-waves">Q1.1  Super-inertial Poincarre waves.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-a-determine-the-wavelength-and-frequency-of-waves">Q1.1.a Determine the wavelength and frequency of waves</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2a-kelvin-wave">Q1.2a  Kelvin wave</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2b-kelvin-wave-assumptions">Q1.2b Kelvin wave assumptions:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2c-geostrophic-balance">Q1.2c geostrophic balance?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-sverdrup-transport">Q1.2 Sverdrup transport</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2b-now-plot-what-this-transport-looks-like-as-a-function-of-x-and-y">Q1.2b Now plot what this transport looks like as a function of x and y</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-rossby-waves">Q1.2 Rossby waves</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-1-expected-wavelengths">Q1.2.1 expected wavelengths</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-2-hovmoller-diagram">Q1.2.2 Hovmoller diagram</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-3-group-speed">Q1.2.3 Group speed</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-4-compare-dq-dt-to-q">Q1.2.4 Compare dq/dt to q</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-western-boundary-current">Q1.3 Western boundary current</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-a">Q1.3.a</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-b-if-return-current-on-other-side">Q1.3.b if return current on other side?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-c-east-west-flow">Q1.3.c East/west flow</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-planetary-waves-qualitative">Q2 Planetary waves: Qualitative</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-1-poincarre-versus-kelvin-waves">Q2.1 Poincarre versus Kelvin waves.</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2-rossby-waves">Q2.2 Rossby waves</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2b-hovmoller">Q2.2b Hovmoller</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-overturning-circulation-qualitative">Q2 Overturning Circulation: Qualitative</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-1-plot-the-forcing">Q2.1 Plot the forcing</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2-overturning-as-a-function-of-mixing-strength">Q2.2 Overturning as a function of mixing strength</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-3-overturning-as-function-of-time">Q2.3 Overturning as function of time</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-4-hosing-experiment-and-stop">Q2.4 Hosing experiment and stop…</a></li>
 </ul>
 </li>
 </ul>

@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Assignment 2: Wind-driven channel flow and basin-scale flow" href="../Assign2/Assignment2.html" />
-    <link rel="prev" title="Assignment 0: dense flow over an obstacle" href="../Assign0/Assignment0.html" />
+    <link rel="prev" title="Assignment 0: dense flow over an obstacle" href="../../solution/Assign0/Assignment0.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -173,10 +173,14 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solution/Assign0/Assignment0.html">Key</a></li>
+</ul>
+</li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Assignment 1: Flow over an obstacle and channel flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Assign2/Assignment2.html">Assignment 2: Wind-driven channel flow and basin-scale flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Assign3/Assignment3.html">Assignment 3: Basin-scale flows and waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assign4/Assignment4.html">Assignment 4: Basin-scale waves and overturning circulation</a></li>
 </ul>
 </li>
 </ul>
@@ -362,10 +366,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="assignment-1-flow-over-an-obstacle-and-channel-flow">
 <span id="assignment-1"></span><h1>Assignment 1: Flow over an obstacle and channel flow<a class="headerlink" href="#assignment-1-flow-over-an-obstacle-and-channel-flow" title="Permalink to this heading">#</a></h1>
-<p>For this assignment you will do quantiative analysis for the flow over an obstacle (see <a class="reference internal" href="../Assign0/Assignment0.html#assignment0"><span class="std std-ref">Assignment 0: dense flow over an obstacle</span></a>), and a qualitative analysis of rotating channel flow.</p>
+<p>For this assignment you will do quantiative analysis for the flow over an obstacle (see <a class="reference internal" href="../../solution/Assign0/Assignment0.html#assignment0"><span class="std std-ref">Assignment 0: dense flow over an obstacle</span></a>), and a qualitative analysis of rotating channel flow.</p>
 <section id="q1-1-continuity-in-a-box">
 <h2>Q1.1  continuity in a box<a class="headerlink" href="#q1-1-continuity-in-a-box" title="Permalink to this heading">#</a></h2>
-<p>Using the simulated data set you produced in <a class="reference internal" href="../Assign0/Assignment0.html#assignment0"><span class="std std-ref">Assignment 0: dense flow over an obstacle</span></a>:</p>
+<p>Using the simulated data set you produced in <a class="reference internal" href="../../solution/Assign0/Assignment0.html#assignment0"><span class="std std-ref">Assignment 0: dense flow over an obstacle</span></a>:</p>
 <p>Consider a single time step in the simulation.  Define a largish box in your model domain with the sides defined at two values of x, and the top defined by one value of z.  The bottom can be defined as the sea floor.  Show that the net flow into the box is close to zero. You can express the flow in terms of <span class="math notranslate nohighlight">\(m^2\,s^{-1}\)</span> or <span class="math notranslate nohighlight">\(m^3\,s^{-1}\)</span>, but given that the flow is 2-D <span class="math notranslate nohighlight">\(m^2\,s^{-1}\)</span> probably makes more sense.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -537,7 +541,7 @@ document.write(`
 <h2>Q2: Channel flow Qualitative<a class="headerlink" href="#q2-channel-flow-qualitative" title="Permalink to this heading">#</a></h2>
 <p>In this simulation, we have a 50-m deep channel with quite steep sides 20 km apart in the y-direction.  The flow starts at rest when a wind stress of <span class="math notranslate nohighlight">\(\tau=0.2\,\mathrm{N\,m^{-2}}\)</span> is applied in the positive x direction at time = 0.  This is called a spin-up problem.  We will do two simulations, one with rotation <span class="math notranslate nohighlight">\(f=10^{-4}\ \mathrm{rad\, s^{-1}}\)</span> and the other without.</p>
 <p>Note that this problem has no variability in the x direction (though there is definitely x-direction velocities!), so we don’t use much resolution in the x direction.</p>
-<p>Run <a class="reference download internal" download="" href="../../_downloads/1b97451e53e962e4377151b0b7398d7c/channelnof.py"><span class="xref download myst">channelnof.py</span></a> and <a class="reference download internal" download="" href="../../_downloads/1b97451e53e962e4377151b0b7398d7c/channelnof.py"><span class="xref download myst">channelfplane.py</span></a> and plot the outputs:</p>
+<p>Run <a class="reference download internal" download="" href="../../_downloads/1b97451e53e962e4377151b0b7398d7c/channelnof.py"><span class="xref download myst">channelnof.py</span></a> and <a class="reference download internal" download="" href="../../_downloads/3540dea6c1145c6a84ded5f927820deb/channelfplane.py"><span class="xref download myst">channelfplane.py</span></a> and plot the outputs:</p>
 <ul class="simple">
 <li><p>plot some represntative time steps of the channel crosssections (y versus z) for each run.</p></li>
 <li><p>choose a time step at the end of the simulation and one location and plot u on the x-axis and v on the y-axis with a dot for each depth.  This is called a “hodogram”.</p></li>
@@ -617,7 +621,7 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../Assign0/Assignment0.html"
+       href="../../solution/Assign0/Assignment0.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
