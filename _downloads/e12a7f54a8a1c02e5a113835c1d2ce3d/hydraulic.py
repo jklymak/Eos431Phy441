@@ -108,7 +108,7 @@ class ChannelSetup(VerosSetup):
         x = vs.xt
         x = x - npx.mean(x)
         kbot += npx.floor(35*npx.exp(-(x/25000)**2)).astype("int")
-        for j in range(state.settings.ny+1):
+        for j in range(state.settings.ny+2):
             vs.kbot = update(vs.kbot, at[:, j], kbot)
         vs.kbot = update(vs.kbot, at[:, 0], 0)
         vs.kbot = update(vs.kbot, at[0, :], 0)
