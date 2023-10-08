@@ -1,0 +1,833 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Assignment 1: Flow over an obstacle and channel flow &#8212; Physical Oceanography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'solution/Assign1/Assignment1';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Eos431/Phy441 – Physical Oceanography
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../texts.html">Texts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../project/index.html">Course Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../project/papers.html">Possible papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../project/talkrubric.html">Talk rubric</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../computing/index.html">Computing: Veros</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../computing/python_environment.html">Setting up a python environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computing/run_veros.html">Running Veros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computing/analyze_veros.html">Analyzing Veros</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../release/Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Assign0/Assignment0.html">Key</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../release/Assign1/Assignment1.html">Assignment 1: Flow over an obstacle and channel flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release/Assign2/Assignment2.html">Assignment 2: Wind-driven channel flow and basin-scale flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release/Assign3/Assignment3.html">Assignment 3: Basin-scale flows and waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release/Assign4/Assignment4.html">Assignment 4: Basin-scale waves and overturning circulation</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jklymak/Eos431Phy441/issues/new?title=Issue%20on%20page%20%2Fsolution/Assign1/Assignment1.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/solution/Assign1/Assignment1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Assignment 1: Flow over an obstacle and channel flow</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-continuity-in-a-box">Q1.1  continuity in a box</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-calculate-the-transport-in-a-layer">Q1.2 Calculate the transport in a “layer”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-x-momentum-budget-pointwise">Q1.3 x-momentum budget (pointwise!)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-4-describe">Q1.4 Describe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#answer">Answer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-5-internal-versus-external-pressure">Q1.5 Internal versus external pressure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-5-continued">Q1.5 continued</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-channel-flow-qualitative">Q2: Channel flow Qualitative</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment-1-flow-over-an-obstacle-and-channel-flow">
+<span id="assignment-1"></span><h1>Assignment 1: Flow over an obstacle and channel flow<a class="headerlink" href="#assignment-1-flow-over-an-obstacle-and-channel-flow" title="Permalink to this heading">#</a></h1>
+<p>For this assignment you will do quantiative analysis for the flow over an obstacle (see <a class="reference internal" href="../../release/Assign0/Assignment0.html#assignment0"><span class="std std-ref">Assignment 0: dense flow over an obstacle</span></a>), and a qualitative analysis of rotating channel flow.</p>
+<section id="q1-1-continuity-in-a-box">
+<h2>Q1.1  continuity in a box<a class="headerlink" href="#q1-1-continuity-in-a-box" title="Permalink to this heading">#</a></h2>
+<p>Using the simulated data set you produced in <a class="reference internal" href="../../release/Assign0/Assignment0.html#assignment0"><span class="std std-ref">Assignment 0: dense flow over an obstacle</span></a>:</p>
+<p>Consider a single time step in the simulation.  Define a largish box in your model domain with the sides defined at two values of x, and the top defined by one value of z.  The bottom can be defined as the sea floor.  Show that the net flow into the box is close to zero. You can express the flow in terms of <span class="math notranslate nohighlight">\(m^2\,s^{-1}\)</span> or <span class="math notranslate nohighlight">\(m^3\,s^{-1}\)</span>, but given that the flow is 2-D <span class="math notranslate nohighlight">\(m^2\,s^{-1}\)</span> probably makes more sense.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Remember that you can do something like <code class="docutils literal notranslate"><span class="pre">ds</span> <span class="pre">=</span> <span class="pre">ds.sel(xt=slice(-50,</span> <span class="pre">50),</span> <span class="pre">xu=slice(-50,</span> <span class="pre">50))</span></code> to get the data just between -50 and +50 km.  And then repeat for the z direction to define your volume.  Check that your shape is correct by doing something like <code class="docutils literal notranslate"><span class="pre">display(ds)</span></code>.</p>
+<p>For the vertical direction, w and u are offset from one another, with w on the bottom of the cell, so you want one more zw value than zt value in your final shape.  You can do this using either <code class="docutils literal notranslate"><span class="pre">sel</span></code> or <code class="docutils literal notranslate"><span class="pre">isel</span></code> and taking care with the limits.  For instance I ended up with dimensions <code class="docutils literal notranslate"><span class="pre">...,</span> <span class="pre">zt:</span> <span class="pre">57,</span> <span class="pre">zw:</span> <span class="pre">58,</span> <span class="pre">...</span></code>.  If you are careful with this, your answer will be closer than if sloppy.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the matplotlib widget</span>
+<span class="o">%</span><span class="k">matplotlib</span> widget
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;hydraulic.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+    <span class="c1"># bonus point: when using sel, w is located at the bottom of the u cells, so we want </span>
+    <span class="c1"># the zw at the top of the last zt cell.  We could also have done this with </span>
+    <span class="c1"># isel, perhaps more straight forwardly:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">yu</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">yt</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">zt</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">40</span><span class="p">),</span> 
+                                          <span class="n">zw</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">41</span><span class="p">))</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">xt</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">),</span> <span class="n">xu</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span> <span class="mi">50</span><span class="p">))</span>
+    
+    <span class="c1">#display(ds)</span>
+    <span class="n">dsleft</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xu</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">transportl</span> <span class="o">=</span> <span class="n">dsleft</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span>
+    <span class="n">dsright</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xt</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">xu</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">transportr</span> <span class="o">=</span> <span class="n">dsright</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span>
+
+    <span class="n">dstop</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">zt</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">zw</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">transportt</span> <span class="o">=</span> <span class="n">dstop</span><span class="o">.</span><span class="n">w</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;xt&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1000</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Flow in left </span><span class="si">{</span><span class="n">transportl</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1"> m^2/s&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Flow out right </span><span class="si">{</span><span class="n">transportr</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Flow out top </span><span class="si">{</span><span class="n">transportt</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Residual </span><span class="si">{</span><span class="p">(</span><span class="n">transportl</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">transportt</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">transportr</span><span class="p">)</span><span class="si">:</span><span class="s1">1.2f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Flow in left 7.28 m^2/s
+Flow out right 10.57
+Flow out top -3.39
+Residual 0.09
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="q1-2-calculate-the-transport-in-a-layer">
+<h2>Q1.2 Calculate the transport in a “layer”<a class="headerlink" href="#q1-2-calculate-the-transport-in-a-layer" title="Permalink to this heading">#</a></h2>
+<p>Consider all water colder than 12 degrees and plot its transport as a function of x along the channel.  Do this for one time step (though bonus grades for also doing it as a Hovmoller diagram).</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>You can make a version of the data set with u=0 for water warmer than 12 degrees by doing <code class="docutils literal notranslate"><span class="pre">ds['ucold']</span> <span class="pre">=</span> <span class="pre">ds.u.where(ds.temp.values&lt;=12,</span> <span class="pre">0)</span></code>. The first argument is the condition, the second is the values to fill in <code class="docutils literal notranslate"><span class="pre">ds.ucold</span></code> if the condition is False. Don’t forget to use <code class="docutils literal notranslate"><span class="pre">fillna</span></code> to take care of the NaN’s in the data…</p>
+</div>
+<p>Discuss your result.  Is the transport constant?  If not, why do you think it is not constant?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;hydraulic.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+    <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">Time</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">)</span>
+    <span class="c1"># bonus point: when using sel, w is located at the bottom of the u cells, so we want </span>
+    <span class="c1"># the zw at the top of the last zt cell.  We could also have done this with </span>
+    <span class="c1"># isel, perhaps more straight forwardly:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">yu</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">yt</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">t0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+    <span class="n">dz</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">dzt</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+    <span class="n">level</span> <span class="o">=</span> <span class="mi">12</span>
+    <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;ucold&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">temp</span><span class="o">.</span><span class="n">values</span><span class="o">&lt;=</span><span class="n">level</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;constrained&#39;</span><span class="p">)</span>
+    <span class="n">pc</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">ucold</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="n">t0</span><span class="p">),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">,</span> <span class="n">clim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">])</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">xt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">temp</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="n">t0</span><span class="p">),</span> <span class="n">levels</span><span class="o">=</span><span class="p">[</span><span class="n">level</span><span class="p">])</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;z [m]&#39;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">ucold</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="n">t0</span><span class="p">))</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">ucold</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="n">t0</span><span class="p">)</span><span class="o">*</span><span class="n">dz</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">ucold</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="n">t0</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="n">dz</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x [km]&#39;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Transport &lt; 12 C $[m^2\,s^{-1}]$&#39;</span><span class="p">)</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">layout</span><span class="o">=</span><span class="s1">&#39;constrained&#39;</span><span class="p">)</span>
+    <span class="n">pc</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">Time</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">ucold</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x [km]&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7628da45c8aa62025b5df63e64e2b5bff950cc0ea889277c97cb3fdffbbb0557.png" src="../../_images/7628da45c8aa62025b5df63e64e2b5bff950cc0ea889277c97cb3fdffbbb0557.png" />
+<img alt="../../_images/b668e859078111d6ae421ee3db1851d7e974b4c911c45ebfe7975253b312e633.png" src="../../_images/b668e859078111d6ae421ee3db1851d7e974b4c911c45ebfe7975253b312e633.png" />
+</div>
+</div>
+<p>The flow in the layer is relatively constant to the left of the obstacle crest.  As the flow goes down the obstacle, there is mixing of water from above, and the volume transport increases somewhat.  Note that there are also some numerical instabilities as the resolution of the model degrades further from the centre of the domain.</p>
+</section>
+<section id="q1-3-x-momentum-budget-pointwise">
+<h2>Q1.3 x-momentum budget (pointwise!)<a class="headerlink" href="#q1-3-x-momentum-budget-pointwise" title="Permalink to this heading">#</a></h2>
+<p>The 2_D x-momentum budget for a non-rotating fluid is:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\frac{\partial u}{\partial t} + u\frac{\partial u}{\partial x} + w\frac{\partial u}{\partial z} = - \frac{1}{\rho} \frac{\partial p}{\partial x}  + \nu_z \frac{\partial^2 u}{\partial z^2} + \nu_x \frac{\partial^2 u}{\partial x^2}
+\]</div>
+<p>In the model, <span class="math notranslate nohighlight">\(P\)</span> is given by <code class="docutils literal notranslate"><span class="pre">ds.p_hydro</span> <span class="pre">+</span> <span class="pre">ds.psi</span></code>.  The vertical viscosity is <span class="math notranslate nohighlight">\(\nu_z=4\times10^{-4} \ \mathrm{m^2\,s^{-1}}\)</span> and the horizontal is
+<span class="math notranslate nohighlight">\(\nu_x = 10\ \mathrm{m^2\,s^{-1}}\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the real world viscosity doesn’t depend on the direction.  In the model, the viscosity parameterizes unresolved turbulence.  Given that the horizontal scales are much larger than the vertical, the model works better if the horizontal viscsity is larger than the vertical.</p>
+</div>
+<p>For one timestep, calculate these terms at each point in the model and compare.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;hydraulic.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">yt</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">yu</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">dstime</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">19</span><span class="p">,</span> <span class="mi">22</span><span class="p">))</span>
+    
+    <span class="c1"># on the u-grid:</span>
+    <span class="n">dudt</span> <span class="o">=</span> <span class="n">dstime</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e9</span>  <span class="c1"># m/s^2</span>
+    
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+    
+    <span class="c1"># on the u-grid:</span>
+    <span class="n">ududx</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">u</span> <span class="o">*</span> <span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;xu&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span>  <span class="c1"># m/s^2</span>
+    
+    <span class="c1"># w du/dz: w is on the w grid.  du/dz could be calculated on the w grid, but we </span>
+    <span class="c1"># really want the data on the u grid.  So lets get w on the u grid:</span>
+    
+    <span class="n">w_ugrid</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">w</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">zw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">swap_dims</span><span class="p">({</span><span class="s1">&#39;zw&#39;</span><span class="p">:</span><span class="s1">&#39;zt&#39;</span><span class="p">})</span>
+    <span class="n">w_ugrid</span> <span class="o">=</span> <span class="n">w_ugrid</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">xt</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">swap_dims</span><span class="p">({</span><span class="s1">&#39;xt&#39;</span><span class="p">:</span><span class="s1">&#39;xu&#39;</span><span class="p">})</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="n">w_ugrid</span><span class="p">)</span>
+    <span class="n">wdudz</span> <span class="o">=</span> <span class="n">w_ugrid</span> <span class="o">*</span> <span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># -dP/dx centered differentiation is on the T grid so we could do the rolling above, or just first difference and swap the dims:</span>
+    
+    <span class="n">dpdx</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">p_hydro</span> <span class="o">+</span> <span class="n">ds</span><span class="o">.</span><span class="n">psi</span><span class="p">)</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;xt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">zt</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">swap_dims</span><span class="p">({</span><span class="s1">&#39;xt&#39;</span><span class="p">:</span><span class="s1">&#39;xu&#39;</span><span class="p">})</span> <span class="o">/</span> <span class="mi">1000</span>
+    
+    <span class="c1"># nu d^2u/dz^2</span>
+    <span class="n">vertdiff</span> <span class="o">=</span> <span class="mf">4e-4</span> <span class="o">*</span> <span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># nu d^2u/dx^2</span>
+    <span class="n">horidiff</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;xu&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;xu&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mi">1000</span> <span class="o">/</span> <span class="mi">1000</span>
+        
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;constrained&#39;</span><span class="p">,</span> <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;facecolor&#39;</span><span class="p">:</span><span class="s1">&#39;0.4&#39;</span><span class="p">})</span>
+    <span class="n">vmin</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1e-5</span>
+    <span class="n">vmax</span> <span class="o">=</span> <span class="o">-</span><span class="n">vmin</span>
+    <span class="n">pcolorargs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;vmin&#39;</span><span class="p">:</span><span class="n">vmin</span><span class="p">,</span> <span class="s1">&#39;vmax&#39;</span><span class="p">:</span><span class="n">vmax</span><span class="p">,</span> <span class="s1">&#39;cmap&#39;</span><span class="p">:</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">}</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">dudt</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">dudt</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">dudt</span><span class="p">,</span> <span class="o">**</span><span class="n">pcolorargs</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;du/dt&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ududx</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">ududx</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">ududx</span><span class="p">,</span> <span class="o">**</span><span class="n">pcolorargs</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;u du/dx&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">wdudz</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">ududx</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">wdudz</span><span class="p">,</span> <span class="o">**</span><span class="n">pcolorargs</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;w du/dz&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">wdudz</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">ududx</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">dpdx</span><span class="p">,</span> <span class="o">**</span><span class="n">pcolorargs</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$1/\rho$ dP/dx&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">wdudz</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">ududx</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">vertdiff</span><span class="p">,</span> <span class="o">**</span><span class="n">pcolorargs</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\nu_z \partial^2 u/\partial z^2$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">wdudz</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">ududx</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">horidiff</span><span class="p">,</span> <span class="o">**</span><span class="n">pcolorargs</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\nu_x \partial^2 u/\partial x^2$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+
+    <span class="n">lhs</span> <span class="o">=</span> <span class="n">dudt</span> <span class="o">+</span> <span class="n">ududx</span> <span class="o">+</span> <span class="n">wdudz</span>
+    <span class="n">rhs</span> <span class="o">=</span> <span class="n">dpdx</span> <span class="o">+</span> <span class="n">vertdiff</span> <span class="o">+</span> <span class="n">horidiff</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">wdudz</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">ududx</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">lhs</span><span class="p">,</span> <span class="o">**</span><span class="n">pcolorargs</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Left-hand terms&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+    
+    <span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">wdudz</span><span class="o">.</span><span class="n">xu</span><span class="p">,</span> <span class="n">ududx</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">rhs</span><span class="p">,</span> <span class="o">**</span><span class="n">pcolorargs</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Right-hand terms&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+
+    <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+
+    
+    
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.DataArray &#39;w&#39; (zt: 90, xu: 200)&gt;
+array([[            nan,             nan,             nan, ...,
+                    nan,             nan,             nan],
+       [            nan, -2.52786931e-08, -2.52601103e-08, ...,
+         2.50701272e-08,  2.52210039e-08,  2.53068387e-08],
+       [            nan, -4.21310797e-08, -4.21000079e-08, ...,
+         4.17831339e-08,  4.20347753e-08,  4.21779710e-08],
+       ...,
+       [            nan, -1.46513050e-06, -1.46322426e-06, ...,
+         1.46221542e-06,  1.46531675e-06,  1.46697889e-06],
+       [            nan, -1.47956565e-06, -1.47769592e-06, ...,
+         1.48089209e-06,  1.48411724e-06,  1.48594339e-06],
+       [            nan, -1.49409789e-06, -1.49225961e-06, ...,
+         1.49954839e-06,  1.50280678e-06,  1.50472793e-06]])
+Coordinates:
+    xt       (xu) float64 -151.3 -147.8 -144.4 -140.9 ... 144.4 147.8 151.3
+    yt       float64 0.5
+    yu       float64 1.0
+    zw       (zt) float64 -197.8 -195.6 -193.3 -191.1 ... -4.444 -2.222 0.0
+    Time     timedelta64[ns] 1 days 18:00:00
+Dimensions without coordinates: zt, xu
+Attributes:
+    long_name:  Vertical velocity
+    units:      m/s
+</pre></div>
+</div>
+<img alt="../../_images/fd0cfdcf047398e38b1eb5a4d6a68efd34ad76325b003b73305510be17f25ccb.png" src="../../_images/fd0cfdcf047398e38b1eb5a4d6a68efd34ad76325b003b73305510be17f25ccb.png" />
+</div>
+</div>
+</section>
+<section id="q1-4-describe">
+<h2>Q1.4 Describe<a class="headerlink" href="#q1-4-describe" title="Permalink to this heading">#</a></h2>
+<p>Describe the breakdown of terms in the x-momentum budget.  Focus in particular over obstacle, though the unsteady behaviour far from the obstacle is useful to think about as well.</p>
+<ul class="simple">
+<li><p>Where is the flow almost in “steady state”?</p></li>
+<li><p>What are the dominant terms in the momentum budget?  Write out an approximate balance that would explain most of the balance.</p></li>
+<li><p>Are the left- and right-hand terms <em>exactly</em> in balance.  Any ideas why they are or are not.</p></li>
+<li><p>Explain the sense of the the largest terms in terms of the structure of the flow (eg does the structure of the terms make sense with respect to the flow?).</p></li>
+</ul>
+<section id="answer">
+<h3>Answer<a class="headerlink" href="#answer" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The flow is almost in steady state over the obstacle to the left of 20 km.  Downstream there is some unsteadiness, and far from the obstacle there is substantial unsteadiness at the leading edge of the waves proagating to the left and the right.</p></li>
+<li><p>The flow is pretty well described by $<span class="math notranslate nohighlight">\( u \partial u / \partial x + w \partial u / \partial z \approx -(1/\rho) \partial P/\partial x\)</span>$  The veritcal viscosity term is not zero, but the horizontal viscosity is negligible.</p></li>
+<li><p>The terms are not <em>exactly</em> in balance because we have not calculated them exactly the way that the model calculates them.</p></li>
+<li><p>The structure of the flow is mostly in the fast jet spilling over the obstacle.  This jet has some shear so that its speed is faster in the middle of the jet, and slow at the bottom and top.</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(u \partial u/\partial x\)</span>: u is &gt; 0, so the sense of this term is largely given by du/dx. du/dx increases to the right through the jet until we emerge from the jet when it starts to drop, giving the red/blue stripe shown above.</p></li>
+<li><p><span class="math notranslate nohighlight">\(w \partial u/\partial z\)</span>: <span class="math notranslate nohighlight">\(w&lt;0\)</span> in much of the jet, and <span class="math notranslate nohighlight">\(\partial u/\partial z&lt;0\)</span> except right at the bottom, so this term is mostly positive in the jet.</p></li>
+<li><p><span class="math notranslate nohighlight">\(-(1/\rho) \partial P/\partial x\)</span>: Pressure decreases to the right moving out of the jet as the water is less dense, so dP/dx &lt;0 and this term is &gt;0.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+</section>
+<section id="q1-5-internal-versus-external-pressure">
+<h2>Q1.5 Internal versus external pressure<a class="headerlink" href="#q1-5-internal-versus-external-pressure" title="Permalink to this heading">#</a></h2>
+<p>Similar to the above, compare the external pressure due to surface tilt (<code class="docutils literal notranslate"><span class="pre">psi</span></code>) to the internal pressure (<code class="docutils literal notranslate"><span class="pre">p_hydro</span></code>) at a given depth, preferably one that goes through the overflowing water.</p>
+<p>First, make a Hovmoller diagram of the surface pressure.  Try and describe what you see - any idea what causes this?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;hydraulic.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">yt</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">yu</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">Time</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ds</span><span class="o">.</span><span class="n">psi</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/b8a1e67d1d518374a1be71f4a599ca3b6d24581b4c64f7ba0937c05342ac4f98.png" src="../../_images/b8a1e67d1d518374a1be71f4a599ca3b6d24581b4c64f7ba0937c05342ac4f98.png" />
+</div>
+</div>
+<p>There is pretty clearly a strong surface wave propagating back and forth on the surface.  This is not surprising, and is a fast wave that travels from end to end due to the initial conditions suddenly being released.  We call this a “start-up transient”.  It will eventually die out, buit it is relatively small and there is not a lot to dissipate it.</p>
+<section id="q1-5-continued">
+<h3>Q1.5 continued<a class="headerlink" href="#q1-5-continued" title="Permalink to this heading">#</a></h3>
+<p>We need to do some smoothing to try and ignore the effect shown above, so average the data by 4 or 6 timesteps.  Then compare the internal to the surface pressure gradient at a depth that includes the overflow.</p>
+<p>Compare and contrast the two pressure signals.  Does the pressure gradients make sense with respect to the direction that water flows?  How many centimeters of surface defelection would you expect to see for the given external pressure gradient?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;hydraulic.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">yt</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">yu</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">22</span><span class="p">))</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;Time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">zt</span><span class="o">=-</span><span class="mi">120</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">xt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">psi</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;external&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">xt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">p_hydro</span><span class="o">-</span><span class="n">ds</span><span class="o">.</span><span class="n">p_hydro</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">xt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">),</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;internal&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x [km]&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$P / \rho\ [m^2 s^{-2}]$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/31ca9ed554d8c5348af1e26d9b43af7f4e3c75a83cce906d2c4084652123cbd7.png" src="../../_images/31ca9ed554d8c5348af1e26d9b43af7f4e3c75a83cce906d2c4084652123cbd7.png" />
+</div>
+</div>
+<p>The internal pressure is high on the right and drops quickly over the obstacle.  The surface pressure gradient is the opposite, and this drives the surface flow from the righthand basin to the left.</p>
+</section>
+</section>
+<section id="q2-channel-flow-qualitative">
+<h2>Q2: Channel flow Qualitative<a class="headerlink" href="#q2-channel-flow-qualitative" title="Permalink to this heading">#</a></h2>
+<p>In this simulation, we have a 50-m deep channel with quite steep sides 20 km apart in the y-direction.  The flow starts at rest when a wind stress of <span class="math notranslate nohighlight">\(\tau=0.2\,\mathrm{N\,m^{-2}}\)</span> is applied in the positive x direction at time = 0.  This is called a spin-up problem.  We will do two simulations, one with rotation <span class="math notranslate nohighlight">\(f=10^{-4}\ \mathrm{rad\, s^{-1}}\)</span> and the other without.</p>
+<p>Note that this problem has no variability in the x direction (though there is definitely x-direction velocities!), so we don’t use much resolution in the x direction.</p>
+<p>Run <a class="reference download internal" download="" href="../../_downloads/0b4a5ec72623bdc6d207eedee094c197/channelnof.py"><span class="xref download myst">channelnof.py</span></a> and <a class="reference download internal" download="" href="../../_downloads/ec08ee530958d25b51405d2e50962316/channelfplane.py"><span class="xref download myst">channelfplane.py</span></a> and plot the outputs:</p>
+<ul class="simple">
+<li><p>plot some represntative time steps of the channel crosssections (y versus z) for each run.</p></li>
+<li><p>choose a time step at the end of the simulation and one location and plot u on the x-axis and v on the y-axis with a dot for each depth.  This is called a “hodogram”.</p></li>
+<li><p>what are the differences between the solution with rotation ansd the solution without rotation?</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">todo</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;channelfplane.snapshot.nc&#39;</span><span class="p">,</span> <span class="s1">&#39;channelnof.snapshot.nc&#39;</span><span class="p">]:</span>
+    <span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds0</span><span class="p">:</span>
+        <span class="n">ds0</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xu</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;constrained&#39;</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">nn</span><span class="p">,</span> <span class="n">td</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">ds</span> <span class="o">=</span> <span class="n">ds0</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="n">td</span><span class="p">)</span>
+            <span class="n">pcu</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">nn</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">yt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+            <span class="n">pcv</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">nn</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">yu</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">0.4</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+            <span class="n">axs</span><span class="p">[</span><span class="n">nn</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s2">&quot;float&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span><span class="o">/</span><span class="mf">1e9</span><span class="o">/</span><span class="mi">3600</span><span class="p">)</span><span class="si">}</span><span class="s1"> h&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pcu</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;u [m/s]&#39;</span><span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pcv</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;v [m/s]&#39;</span><span class="p">)</span>
+        <span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/94c333c4fe1c7247c1e88fdb9cb2d4a2397261ea17dfc57bfddac077399cd771.png" src="../../_images/94c333c4fe1c7247c1e88fdb9cb2d4a2397261ea17dfc57bfddac077399cd771.png" />
+<img alt="../../_images/5fd352d101464e274eed8dcd4eec400afeaf66e45be0b2976f32d5bc530c020c.png" src="../../_images/5fd352d101464e274eed8dcd4eec400afeaf66e45be0b2976f32d5bc530c020c.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;constrained&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">nn</span><span class="p">,</span> <span class="n">todo</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;channelnof.snapshot.nc&#39;</span><span class="p">,</span> <span class="s1">&#39;channelfplane.snapshot.nc&#39;</span><span class="p">]):</span>
+    <span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">todo</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">Time</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">yt</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">yu</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="n">nn</span><span class="p">]</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">nn</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$u\ [m\,s^{-1}]$&#39;</span><span class="p">)</span>
+        <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$v\ [m\,s^{-1}]$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/68c3f8f8e39a241a05a68b6ef310e989c24caaae6a196bbbc2511e295b794deb.png" src="../../_images/68c3f8f8e39a241a05a68b6ef310e989c24caaae6a196bbbc2511e295b794deb.png" />
+</div>
+</div>
+<p>For the non-rotating case, the velocity moves downwind, and continues to accelerate.  Momentum diffuses down until eventually it can dissipate near the sea floor.  No velocity develops in the cross-wind (y) direction.</p>
+<p>Fo the rotating case, the water moves downwind, but there is also a flow to the right of the wind, cross channel.  This layer deepens, but maxes out at about 10-m deep.  In the interior there is a relatively constant flow with <span class="math notranslate nohighlight">\(v \approx=0\)</span>.  At the bottom, a flow develops that is to the right of the bottom stress.  In steady state this near-bottom flow balances the near surface flow.</p>
+<p>The hodograph shows the surface velocity is 45 degrees to the right of the wind stress.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./solution/Assign1"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-continuity-in-a-box">Q1.1  continuity in a box</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-calculate-the-transport-in-a-layer">Q1.2 Calculate the transport in a “layer”</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-x-momentum-budget-pointwise">Q1.3 x-momentum budget (pointwise!)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-4-describe">Q1.4 Describe</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#answer">Answer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-5-internal-versus-external-pressure">Q1.5 Internal versus external pressure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-5-continued">Q1.5 continued</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-channel-flow-qualitative">Q2: Channel flow Qualitative</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jody Klymak
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
