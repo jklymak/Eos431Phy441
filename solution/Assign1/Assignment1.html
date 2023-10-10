@@ -67,6 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Assignment 2: Wind-driven channel flow and basin-scale flow" href="../../release/Assign2/Assignment2.html" />
+    <link rel="prev" title="Assignment 1: Flow over an obstacle and channel flow" href="../../release/Assign1/Assignment1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,7 +159,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../texts.html">Texts</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../project/index.html">Course Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../project/papers.html">Possible papers</a></li>
@@ -170,12 +172,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../computing/analyze_veros.html">Analyzing Veros</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../release/Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../Assign0/Assignment0.html">Key</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../release/Assign1/Assignment1.html">Assignment 1: Flow over an obstacle and channel flow</a></li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../release/Assign1/Assignment1.html">Assignment 1: Flow over an obstacle and channel flow</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Key Assign 1</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="../../release/Assign2/Assignment2.html">Assignment 2: Wind-driven channel flow and basin-scale flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../release/Assign3/Assignment3.html">Assignment 3: Basin-scale flows and waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../release/Assign4/Assignment4.html">Assignment 4: Basin-scale waves and overturning circulation</a></li>
@@ -367,10 +372,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="assignment-1-flow-over-an-obstacle-and-channel-flow">
 <span id="assignment-1"></span><h1>Assignment 1: Flow over an obstacle and channel flow<a class="headerlink" href="#assignment-1-flow-over-an-obstacle-and-channel-flow" title="Permalink to this heading">#</a></h1>
-<p>For this assignment you will do quantiative analysis for the flow over an obstacle (see <a class="reference internal" href="../../release/Assign0/Assignment0.html#assignment0"><span class="std std-ref">Assignment 0: dense flow over an obstacle</span></a>), and a qualitative analysis of rotating channel flow.</p>
+<p>For this assignment you will do quantiative analysis for the flow over an obstacle (see <a class="reference internal" href="../Assign0/Assignment0.html#assignment0"><span class="std std-ref">Assignment 0: dense flow over an obstacle</span></a>), and a qualitative analysis of rotating channel flow.</p>
 <section id="q1-1-continuity-in-a-box">
 <h2>Q1.1  continuity in a box<a class="headerlink" href="#q1-1-continuity-in-a-box" title="Permalink to this heading">#</a></h2>
-<p>Using the simulated data set you produced in <a class="reference internal" href="../../release/Assign0/Assignment0.html#assignment0"><span class="std std-ref">Assignment 0: dense flow over an obstacle</span></a>:</p>
+<p>Using the simulated data set you produced in <a class="reference internal" href="../Assign0/Assignment0.html#assignment0"><span class="std std-ref">Assignment 0: dense flow over an obstacle</span></a>:</p>
 <p>Consider a single time step in the simulation.  Define a largish box in your model domain with the sides defined at two values of x, and the top defined by one value of z.  The bottom can be defined as the sea floor.  Show that the net flow into the box is close to zero. You can express the flow in terms of <span class="math notranslate nohighlight">\(m^2\,s^{-1}\)</span> or <span class="math notranslate nohighlight">\(m^3\,s^{-1}\)</span>, but given that the flow is 2-D <span class="math notranslate nohighlight">\(m^2\,s^{-1}\)</span> probably makes more sense.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -747,6 +752,24 @@ Attributes:
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../../release/Assign1/Assignment1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Assignment 1: Flow over an obstacle and channel flow</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../release/Assign2/Assignment2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 2: Wind-driven channel flow and basin-scale flow</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
