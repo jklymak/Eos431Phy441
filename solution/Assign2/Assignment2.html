@@ -1,0 +1,722 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Assignment 2: Wind-driven channel flow and basin-scale flow &#8212; Physical Oceanography</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'solution/Assign2/Assignment2';</script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Assignment 3: Basin-scale flows and waves" href="../../release/Assign3/Assignment3.html" />
+    <link rel="prev" title="Assignment 2: Wind-driven channel flow and basin-scale flow" href="../../release/Assign2/Assignment2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Eos431/Phy441 – Physical Oceanography
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../texts.html">Texts</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../project/index.html">Course Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../project/papers.html">Possible papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../project/talkrubric.html">Talk rubric</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../computing/index.html">Computing: Veros</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../computing/python_environment.html">Setting up a python environment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computing/run_veros.html">Running Veros</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../computing/analyze_veros.html">Analyzing Veros</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../release/Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Assign0/Assignment0.html">Key</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../release/Assign1/Assignment1.html">Assignment 1: Flow over an obstacle and channel flow</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Assign1/Assignment1.html">Key Assign 1</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../release/Assign2/Assignment2.html">Assignment 2: Wind-driven channel flow and basin-scale flow</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">Key Assign 2</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../release/Assign3/Assignment3.html">Assignment 3: Basin-scale flows and waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release/Assign4/Assignment4.html">Assignment 4: Basin-scale waves and overturning circulation</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/jklymak/Eos431Phy441/issues/new?title=Issue%20on%20page%20%2Fsolution/Assign2/Assignment2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button"
+   title="Open an issue"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/solution/Assign2/Assignment2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Assignment 2: Wind-driven channel flow and basin-scale flow</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-stress-with-no-rotation">Q1.1  Stress with no rotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-geostrophic-balance-interior">Q1.2 Geostrophic balance (interior)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-ekman-balance">Q1.3 Ekman balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-4-ekman-spiral">Q1.4 Ekman spiral</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-wind-driven-basin-qualitative">Q2: Wind-driven basin: Qualitative</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-1-plot-the-wind-stress-as-a-function-of-y">Q2.1: plot the wind stress as a function of y</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2">Q2.2</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="assignment-2-wind-driven-channel-flow-and-basin-scale-flow">
+<span id="assignment-2"></span><h1>Assignment 2: Wind-driven channel flow and basin-scale flow<a class="headerlink" href="#assignment-2-wind-driven-channel-flow-and-basin-scale-flow" title="Permalink to this heading">#</a></h1>
+<p>For this assignment you will do quantiative analysis of the channel flow (see <a class="reference internal" href="../Assign1/Assignment1.html#assignment-1"><span class="std std-ref">Assignment 1: Flow over an obstacle and channel flow</span></a>), and a qualitative analysis of flow in a basin under wind stress curl.</p>
+<section id="q1-1-stress-with-no-rotation">
+<h2>Q1.1  Stress with no rotation<a class="headerlink" href="#q1-1-stress-with-no-rotation" title="Permalink to this heading">#</a></h2>
+<p>For the simulation with no rotation (<code class="docutils literal notranslate"><span class="pre">channelnof</span></code>), plot a profile of the x-momentum stress that is transmitted in the vertical direction at a point in the middle of the channel.  Do this at something like 12 h into the simulation.</p>
+<p>What is the net acceleration of the water parcel due to this stress profile?</p>
+<p>Recall that the surface stress is equal to <span class="math notranslate nohighlight">\(\tau_w = 0.2 \ \mathrm{N\,m^{-2}}\)</span>, and the vertical viscosity is <span class="math notranslate nohighlight">\(\kappa = 3\times10^{-3}\ \mathrm{m^2\,s^{-1}}\)</span>.  What will the velocity and stress profile look like at steady state (flow no longer accelerating), or is there a steady state?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_skip-execution docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use the matplotlib widget</span>
+<span class="o">%</span><span class="k">matplotlib</span> widget
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;channelnof.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">yt</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">yu</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;constrained&#39;</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">zt</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$u \ \mathrm{[m\,s^{-1}]}$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$z \ \mathrm{[m]}$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span><span class="o">*</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">zt</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">0.2</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\tau_</span><span class="si">{xz}</span><span class="s1">/\rho \ \mathrm{m^2\,s^{-2}}$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span><span class="o">*</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">zt</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\partial (\tau_</span><span class="si">{xz}</span><span class="s1">/\rho) / \partial z \ \mathrm{m\,s^{-2}}$&#39;</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/5947a3f9ca350dc986b64d28b0d91e10802498dcbf0264314637da42f9d701fd.png" src="../../_images/5947a3f9ca350dc986b64d28b0d91e10802498dcbf0264314637da42f9d701fd.png" />
+</div>
+</div>
+<p>This flow is not in steady state yet.  Steady state would be a linear profile of velocity with <span class="math notranslate nohighlight">\(\nu \partial u / \partial z = \tau_w / \rho\)</span> so <span class="math notranslate nohighlight">\(u(z=0) = 10 \ \mathrm{m\,s^{-1}}\)</span>.  This would lead to a constant stress through the water column As it is, the flow is faster above than below, and the stress is higher with increasing z, so momentum is converging with depth and <span class="math notranslate nohighlight">\(\partial u / \partial t&gt;0\)</span>.</p>
+<p>Note that the time scale for this to be in steady state is <span class="math notranslate nohighlight">\(T\approx H^2 / \kappa \approx 28\)</span> days, so we would have to run the simulation for considerably longer to see the steady state behaviour.</p>
+</section>
+<section id="q1-2-geostrophic-balance-interior">
+<h2>Q1.2 Geostrophic balance (interior)<a class="headerlink" href="#q1-2-geostrophic-balance-interior" title="Permalink to this heading">#</a></h2>
+<p>For the f-plane simulation (<code class="docutils literal notranslate"><span class="pre">channelfplane</span></code>) show that the interior of the flow (away from the Ekman layers) is approximately in geostrophic balance with the surface flow.  Note that <span class="math notranslate nohighlight">\(f=10^{-4}\ \mathrm{rad\,s^{-1}}\)</span>.  I did this by comparing the size of <span class="math notranslate nohighlight">\(u\)</span> with the size of <span class="math notranslate nohighlight">\((g/f) \partial  \eta / \partial y\)</span> across the whol y-z cross-section.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Remember that the surface pressure, <span class="math notranslate nohighlight">\(g\eta\)</span>, is given by <code class="docutils literal notranslate"><span class="pre">psi</span></code> in veros.</p>
+</div>
+<p>Describe where in the water column the geostrophic balance is poor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># fu = - g d eta/dx</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mf">1e-4</span>
+<span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;channelfplane.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">xt</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">xu</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">height_ratios</span><span class="o">=</span><span class="p">[</span><span class="mf">0.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;constrained&#39;</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">yt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">psi</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$g \eta \mathrm{[m^2\,s^{-2}]}$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">pc</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">yt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">)</span>
+    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+    <span class="n">pc</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">yt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">zt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">u</span> <span class="o">+</span> <span class="n">ds</span><span class="o">.</span><span class="n">psi</span><span class="o">.</span><span class="n">differentiate</span><span class="p">(</span><span class="n">coord</span><span class="o">=</span><span class="s1">&#39;yt&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="n">f</span> <span class="o">/</span> <span class="mi">1000</span> <span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;$u - (-g/f) \partial \eta / \partial y$&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/9cd335c2a0f105ef45711d43bd2f3bbf9b6698bf82b400126581fee8b9828a08.png" src="../../_images/9cd335c2a0f105ef45711d43bd2f3bbf9b6698bf82b400126581fee8b9828a08.png" />
+</div>
+</div>
+<p>The flow is close to being in Geostrophic balance, with a small interior flow that is not quite in balance.</p>
+</section>
+<section id="q1-3-ekman-balance">
+<h2>Q1.3 Ekman balance<a class="headerlink" href="#q1-3-ekman-balance" title="Permalink to this heading">#</a></h2>
+<p>Plot as a time-series and demonstrate that the Ekman Transport reaches the expected value in the upper part of the water column and that there is an equal and opposite Ekman transport in the bottom boundary layer.  You can do this with y at the center of the channel.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>The tendency would be to use <code class="docutils literal notranslate"><span class="pre">integrate</span></code> to do the integral.  However a lot of the Ekman transport is in the first grid cell, and the trapezoid rule does a poor job at the boundary.  Suggest you use <code class="docutils literal notranslate"><span class="pre">sum</span></code> instead (and multiply by the correct dz for each cell).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dz</span> <span class="o">=</span> <span class="mi">50</span><span class="o">/</span><span class="mi">45</span>
+<span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;../Assign1/channelfplane.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xu</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">yt</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">yu</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+    <span class="n">vEkSurf</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">zt</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">25</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="n">dz</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vEkSurf</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Top&#39;</span><span class="p">)</span>
+    <span class="n">vEkBott</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">zt</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="o">-</span><span class="mi">70</span><span class="p">,</span> <span class="o">-</span><span class="mi">25</span><span class="p">))</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="n">dz</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vEkBott</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Bottom&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="s1">&#39;on&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">/</span><span class="mi">45</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time [h]&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$T_</span><span class="si">{Ek}</span><span class="s1">\ [m^2\,s^{-1}]$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/fec477150fea3d909448689a48e28db33c3151bf17a815c9c82adf7b5a6a7658.png" src="../../_images/fec477150fea3d909448689a48e28db33c3151bf17a815c9c82adf7b5a6a7658.png" />
+</div>
+</div>
+</section>
+<section id="q1-4-ekman-spiral">
+<h2>Q1.4 Ekman spiral<a class="headerlink" href="#q1-4-ekman-spiral" title="Permalink to this heading">#</a></h2>
+<p>Show that the velocity in the upper and lower Ekman layers follow the Ekman spiral solution in the upper ocean and near the sea floor.  Also add the two Ekman layer solutions together and compare to the observed profile.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;../Assign1/channelfplane.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">xt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xu</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">Time</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">yt</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">yu</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">v</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">ds</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mf">3e-3</span> <span class="o">/</span> <span class="mf">1e-4</span><span class="p">)</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">zt</span>
+    <span class="n">taux</span><span class="o">=</span><span class="mf">0.2</span>
+    <span class="n">u0</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">u</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">zt</span><span class="o">=</span><span class="mi">22</span><span class="p">)</span> <span class="c1">#, method=&#39;nearest&#39;)</span>
+    
+    <span class="n">uEk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mf">1e-4</span><span class="o">/</span><span class="n">d</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="o">/</span><span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">taux</span> <span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">z</span><span class="o">/</span><span class="n">d</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">vEk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">1024</span><span class="o">/</span><span class="mf">1e-4</span><span class="o">/</span><span class="n">d</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="o">/</span><span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">taux</span> <span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">z</span><span class="o">/</span><span class="n">d</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">4</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uEk</span><span class="o">+</span><span class="n">u0</span><span class="p">,</span> <span class="n">vEk</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;surface&#39;</span><span class="p">)</span>
+
+    <span class="n">uEkB</span> <span class="o">=</span> <span class="n">u0</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mi">50</span><span class="o">+</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">((</span><span class="mi">50</span><span class="o">+</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">d</span><span class="p">))</span>
+    <span class="n">vEkB</span> <span class="o">=</span> <span class="n">u0</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mi">50</span><span class="o">+</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">d</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">((</span><span class="mi">50</span><span class="o">+</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">d</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uEkB</span><span class="p">,</span> <span class="n">vEkB</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;bottom&#39;</span><span class="p">)</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">uEkB</span><span class="o">+</span><span class="n">uEk</span><span class="p">,</span> <span class="n">vEkB</span><span class="o">+</span><span class="n">vEk</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4c650412278356535ac4a8692138e0b1dbbd01b897fd11b583030b89fc7d7514.png" src="../../_images/4c650412278356535ac4a8692138e0b1dbbd01b897fd11b583030b89fc7d7514.png" />
+</div>
+</div>
+</section>
+<section id="q2-wind-driven-basin-qualitative">
+<h2>Q2: Wind-driven basin: Qualitative<a class="headerlink" href="#q2-wind-driven-basin-qualitative" title="Permalink to this heading">#</a></h2>
+<p>In this simulation an 80x80km 200-m deep basin is used.  Wind is blown on it so that it blows strongest to the west at the south side of the box, and strongest to the east atthe top of the box, so <span class="math notranslate nohighlight">\(\tau_x^w = -0.1 \cos\left(\pi \frac{y}{y_{max}}\right)\)</span>.  There are two runs, where <span class="math notranslate nohighlight">\(f=f_0 = 10^{-4}\ \mathrm{rad \, s^{-1}}\)</span>, and a second where f increases towards the north: <span class="math notranslate nohighlight">\(f = f_0 + \left( 10^{-9} \left( ms \right)^{-1} \right) y\)</span></p>
+<p>To make the simulation output, please run <code class="docutils literal notranslate"><span class="pre">basinfplane.py</span></code> and <code class="docutils literal notranslate"><span class="pre">basinbetaplane.py</span></code>.</p>
+<section id="q2-1-plot-the-wind-stress-as-a-function-of-y">
+<h3>Q2.1: plot the wind stress as a function of y<a class="headerlink" href="#q2-1-plot-the-wind-stress-as-a-function-of-y" title="Permalink to this heading">#</a></h3>
+<p>Note that this is stored in <code class="docutils literal notranslate"><span class="pre">ds.surface_taux</span></code> (and <code class="docutils literal notranslate"><span class="pre">ds.surface_tauy</span></code>).  Describe a) what direction youd expect the Ekman transport to be at <span class="math notranslate nohighlight">\(y=40\ \mathrm{km}\)</span> and at <span class="math notranslate nohighlight">\(y=130\ \mathrm{km}\)</span> b) describe what must happen between these two “latitudes” given these Ekman transports.  c) What direction is the water being “torqued” (twisted)?  d) hwo do you think the water will move in this flow given that it will be close to geostrophic balance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;basinfplane.snapshot.nc&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">surface_taux</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">ds</span><span class="o">.</span><span class="n">yt</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">tau_x^W\ \mathrm{[N\,m^{-2}]}$&#39;</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Y [km]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/6121422aca69872401bd6b354333d91e7add22d4c077f12de846b0b2a658b8f0.png" src="../../_images/6121422aca69872401bd6b354333d91e7add22d4c077f12de846b0b2a658b8f0.png" />
+</div>
+</div>
+<p>The Ekman tranport is to the north at y=40 km and to the south at y=130 km.  Because the transports are coming at each other, the water must converge between these two.  This will cause the sea leve to rise, and water to be pushed downwards out of the Ekman layer.  The water is being torqued in a clockwise direction (torque: <span class="math notranslate nohighlight">\(\nabla \times \mathbf{\tau}^W &lt; 0\)</span>) using the right-hand rule.  Finally, the water piled up in the middle means that water will flow clockwise around the high if it is in geostrophic balance.</p>
+</section>
+<section id="q2-2">
+<h3>Q2.2<a class="headerlink" href="#q2-2" title="Permalink to this heading">#</a></h3>
+<p>Plot four or so snapshots of <a class="reference download internal" download="" href="../../_downloads/900bff7a1f7303f3163bc6c75e1192e3/basinfplane.py"><span class="xref download myst">basinfplane.py</span></a> and <a class="reference download internal" download="" href="../../_downloads/74cd7c71726c8d821623bd298466d0ea/basinbetaplane.py"><span class="xref download myst">basinbetaplane</span></a> and compare and contrast the behaviour over time.  I suggest plotting <code class="docutils literal notranslate"><span class="pre">psi</span></code> which is the sea surface pressure anomally <span class="math notranslate nohighlight">\(g\eta\)</span> using contours, overtop of pcolor of the north-south velocity <span class="math notranslate nohighlight">\(v\)</span>.</p>
+<p>Note that there is an Ekman layer, so <span class="math notranslate nohighlight">\(v(z=0)\)</span> is interesting, but a bit misleading for the over-all circulation.  <code class="docutils literal notranslate"><span class="pre">ds.v.mean(dim='zt')</span></code> is a useful pcolor to make, or you could choose a depth out of the Ekman layer.</p>
+<p>What are the similarities and differences between the two simulations?  Which one looks more like the real ocean?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">todo</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;basinfplane.snapshot.nc&#39;</span><span class="p">,</span> <span class="s1">&#39;basinbetaplane.snapshot.nc&#39;</span><span class="p">]</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">),)</span>
+<span class="k">for</span> <span class="n">nt</span><span class="p">,</span> <span class="n">time</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">nn</span><span class="p">,</span> <span class="n">td</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">todo</span><span class="p">):</span>
+        <span class="n">ax</span> <span class="o">=</span> <span class="n">axs</span><span class="p">[</span><span class="n">nt</span><span class="p">,</span> <span class="n">nn</span><span class="p">]</span>
+        <span class="k">with</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">td</span><span class="p">)</span> <span class="k">as</span> <span class="n">ds</span><span class="p">:</span>
+            <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">Time</span><span class="o">=</span><span class="n">time</span><span class="p">)</span>
+            <span class="n">ttime</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">Time</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span> <span class="o">/</span> <span class="mf">1e9</span> <span class="o">/</span> <span class="mi">3600</span><span class="p">)</span>
+            <span class="n">levels</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+            <span class="n">cont</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">xt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">yt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">psi</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="mi">16</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+            <span class="n">cs</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">xt</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">yu</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">v</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;zt&#39;</span><span class="p">),</span> <span class="n">vmin</span><span class="o">=-</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">,</span> <span class="n">rasterized</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">clabel</span><span class="p">(</span><span class="n">cont</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
+            <span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.94</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">ttime</span><span class="si">}</span><span class="s1"> h&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;f-plane&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.04</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">,</span> <span class="s1">&#39;contours in cm&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">transAxes</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;small&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">beta$-plane&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y [km]&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x [km]&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">cs</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">axs</span><span class="p">,</span> <span class="n">shrink</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">extend</span><span class="o">=</span><span class="s1">&#39;both&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;$v\ \mathrm{[m\,s^{-1}]}$&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x15254ea90&gt;
+</pre></div>
+</div>
+<img alt="../../_images/d38566050edecb9b0157b276e35ecb4d5ee9d7e24c884958466d947b96b39700.png" src="../../_images/d38566050edecb9b0157b276e35ecb4d5ee9d7e24c884958466d947b96b39700.png" />
+</div>
+</div>
+<p>The flows start out similar, with the expected surface convergence in the centre of the basin.  However, the convergence in the beta-plane simulation migrates west, whereas the f-plane solution stays centered.  In bot cases there is anti-cyclic (clockwise) circulation with southward flow and then northward flow on the west side.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./solution/Assign2"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../release/Assign2/Assignment2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Assignment 2: Wind-driven channel flow and basin-scale flow</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../release/Assign3/Assignment3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 3: Basin-scale flows and waves</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-1-stress-with-no-rotation">Q1.1  Stress with no rotation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-2-geostrophic-balance-interior">Q1.2 Geostrophic balance (interior)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-3-ekman-balance">Q1.3 Ekman balance</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q1-4-ekman-spiral">Q1.4 Ekman spiral</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-wind-driven-basin-qualitative">Q2: Wind-driven basin: Qualitative</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-1-plot-the-wind-stress-as-a-function-of-y">Q2.1: plot the wind stress as a function of y</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#q2-2">Q2.2</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jody Klymak
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
