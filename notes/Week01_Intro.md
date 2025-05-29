@@ -147,7 +147,7 @@ $$\frac{\partial C}{\partial t} = - \nabla \cdot \left(\mathbf{u}C\right) + \mat
 This equation is the _advection equation_ and, again, $\mathbf{u}C$ is the _advective flux_ of the tracer $C$.
 
 Note we could also have done:
-$$ \int_V \frac{\partial C}{\partial t}  \, dV = -\int_S C \mathbf{u} \cdot \mathbf{n} \, dS$$
+$$\int_V \frac{\partial C}{\partial t}  \, dV = -\int_S C \mathbf{u} \cdot \mathbf{n} \, dS$$
 and by Gauss's theorem, we can convert the surface integral to a volume integral:
 $$\int_V \frac{\partial C}{\partial t}  \, dV = -\int_V \nabla \cdot \left(C \mathbf{u} \right) \, dV$$
 
@@ -260,7 +260,7 @@ For most practical purposes the first term is small because atmospheric sea leve
 $$\frac{Du}{Dt} = - \frac{\partial \eta}{\partial x} g - \frac{1}{\rho_0}\int_z^0 \frac{\partial \rho}{\partial x} g\,\mathrm{d}z$$
 The first term on the right hand side is the acceleration due to sea surface height gradients, and is called the _barotropic pressure gradient force_.  The second term is the acceleration due to density gradients, and is called the _baroclinic pressure gradient force_.
 
-![Baroclinic pressure gradient](./imgs/S01_baroclinicSketch.jpg)
+![Baroclinic pressure gradient](./imgs/S01_BaroclinicSketch.jpg)
 
 As an example of the baroclinic pressure gradient force, in the above sketch, the weight of the water at A is less than the weight of the water column at B, so the pressure at A is less than the pressure at B, and therefore there is a net pressure gradient from from B towards A, and the water in the bottom layer will accelerate to the left.
   - soon after there will be change in the surface pressure gradient as water piles up at A and is removed from B.
