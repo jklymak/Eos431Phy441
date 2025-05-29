@@ -1,0 +1,21 @@
+name: eos431
+channels:
+  - conda-forge
+dependencies:
+  - pip
+  - numpy
+  - xarray
+  - netcdf4
+  - hdf5
+  - h5py=*=mpi*
+  - dask
+  - scipy
+  - matplotlib
+  - ipython
+  - jupyter
+  - jupyterlab
+  - mpi
+  - mpi4py
+  - ipympl
+  - pip:
+    - veros

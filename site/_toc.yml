@@ -6,7 +6,10 @@ format: jb-book
 root: index
 chapters:
 - file: texts
-- file: courseproject
+- file: project/index
+  sections:
+  - file: project/papers
+  - file: project/talkrubric
 - file: computing/index
   sections:
   - file: computing/python_environment
@@ -15,8 +18,23 @@ chapters:
 - file: assignments/index
   sections:
   - file: release/Assign0/Assignment0.ipynb
-    #sections:
-    #- file: solution/Assign0/Assignment0.ipynb
-    #  title: Key
+    sections:
+    - file: solution/Assign0/Assignment0.ipynb
+      title: Key Assign 0
   - file: release/Assign1/Assignment1.ipynb
+    sections:
+    - file: solution/Assign1/Assignment1.ipynb
+      title: Key Assign 1
   - file: release/Assign2/Assignment2.ipynb
+    sections:
+    - file: solution/Assign2/Assignment2.ipynb
+      title: Key Assign 2
+  - file: release/Assign3/Assignment3.ipynb
+    sections:
+    - file: solution/Assign3/Assignment3.ipynb
+      title: Key Assign 3
+  - file: release/Assign4/Assignment4.ipynb
+    sections:
+    - file: solution/Assign4/Assignment4.ipynb
+      title: Key Assign 4
+  - file: release/Assign5/Assignment5.ipynb

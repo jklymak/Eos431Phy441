@@ -87,7 +87,6 @@ class BasinSetup(VerosSetup):
         vs.coriolis_t = update(
             vs.coriolis_t, at[...], cor
         )
-        print(vs.coriolis_t)
 
     @veros_routine
     def set_topography(self, state):

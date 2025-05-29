@@ -1,0 +1,47 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, decorations.pathmorphing}
+
+\begin{document}
+
+\begin{tikzpicture}[scale=1.2]
+
+  % Define cube coordinates
+  \coordinate (A) at (0,0);
+  \coordinate (B) at (2,0);
+  \coordinate (C) at (2,1.5);
+  \coordinate (D) at (0,1.5);
+  \coordinate (E) at (0.5,0.5);
+  \coordinate (F) at (2.5,0.5);
+  \coordinate (G) at (2.5,2);
+  \coordinate (H) at (0.5,2);
+
+  % Draw front face
+  \draw[thick] (A) -- (B) -- (C) -- (D) -- cycle;
+  % Draw top face
+  \draw[thick] (D) -- (H) -- (G) -- (C);
+  % Draw side face
+  \draw[thick] (B) -- (F) -- (G);
+  % Draw bottom face
+  \draw[dashed] (A) -- (E) -- (F);
+  % Draw back edges
+  \draw[dashed] (E) -- (H);
+  \draw[thick] (F) -- (G);
+
+  % Dimension labels
+  \node at (1.0,-0.2) {$\delta x$};
+  \node[rotate=90] at (-0.3,0.75) {$\delta z$};
+  \node at (2.7,0.2) {$\delta y$};
+
+
+  % Shear stress at bottom face (upward)
+  \draw[->, red, thick, decorate, decoration={snake, amplitude=1mm, segment length=2mm}]
+    (1.25,0.3) -- (1.25,-0.2) node[midway, right] {\small $\tau_{xz}(z)$};
+
+  % Shear stress at top face (downward)
+  \draw[->, red, thick, decorate, decoration={snake, amplitude=1mm, segment length=2mm}]
+    (1.25,1.7) -- (1.25,1.0) node[midway, right] {\small $\tau_{xz}(z+\delta z)$};
+
+\end{tikzpicture}
+
+\end{document}

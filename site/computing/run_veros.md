@@ -29,19 +29,21 @@ Usage: veros [OPTIONS] COMMAND [ARGS]...
 Each model run can be setup from a single python file that is called from the veros command-line tool, eg:
 
 ```
-veros run --force-overwrite mysetup.py
+veros run --force-overwrite example.py
 ```
 
-Where here we have named the setup file `mysetup.py`.  Depending on what information is in this file, the program will run, sometimes for quite a while, and create netcdf files of the output.  For instance, this file might create a netcdf file named `mysetup.snapshot.nc`.
+Where here we have named the setup file [example.py](./example.py).  Depending on what information is in this file, the program will run, sometimes for quite a while, and create netcdf files of the output.  For instance, this file might create a netcdf file named `example.snapshot.nc`.
 
-For your assignments, I have already created these files for you, eg ???  However, you may want to edit them for some of the bonus opportunities.
+For your assignments, I have already created these files for you.  However, you may wish to consult them to see how the models are set up.
 
-Most of you should have `mpi` installed with `eos431` environment as well.  If you do, this can be used to speed up `veros` runs by using multiple processors on your machines.  You of course shouldn't use more processes than you have cores in your computer, and it actually can be conterproductive to use too many cores.  But some of the processes here can be sped up using 4 cores.  For instance, if we wanted to divide the x-y domain into 4 subdomains in x and 1 subdomain in y, we can do:
+Most of you should have `mpi` installed with `eos431` environment as well.  If you do, this can be used to speed up `veros` runs by using multiple processors on your machines.  You of course shouldn't use more processes than you have cores in your computer, and it actually can be counter-productive to use too many cores.  But some of the processes here can be sped up using 4 cores.  For instance, if we wanted to divide the x-y domain into 4 subdomains in x and 1 subdomain in y, we can do:
 
 ```
-mpirun -np 4 veros run --force-overwrite mysetup.py -n 1 4
+mpirun -np 4 veros run --force-overwrite example.py -n 4 1
 ```
+
+A good rule of thumb is that its not worthwhile making either x or y less than 40 tiles wide.  So `example.py`, we have `settings.nx = 200`, so this is worth dividing into 4 cores, whereas `settings.ny = 4` is definitely not worth dividing.
 
 ## Output files
 
-As noted, veros will output `mysetup.snapshot.nc`.  It may also make `*.h5` restart files, which can be used to restart the model from part way through a run.
+As noted, veros will output `example.snapshot.nc`.  It may also make `*.h5` restart files, which can be used to restart the model from part way through a run.

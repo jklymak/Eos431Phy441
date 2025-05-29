@@ -21,12 +21,24 @@ __Fall 2023__
   - Meeting time:  TWF 11:30-12:20
   - Location:  [Bob Wright B121](https://www.uvic.ca/search/maps-buildings/buildings/bob-wright-centre-ocean-earth-and-atmospheric-sciences.php)
 
+(brightspace)=
+## Brightspace
+
+[Brightspace](https://bright.uvic.ca/d2l/home/308490) is used to schedule and hand in [assignments](assignments/index) and [project milestones](project/index).
+
 ## Course Objectives
+
+- Better understand geophysical fluid dynamics
+- Practice data presentation and interpretation
+- Practice data analysis, including numerical skills
+- Practice written and oral presentation of ideas and concepts
 
 ## Schedule
 
-- one
-- two
+If there is a conflict between these dates and those in {ref}`brightspace` please contact the instructor!  Dates in {ref}`brightspace` are the official due dates.
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSsXfZWS6bEAlcr7JjZBvQ_aLIImhPL2A0hOomNbgjELG5snPKgtbGTGGGjujbHAQi-opGILojRYFq7/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false" width=650; height=500></iframe>
+
 
 ## [Texts](texts)
 
@@ -34,6 +46,10 @@ Mostly [Cushman-Roisin and Beckers, 2011](https://www-sciencedirect-com.ezproxy.
 
 ## Grading
 
-## [Assignments](assignments/index)
+- 50% [Assignments](assignments/index)
+- 45% [Course project](project/index)
+- 5% Participation
 
-## [Course Project](courseproject)
+## Computing
+
+This course has a relatively heavy computing component, so please spend time setting your computing environment up.  See {ref}`computing` for more details.  Note their is a (modest) computing assignment due the first Tuesday of class.

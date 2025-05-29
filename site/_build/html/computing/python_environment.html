@@ -159,16 +159,26 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../texts.html">Texts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../courseproject.html">Course Project</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Computing: Veros</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../project/index.html">Course Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../project/papers.html">Possible papers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../project/talkrubric.html">Talk rubric</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Computing: Veros</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Setting up a python environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="run_veros.html">Running Veros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="analyze_veros.html">Analyzing Veros</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../assignments/index.html">Assignments</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../release/Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../release/Assign1/Assignment1.html">Assignment 1:</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../assignments/index.html">Assignments</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../release/Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../solution/Assign0/Assignment0.html">Key</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../release/Assign1/Assignment1.html">Assignment 1: Flow over an obstacle and channel flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release/Assign2/Assignment2.html">Assignment 2: Wind-driven channel flow and basin-scale flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release/Assign3/Assignment3.html">Assignment 3: Basin-scale flows and waves</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release/Assign4/Assignment4.html">Assignment 4: Basin-scale waves and overturning circulation</a></li>
 </ul>
 </li>
 </ul>
@@ -335,6 +345,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-mamba-or-conda">Install Mamba (or conda)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-your-environment">Creating your environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jupyter-notebooks">Running jupyter notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-uvic-syzygy-ca">Working on uvic.syzygy.ca</a></li>
 </ul>
             </nav>
         </div>
@@ -351,12 +362,12 @@ document.write(`
 <section id="install-mamba-or-conda">
 <h2>Install Mamba (or conda)<a class="headerlink" href="#install-mamba-or-conda" title="Permalink to this heading">#</a></h2>
 <p>If you don’t already have it (or conda), install mamba from <a class="reference external" href="https://github.com/conda-forge/miniforge#mambaforge">mambaforge</a> appropriate for you computer architecture.</p>
-<p>If you have conda it should work well, but make sure that your default channel is <a class="reference external" href="https://conda-forge.org/docs/user/introduction.html#how-can-i-install-packages-from-conda-forge">conda-forge</a>. However, note that mamba usually faster.</p>
+<p>If you have conda it should work well, but make sure that your default channel is <a class="reference external" href="https://conda-forge.org/docs/user/introduction.html#how-can-i-install-packages-from-conda-forge">conda-forge</a>. However, note that mamba is usually faster.</p>
 <p>Mamba (and conda) provide “environments” or “kernels” to run your python-based programs.  They not only work with python files, but with c- and FORTRAN extensions used in much of scientific computing.  You could use <code class="docutils literal notranslate"><span class="pre">pip</span></code> instead, but you will likely hit roadblocks when dealing with netcdf files.</p>
 </section>
 <section id="creating-your-environment">
 <h2>Creating your environment<a class="headerlink" href="#creating-your-environment" title="Permalink to this heading">#</a></h2>
-<p>A list of packages is available that should work to create you an environment at <a class="reference external" href="https://jklymak.github.io/Eos431Phy441/eos431environment.yml">https://jklymak.github.io/Eos431Phy441/eos431environment.yml</a>.  To use this file you simply do:</p>
+<p>A list of packages is available that should work to create you an environment at <a class="reference download internal" download="" href="../_downloads/b91dc7e02a611c4509e3a10a29e8ce17/eos431environment.yml"><span class="xref download myst">eos431environment.yml</span></a>.  To use this file you simply do:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mamba</span> <span class="n">env</span> <span class="n">create</span> <span class="o">-</span><span class="n">f</span> <span class="n">eos431environment</span><span class="o">.</span><span class="n">yml</span>
 <span class="n">mamba</span> <span class="n">env</span> <span class="nb">list</span>
 </pre></div>
@@ -378,6 +389,19 @@ document.write(`
 </pre></div>
 </div>
 <p>which should open a jupyterlab interface in your browser.</p>
+</section>
+<section id="working-on-uvic-syzygy-ca">
+<span id="syzygy"></span><h2>Working on uvic.syzygy.ca<a class="headerlink" href="#working-on-uvic-syzygy-ca" title="Permalink to this heading">#</a></h2>
+<p>Some folks are used to working on <a class="reference external" href="https://uvic.syzygy.ca">https://uvic.syzygy.ca</a>.  My short experience with this is that its pretty slow, and if many folks do it, we are liable to get in trouble.  But if you are really stuck because your computer is too ancient then you can do the install steps above, and then install a kernel to make it available on the syzygy machines.</p>
+<p>To do this, I did the following</p>
+<ul class="simple">
+<li><p>uploaded <a class="reference download internal" download="" href="../_downloads/b91dc7e02a611c4509e3a10a29e8ce17/eos431environment.yml"><span class="xref download myst">eos431environment.yml</span></a> to syzygy, as above, and put it in a subdirectory.</p></li>
+<li><p>Make an eos431 environment: from a terminal on syzygy, I ran the mamba command above: <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">env</span> <span class="pre">create</span> <span class="pre">-f</span> <span class="pre">eos431environment.yml</span></code>.  At this point everything installed fine for me, so it should work for you as well.</p></li>
+<li><p>Run <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">activate</span> <span class="pre">eos431</span></code> to activate the new environment.</p></li>
+<li><p>Install a kernel for jupyter: <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">ipykernel</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">--name</span> <span class="pre">eos431</span> <span class="pre">--display-name</span> <span class="pre">&quot;Python</span> <span class="pre">(eos431)&quot;</span></code></p></li>
+<li><p>Refresh your kernel window, create a new notebook, but choose <code class="docutils literal notranslate"><span class="pre">Python</span> <span class="pre">(eos431)</span></code> as the kernel (instead of <code class="docutils literal notranslate"><span class="pre">Python3</span> <span class="pre">(ipykernel)</span></code>).</p></li>
+<li><p>To run veros, just follow the instructions above in the command line (after <code class="docutils literal notranslate"><span class="pre">mamba</span> <span class="pre">activate</span> <span class="pre">eos431</span></code>.)</p></li>
+</ul>
 </section>
 </section>
 
@@ -451,6 +475,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#install-mamba-or-conda">Install Mamba (or conda)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-your-environment">Creating your environment</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#running-jupyter-notebooks">Running jupyter notebooks</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-on-uvic-syzygy-ca">Working on uvic.syzygy.ca</a></li>
 </ul>
   </nav></div>
 
