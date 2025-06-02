@@ -255,7 +255,7 @@ $$\frac{1}{\rho}\frac{\partial P}{\partial x}$$
 If the flow is hydrostatic, then
 $$\frac{Du}{Dt} = -\frac{1}{\rho}\frac{\partial P(\eta)}{\partial x} - \frac{1}{\rho}\frac{\partial}{\partial x} \int_z^{\eta} \rho g \, dz'$$
 which we can use the Leibniz rule to write as
-$$\frac{Du}{Dt} = -\frac{1}{\rho}\frac{\partial P(\eta)}{\partial x} - \frac{\partial \eta}{\partial x} g + \frac{1}{\rho}\int_z^\eta(x) \frac{\partial \rho}{\partial x} g\,\mathrm{d}z$$
+$$\frac{Du}{Dt} = -\frac{1}{\rho}\frac{\partial P(\eta)}{\partial x} - \frac{\partial \eta}{\partial x} g + \frac{1}{\rho}\int_z^{\eta(x)} \frac{\partial \rho}{\partial x} g\,\mathrm{d}z$$
 For most practical purposes the first term is small because atmospheric sea level pressure doesn't vary much, and does so over large areas.  In the third term, the contribution of the density gradient from $z=0 to \eta$ is small, so we simplify to:
 $$\frac{Du}{Dt} = - \frac{\partial \eta}{\partial x} g - \frac{1}{\rho_0}\int_z^0 \frac{\partial \rho}{\partial x} g\,\mathrm{d}z$$
 The first term on the right hand side is the acceleration due to sea surface height gradients, and is called the _barotropic pressure gradient force_.  The second term is the acceleration due to density gradients, and is called the _baroclinic pressure gradient force_.
