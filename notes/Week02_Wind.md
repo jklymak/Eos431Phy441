@@ -163,6 +163,8 @@ which is unrealistically large.  What tends to happen in the real ocean is that 
 
 We won't derive it here, but the timescale for this flow to develop from rest is about $H^2/\nu$.  For the molecular case, this is about $10^8\ \mathrm{s}$, or about 3 years.  For the turbulent case, it is about $10^6\ \mathrm{s}$, or about 11 days, which actually is quite slow compared to the observations of wind-driven upwelling on the coast.
 
+Finally, note that we assume that the flow is zero at the seafloor.  This is not always practical to keep track of, so we often assume a boundary condition that specifies the stress near the sea floor as a function of the velocity in a drag law, eg $\mathbf{\tau}^B = -C_D\mathbf{u}\left|\mathbf{u}\right|$
+
 # Balances with rotation
 
 In geophysical fluid a large part of the flow can be described as a balance between the Coriolis force and either the pressure gradient force or the _vertical_ stresses:
@@ -212,15 +214,17 @@ where $C$ is an arbitrary constant, often chosen so that $\eta_D = 0$ at a refer
 ![Gulf Stream Density](imgs/S02_GulfStreamDensity.png)
 
 
-The data above is taken from the Gulf Stream.  The water is denser on the left (say at 200 km) than on the right (say at 600 km). If we make it so $\eta_D=0$ at 200 km, then the dynamic height will be positive on the right over the lighter water.  Or in terms of pressure gradients, the baroclinic pressure gradient force is from left to right, so if there were no pressure gradient at 2000 m, there would need to be a barotropic pressure gradient from right to left to balance.
+The data above is taken from the Gulf Stream.  The water is denser on the left (say at 50 km; note that colder temperatures are higher density) than on the right (say at 200 km). If we make it so $\eta_D=0$ at 50 km, then the dynamic height will be positive on the right over the lighter water.  Or in terms of pressure gradients, the baroclinic pressure gradient force is from left to right, so if there were no pressure gradient at 2000 m, there would need to be a barotropic pressure gradient from right to left to balance.
 
-Note that there is still some baroclinic pressure gradient force at 2000 m; the _isopycnals_ (contours of constant density) are still sloping, so the dynamic height is still an approximation.
+Note that there is still some baroclinic pressure gradient force at 2000 m; the _siotherms_ (contours of constant temperature, and hence density) are still sloping, so the dynamic height is still an approximation.
 
-The flow of the Gulf stream is into the page and strongest at the surface  where the isopycnal tilts are the strongest, and decreases with depth (see bottom plot for the geostrophic velocity).
+The flow of the Gulf stream is into the page and strongest at the surface  where the isopycnal tilts are the strongest (eg at 110 km), and decreases with depth (see bottom plot for the geostrophic velocity).
 
 Again, before the satellite era, dynamic height was used to estimate the sea surface height using global ship surveys:
 
-![Dynamic height from ship surveys](imgs/S02_DynamicHeightOcean.png).  Compare to the satellite-derived seasurface height above, and the agreement is pretty good.
+![Dynamic height from ship surveys](imgs/S02_DynamicHeightOcean.png)
+
+Compare to the satellite-derived seasurface height above, and the agreement is pretty good.
 
 
 # Ekman Balance
@@ -242,7 +246,9 @@ So considering the case above of $\tau^W_x = 0.1\ \mathrm{N\,m^{-2}}$, and $f=10
 $$\int_{-H}^0 v_{Ek}\ \mathrm{d}z = -\frac{1}{f\rho}\tau^W_x = -\frac{0.1}{10^{-4}\cdot 1000} = -10\ \mathrm{m^2\,s^{-1}}$$
 and the transport is to the south.  If we needed a 3-D transport, we would need a to multiply by a distance in the x-direction, say $L_x$.
 
-### Velocities in the Ekman layer
+Note that the same balance applies at the sea floor - if there is a bottom stress, there will tend to be an Ekman transport to the right of the bottom stress in the Ekman layer.
+
+### Velocities within the Ekman layer
 
 As an aside, and as motivation for the idea that the stress may be expected to go to zero far from the boundary, we can consider the Ekman equations:
 $$fv_{Ek} = -\nu\frac{\partial^2 u_{Ek}}{\partial z^2}$$
@@ -262,11 +268,69 @@ $$\mathbf{u} = \mathbf{A} e^{(1+j) \frac{z}{d_{Ek}}} +\mathbf{B} e^{-(1+j) \frac
 
 Note that the second term solutions grow to infinity as $z\to -\infty$, so we can ignore it, and the solution is
 $$\mathbf{u} = \mathbf{A} e^{(1+j) \frac{z}{d_{Ek}}}$$
+The value of $\mathbf{A}$ is determined by the surface boundary condition, which is that the stress at the surface is equal to the wind stress:
+$$\nu \frac{\partial \mathbf{u}}{\partial z}|_{z=0} = \mathbf{\tau}^W/\rho$$
+where $\mathbf{\tau}^W = \tau^W_x + j \tau^W_y$ is the wind stress vector.  This gives:
+$$\mathbf{A}(1+j) = \frac{d_{Ek} \mathbf{\tau}^W}{\rho \nu}$$
+which breaking into real and imaginary parts gives:
+$$ a-b = \frac{d_{Ek} \tau^W_x}{\rho \nu}$$
+$$ a+b = \frac{d_{Ek} \tau^W_y}{\rho \nu}$$
+where $A = a + j b$.
+
+So, if for instance, $\tau^W_y = 0$ then $a=-b$ and
+$$a = -b = \frac{d_{Ek} \tau^W_x}{2\rho \nu}$$
+Writing the solution out we get the slightly complicated:
+$$u(z) = a \left(\cos(z/d_{Ek}) + \sin(z/d_{Ek}) \right)e^{z/d_{Ek}}$$
+$$v(z) = a \left(-\cos(z/d_{Ek}) + \sin(z/d_{Ek}) \right)e^{z/d_{Ek}}$$
+This traces out a spiral in the $u-v$ plane with depth, with a decay scale of $d_{Ek}$, and a wavelength of $2\pi d_{Ek}$.  The surface velocity is to the right of the wind at exactly an angle of 45 degrees (to the left in the southern hemisphere) Note that the solution is the same for any initial wind stress direction.
+
+Finally, note that the velocity decays with depth, validating our assumption that the shear stresses go to zero.
+
+![Ekman spiral](imgs/ekman_spiralNOAA.png)
+
+The reason that this is an aside, is that for the dynamics we are interested in, it is the _transport_ that is important, not the structure of the velocities in the mixed layer.  And we have assumed a constant viscosity $\nu$, which is fine for a laminar fluid, but in a turbulent ocean would be replaced by a turbulent viscosity that is not likely to be constant and may affected by stratification.  Indeed observed Ekman spirals tend to be substantially different than this simple theory (see below).  However, the observed transport is found to be consistent with the overall Ekman balance.
+
+![Ekman spiral in the ocean](imgs/S02_EkmanObserved.png)
+
+## Ekman and geostrophic balance in a channel
+
+Between them, the Ekman balance and the geostrophic balance can explain a lot of the flow in the ocean.  Lets consider a simple case of a channel in the x-direction with a depth that is large enough that there is a region between the surface ocean and the sea floor where the stresses are weak, and at a latitude where the Corilis parameter is $f$, with a wind stress $\tau^W_x$ at the surface.  Let's parameterize the bottom stress as $\tau^B_x = C_D \rho_0 U^2$, where $C_D$ is a drag coefficient, and $U$ is the velocity near the bottom of the channel (but _not_ the Ekman velocity). Suppose the channel starts are rest, and the wind stress is turned on at $t=0$.
+
+![Channel with wind stress](imgs/S02_ChannelT0.svg)
+
+_Initially_ the flow will be down wind in a very thin layer at the surface.  However, the Ekman layer will develop within an inertial period, and soon the flow will be southward in balance with the wind.  This southward flow will be _everywhere_ in the channel, and what will immediately start happening is that water will be removed from the north side and pile up on the south side. This creates a pressure gradient force from south to north that will come into balance with an equal and opposite Coriolis force, which means that there will be a flow towards the east, in the positive x direction.
+
+![Channel with wind stress](imgs/S02_ChannelT1.svg)
+
+While this is happening, the Ekman layer is continuing to pile water up in the south, increasing the interior pressure gradient.  This doesn't stop until there is a return flow from north to south somewhere.  THis happens in the bottom Ekman layer.  Remember that we will parameterize bottom stress as opposite to the mean flow.  This means that there will be a bottom drag $\tau^B_x$ towards the west (negative x-direction).  If there is a bottom Ekman layer in balance with this bottom stress, the Coriolis force must be to the east and the water is moving north $v_{Ek}$ on average.
+
+![Channel with wind stress](imgs/S02_ChannelT2.svg)
+
+These three layers of flow will come to steady state when the transport in the bottom Ekman layer is equal and opposite the transport in the surface Ekman layer. Since the transport is $\int_{-d_{Ek}}^0 v_{Ek}\ \mathrm{d}z = \frac{\tau^W_x}{f\rho} = - \int_{-H}^{-H+d_{Ek}}v_{Ek}\,\mathrm{d}z = -\frac{\tau^B_x}{f\rho}$, we can see trivially that $\tau^B_x = -\tau^W_x$.  This equivalence of the two stresses should be apparent from the fact that overall the flow will not be in steady state until there is just as strong a force on the water to oppose the wind.
+
+Note that this flow implies an overturning circulation
 
 
+Given this, we can predict how fast the flow in the channel is, if we believe that the bottom stress is given by a quadratic drag law:
+$$\tau^B_x = -C_D \rho_0 u_g\left|u_g\right|$$
+The drag coefficient is determined empirically and can vary depending on the seafloor composition and roughness, but is often about $10^{-3}$ (and note it is dimensionless).  Given the wind stress of $\tau^W_x = 0.1\ \mathrm{N\,m^{-2}}$, we can can get $u_g\approx 0.1\ \mathrm{m\,s^{-1}}$.
+This is a reasonable speed for a current in the ocean.  We can further estimate the seasurface tilt necessary to keep this geostrophic flow in balance with the Coriolis force:
+$$g \frac{\partial \eta}{\partial y} = - f u_g$$
+so in this case $\frac{d\eta}{dy} \approx 10^{-3}\mathrm{m\,km^{-1}}$, or over a 10 km wide channel the seasurface tilt would only be 1 cm.
 
+### Timescales
 
+The timescales for a wind-driven circulation are _much_ faster when there is rotation and Ekman layers.  The Ekman layers are relatively thin - for $f=10^{-4}\ \mathrm{rad\,s^{-1}}$ and a turbulence viscosity of  $\nu_T=10^{-2}\ \mathrm{m^2\,s^{-1}}$, the Ekman depth is about $15\ \mathrm{m}$.  The time scale for the diffusion of momentum through the Ekman layer is
+$$t \sim \frac{d_{Ek}^2}{\nu_T} = 2 / f \approx 4\pi\cdot 10^4\ \mathrm{s}$$
+or about 36 h, which is much faster than if it had to diffuse through the whole water column ($t\approx 10^6 \mathrm{s}$ if water 100 m deep).
 
+Similarly, if the Ekman layer is transporting $10\ \mathrm{m^2\,s^{-1}}$ of water to the south, it does not take much time at all to set up the 1-cm scale sea surface tilt once the Ekman transport is established.  The convegence at the southern wall propagates across the channel as a surface wave which has speeds $\sqrt(gH) \approx 30\ \mathrm{m\,s^{-1}}$ in 100 m of water.
+
+## Compare to observations:
+
+Show all this happening in the coastal upwelling case using Perlin et al slides.
+
+- note the baroclinic pressure gradient means that the net flow is stronger and the sea-surface tilt is larger than if the flow were barotropic.
 
 
 
