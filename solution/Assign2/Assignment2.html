@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Assignment 2: Wind-driven channel flow and basin-scale flow &#8212; Physical Oceanography</title>
   
@@ -15,60 +14,55 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'solution/Assign2/Assignment2';</script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Assignment 3: Basin-scale flows and waves" href="../../release/Assign3/Assignment3.html" />
-    <link rel="prev" title="Assignment 2: Wind-driven channel flow and basin-scale flow" href="../../release/Assign2/Assignment2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -78,19 +72,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -112,12 +110,22 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -132,9 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -144,12 +156,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Physical Oceanography - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Physical Oceanography - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -159,36 +182,30 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../texts.html">Texts</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../project/index.html">Course Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../project/index.html">Course Project</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../project/papers.html">Possible papers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../project/talkrubric.html">Talk rubric</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../computing/index.html">Computing: Veros</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../computing/index.html">Computing: Veros</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../computing/python_environment.html">Setting up a python environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../computing/run_veros.html">Running Veros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../computing/analyze_veros.html">Analyzing Veros</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../release/Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Assign0/Assignment0.html">Key</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../release/Assign1/Assignment1.html">Assignment 1: Flow over an obstacle and channel flow</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../Assign1/Assignment1.html">Key Assign 1</a></li>
-</ul>
-</li>
-<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../release/Assign2/Assignment2.html">Assignment 2: Wind-driven channel flow and basin-scale flow</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l3 current active"><a class="current reference internal" href="#">Key Assign 2</a></li>
-</ul>
-</li>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../release/Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release/Assign1/Assignment1.html">Assignment 1: Flow over an obstacle and channel flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release/Assign2/Assignment2.html">Assignment 2: Wind-driven channel flow and basin-scale flow</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../release/Assign3/Assignment3.html">Assignment 3: Basin-scale flows and waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../release/Assign4/Assignment4.html">Assignment 4: Basin-scale waves and overturning circulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../release/Assign5/Assignment5.html">Assignment 5: Global overturning circulation</a></li>
+
+
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -204,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -213,14 +230,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -310,26 +327,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -368,21 +387,21 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="assignment-2-wind-driven-channel-flow-and-basin-scale-flow">
-<span id="assignment-2"></span><h1>Assignment 2: Wind-driven channel flow and basin-scale flow<a class="headerlink" href="#assignment-2-wind-driven-channel-flow-and-basin-scale-flow" title="Permalink to this heading">#</a></h1>
+<span id="assignment-2"></span><h1>Assignment 2: Wind-driven channel flow and basin-scale flow<a class="headerlink" href="#assignment-2-wind-driven-channel-flow-and-basin-scale-flow" title="Link to this heading">#</a></h1>
 <p>For this assignment you will do quantiative analysis of the channel flow (see <a class="reference internal" href="../Assign1/Assignment1.html#assignment-1"><span class="std std-ref">Assignment 1: Flow over an obstacle and channel flow</span></a>), and a qualitative analysis of flow in a basin under wind stress curl.</p>
 <section id="q1-1-stress-with-no-rotation">
-<h2>Q1.1  Stress with no rotation<a class="headerlink" href="#q1-1-stress-with-no-rotation" title="Permalink to this heading">#</a></h2>
+<h2>Q1.1  Stress with no rotation<a class="headerlink" href="#q1-1-stress-with-no-rotation" title="Link to this heading">#</a></h2>
 <p>For the simulation with no rotation (<code class="docutils literal notranslate"><span class="pre">channelnof</span></code>), plot a profile of the x-momentum stress that is transmitted in the vertical direction at a point in the middle of the channel.  Do this at something like 12 h into the simulation.</p>
 <p>What is the net acceleration of the water parcel due to this stress profile?</p>
 <p>Recall that the surface stress is equal to <span class="math notranslate nohighlight">\(\tau_w = 0.2 \ \mathrm{N\,m^{-2}}\)</span>, and the vertical viscosity is <span class="math notranslate nohighlight">\(\kappa = 3\times10^{-3}\ \mathrm{m^2\,s^{-1}}\)</span>.  What will the velocity and stress profile look like at steady state (flow no longer accelerating), or is there a steady state?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 </pre></div>
 </div>
 </div>
@@ -416,14 +435,26 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5947a3f9ca350dc986b64d28b0d91e10802498dcbf0264314637da42f9d701fd.png" src="../../_images/5947a3f9ca350dc986b64d28b0d91e10802498dcbf0264314637da42f9d701fd.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+&lt;&gt;:6: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+&lt;&gt;:7: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/4132370989.py:6: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+  ax.set_xlabel(&#39;$u \ \mathrm{[m\,s^{-1}]}$&#39;)
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/4132370989.py:7: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+  ax.set_ylabel(&#39;$z \ \mathrm{[m]}$&#39;)
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/4132370989.py:1: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(&#39;channelnof.snapshot.nc&#39;) as ds:
+</pre></div>
+</div>
+<img alt="../../_images/5e597bccf25acb340872c2b42c58cc29143639959fdf4084ff3781020a8b5ef2.png" src="../../_images/5e597bccf25acb340872c2b42c58cc29143639959fdf4084ff3781020a8b5ef2.png" />
 </div>
 </div>
 <p>This flow is not in steady state yet.  Steady state would be a linear profile of velocity with <span class="math notranslate nohighlight">\(\nu \partial u / \partial z = \tau_w / \rho\)</span> so <span class="math notranslate nohighlight">\(u(z=0) = 10 \ \mathrm{m\,s^{-1}}\)</span>.  This would lead to a constant stress through the water column As it is, the flow is faster above than below, and the stress is higher with increasing z, so momentum is converging with depth and <span class="math notranslate nohighlight">\(\partial u / \partial t&gt;0\)</span>.</p>
 <p>Note that the time scale for this to be in steady state is <span class="math notranslate nohighlight">\(T\approx H^2 / \kappa \approx 28\)</span> days, so we would have to run the simulation for considerably longer to see the steady state behaviour.</p>
 </section>
 <section id="q1-2-geostrophic-balance-interior">
-<h2>Q1.2 Geostrophic balance (interior)<a class="headerlink" href="#q1-2-geostrophic-balance-interior" title="Permalink to this heading">#</a></h2>
+<h2>Q1.2 Geostrophic balance (interior)<a class="headerlink" href="#q1-2-geostrophic-balance-interior" title="Link to this heading">#</a></h2>
 <p>For the f-plane simulation (<code class="docutils literal notranslate"><span class="pre">channelfplane</span></code>) show that the interior of the flow (away from the Ekman layers) is approximately in geostrophic balance with the surface flow.  Note that <span class="math notranslate nohighlight">\(f=10^{-4}\ \mathrm{rad\,s^{-1}}\)</span>.  I did this by comparing the size of <span class="math notranslate nohighlight">\(u\)</span> with the size of <span class="math notranslate nohighlight">\((g/f) \partial  \eta / \partial y\)</span> across the whol y-z cross-section.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -452,13 +483,25 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9cd335c2a0f105ef45711d43bd2f3bbf9b6698bf82b400126581fee8b9828a08.png" src="../../_images/9cd335c2a0f105ef45711d43bd2f3bbf9b6698bf82b400126581fee8b9828a08.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:8: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+&lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+&lt;&gt;:8: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+&lt;&gt;:15: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2680247521.py:8: SyntaxWarning: invalid escape sequence &#39;\e&#39;
+  ax.set_ylabel(&#39;$g \eta \mathrm{[m^2\,s^{-2}]}$&#39;)
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2680247521.py:15: SyntaxWarning: invalid escape sequence &#39;\p&#39;
+  ax.set_title(&#39;$u - (-g/f) \partial \eta / \partial y$&#39;)
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2680247521.py:3: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(&#39;channelfplane.snapshot.nc&#39;) as ds:
+</pre></div>
+</div>
+<img alt="../../_images/9e9aab3dc574562828aa518fec3c2e1f2720c9b94a2b9f3f52960d453f6298c9.png" src="../../_images/9e9aab3dc574562828aa518fec3c2e1f2720c9b94a2b9f3f52960d453f6298c9.png" />
 </div>
 </div>
 <p>The flow is close to being in Geostrophic balance, with a small interior flow that is not quite in balance.</p>
 </section>
 <section id="q1-3-ekman-balance">
-<h2>Q1.3 Ekman balance<a class="headerlink" href="#q1-3-ekman-balance" title="Permalink to this heading">#</a></h2>
+<h2>Q1.3 Ekman balance<a class="headerlink" href="#q1-3-ekman-balance" title="Link to this heading">#</a></h2>
 <p>Plot as a time-series and demonstrate that the Ekman Transport reaches the expected value in the upper part of the water column and that there is an equal and opposite Ekman transport in the bottom boundary layer.  You can do this with y at the center of the channel.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -483,12 +526,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fec477150fea3d909448689a48e28db33c3151bf17a815c9c82adf7b5a6a7658.png" src="../../_images/fec477150fea3d909448689a48e28db33c3151bf17a815c9c82adf7b5a6a7658.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:13: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+&lt;&gt;:13: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2155734663.py:13: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+  ax.set_ylabel(&#39;$T_{Ek}\ [m^2\,s^{-1}]$&#39;)
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2155734663.py:2: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(&#39;../Assign1/channelfplane.snapshot.nc&#39;) as ds:
+</pre></div>
+</div>
+<img alt="../../_images/f07560e52d4779bc35c15249eaeec2f784edcd23eb0bcaf3299d304b67c51521.png" src="../../_images/f07560e52d4779bc35c15249eaeec2f784edcd23eb0bcaf3299d304b67c51521.png" />
 </div>
 </div>
 </section>
 <section id="q1-4-ekman-spiral">
-<h2>Q1.4 Ekman spiral<a class="headerlink" href="#q1-4-ekman-spiral" title="Permalink to this heading">#</a></h2>
+<h2>Q1.4 Ekman spiral<a class="headerlink" href="#q1-4-ekman-spiral" title="Link to this heading">#</a></h2>
 <p>Show that the velocity in the upper and lower Ekman layers follow the Ekman spiral solution in the upper ocean and near the sea floor.  Also add the two Ekman layer solutions together and compare to the observed profile.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -520,16 +571,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4c650412278356535ac4a8692138e0b1dbbd01b897fd11b583030b89fc7d7514.png" src="../../_images/4c650412278356535ac4a8692138e0b1dbbd01b897fd11b583030b89fc7d7514.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/497392747.py:1: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(&#39;../Assign1/channelfplane.snapshot.nc&#39;) as ds:
+</pre></div>
+</div>
+<img alt="../../_images/4a9332075f9edef778bacd8a2bed04970324521c9d5de2a9171a081f756f5a92.png" src="../../_images/4a9332075f9edef778bacd8a2bed04970324521c9d5de2a9171a081f756f5a92.png" />
 </div>
 </div>
 </section>
 <section id="q2-wind-driven-basin-qualitative">
-<h2>Q2: Wind-driven basin: Qualitative<a class="headerlink" href="#q2-wind-driven-basin-qualitative" title="Permalink to this heading">#</a></h2>
+<h2>Q2: Wind-driven basin: Qualitative<a class="headerlink" href="#q2-wind-driven-basin-qualitative" title="Link to this heading">#</a></h2>
 <p>In this simulation an 80x80km 200-m deep basin is used.  Wind is blown on it so that it blows strongest to the west at the south side of the box, and strongest to the east atthe top of the box, so <span class="math notranslate nohighlight">\(\tau_x^w = -0.1 \cos\left(\pi \frac{y}{y_{max}}\right)\)</span>.  There are two runs, where <span class="math notranslate nohighlight">\(f=f_0 = 10^{-4}\ \mathrm{rad \, s^{-1}}\)</span>, and a second where f increases towards the north: <span class="math notranslate nohighlight">\(f = f_0 + \left( 10^{-9} \left( ms \right)^{-1} \right) y\)</span></p>
 <p>To make the simulation output, please run <code class="docutils literal notranslate"><span class="pre">basinfplane.py</span></code> and <code class="docutils literal notranslate"><span class="pre">basinbetaplane.py</span></code>.</p>
 <section id="q2-1-plot-the-wind-stress-as-a-function-of-y">
-<h3>Q2.1: plot the wind stress as a function of y<a class="headerlink" href="#q2-1-plot-the-wind-stress-as-a-function-of-y" title="Permalink to this heading">#</a></h3>
+<h3>Q2.1: plot the wind stress as a function of y<a class="headerlink" href="#q2-1-plot-the-wind-stress-as-a-function-of-y" title="Link to this heading">#</a></h3>
 <p>Note that this is stored in <code class="docutils literal notranslate"><span class="pre">ds.surface_taux</span></code> (and <code class="docutils literal notranslate"><span class="pre">ds.surface_tauy</span></code>).  Describe a) what direction youd expect the Ekman transport to be at <span class="math notranslate nohighlight">\(y=40\ \mathrm{km}\)</span> and at <span class="math notranslate nohighlight">\(y=130\ \mathrm{km}\)</span> b) describe what must happen between these two “latitudes” given these Ekman transports.  c) What direction is the water being “torqued” (twisted)?  d) hwo do you think the water will move in this flow given that it will be close to geostrophic balance.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -543,13 +598,21 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/6121422aca69872401bd6b354333d91e7add22d4c077f12de846b0b2a658b8f0.png" src="../../_images/6121422aca69872401bd6b354333d91e7add22d4c077f12de846b0b2a658b8f0.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+&lt;&gt;:5: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/3947647690.py:5: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+  ax.set_xlabel(&#39;$\\tau_x^W\ \mathrm{[N\,m^{-2}]}$&#39;)
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/3947647690.py:1: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(&#39;basinfplane.snapshot.nc&#39;) as ds:
+</pre></div>
+</div>
+<img alt="../../_images/f7be0e1550808d18fe485cf75b76a4579aeea3bdfeaa885e6c6f9619fb69f928.png" src="../../_images/f7be0e1550808d18fe485cf75b76a4579aeea3bdfeaa885e6c6f9619fb69f928.png" />
 </div>
 </div>
 <p>The Ekman tranport is to the north at y=40 km and to the south at y=130 km.  Because the transports are coming at each other, the water must converge between these two.  This will cause the sea leve to rise, and water to be pushed downwards out of the Ekman layer.  The water is being torqued in a clockwise direction (torque: <span class="math notranslate nohighlight">\(\nabla \times \mathbf{\tau}^W &lt; 0\)</span>) using the right-hand rule.  Finally, the water piled up in the middle means that water will flow clockwise around the high if it is in geostrophic balance.</p>
 </section>
 <section id="q2-2">
-<h3>Q2.2<a class="headerlink" href="#q2-2" title="Permalink to this heading">#</a></h3>
+<h3>Q2.2<a class="headerlink" href="#q2-2" title="Link to this heading">#</a></h3>
 <p>Plot four or so snapshots of <a class="reference download internal" download="" href="../../_downloads/900bff7a1f7303f3163bc6c75e1192e3/basinfplane.py"><span class="xref download myst">basinfplane.py</span></a> and <a class="reference download internal" download="" href="../../_downloads/74cd7c71726c8d821623bd298466d0ea/basinbetaplane.py"><span class="xref download myst">basinbetaplane</span></a> and compare and contrast the behaviour over time.  I suggest plotting <code class="docutils literal notranslate"><span class="pre">psi</span></code> which is the sea surface pressure anomally <span class="math notranslate nohighlight">\(g\eta\)</span> using contours, overtop of pcolor of the north-south velocity <span class="math notranslate nohighlight">\(v\)</span>.</p>
 <p>Note that there is an Ekman layer, so <span class="math notranslate nohighlight">\(v(z=0)\)</span> is interesting, but a bit misleading for the over-all circulation.  <code class="docutils literal notranslate"><span class="pre">ds.v.mean(dim='zt')</span></code> is a useful pcolor to make, or you could choose a depth out of the Ekman layer.</p>
 <p>What are the similarities and differences between the two simulations?  Which one looks more like the real ocean?</p>
@@ -579,10 +642,36 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x15254ea90&gt;
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+&lt;&gt;:20: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2088606154.py:20: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+  fig.colorbar(cs, ax=axs, shrink=0.2, extend=&#39;both&#39;, label=&#39;$v\ \mathrm{[m\,s^{-1}]}$&#39;)
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2088606154.py:6: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(td) as ds:
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2088606154.py:6: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(td) as ds:
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2088606154.py:6: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(td) as ds:
 </pre></div>
 </div>
-<img alt="../../_images/d38566050edecb9b0157b276e35ecb4d5ee9d7e24c884958466d947b96b39700.png" src="../../_images/d38566050edecb9b0157b276e35ecb4d5ee9d7e24c884958466d947b96b39700.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2088606154.py:6: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(td) as ds:
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2088606154.py:6: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(td) as ds:
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2088606154.py:6: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(td) as ds:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2088606154.py:6: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(td) as ds:
+/var/folders/kx/4c3bx_w92t31pqyvg6ws03200000gn/T/ipykernel_69076/2088606154.py:6: FutureWarning: In a future version of xarray decode_timedelta will default to False rather than None. To silence this warning, set decode_timedelta to True, False, or a &#39;CFTimedeltaCoder&#39; instance.
+  with xr.open_dataset(td) as ds:
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x320d0a510&gt;
+</pre></div>
+</div>
+<img alt="../../_images/1ac156caf01603148693f746b8ce0cd85833077e7c2fec700de8edefa35cc261.png" src="../../_images/1ac156caf01603148693f746b8ce0cd85833077e7c2fec700de8edefa35cc261.png" />
 </div>
 </div>
 <p>The flows start out similar, with the expected surface convergence in the centre of the basin.  However, the convergence in the beta-plane simulation migrates west, whereas the f-plane solution stays centered.  In bot cases there is anti-cyclic (clockwise) circulation with southward flow and then northward flow on the west side.</p>
@@ -615,34 +704,12 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../../release/Assign2/Assignment2.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Assignment 2: Wind-driven channel flow and basin-scale flow</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../../release/Assign3/Assignment3.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Assignment 3: Basin-scale flows and waves</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -650,6 +717,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -687,9 +755,10 @@ By Jody Klymak
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -713,8 +782,8 @@ By Jody Klymak
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

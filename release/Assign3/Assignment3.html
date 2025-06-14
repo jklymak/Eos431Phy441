@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Assignment 3: Basin-scale flows and waves &#8212; Physical Oceanography</title>
   
@@ -15,60 +14,57 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'release/Assign3/Assignment3';</script>
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="icon" href="../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Assignment 3: Basin-scale flows and waves" href="../../solution/Assign3/Assignment3.html" />
-    <link rel="prev" title="Assignment 2: Wind-driven channel flow and basin-scale flow" href="../../solution/Assign2/Assignment2.html" />
+    <link rel="next" title="Assignment 4: Basin-scale waves and overturning circulation" href="../Assign4/Assignment4.html" />
+    <link rel="prev" title="Assignment 2: Wind-driven channel flow and basin-scale flow" href="../Assign2/Assignment2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -78,19 +74,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -112,12 +112,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -132,9 +140,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../index.html">
+  
   
   
   
@@ -144,12 +156,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="Physical Oceanography - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="Physical Oceanography - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -161,37 +184,28 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../texts.html">Texts</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../project/index.html">Course Project</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../project/index.html">Course Project</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../project/papers.html">Possible papers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../project/talkrubric.html">Talk rubric</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../computing/index.html">Computing: Veros</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../computing/index.html">Computing: Veros</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../computing/python_environment.html">Setting up a python environment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../computing/run_veros.html">Running Veros</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../computing/analyze_veros.html">Analyzing Veros</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="../Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../solution/Assign0/Assignment0.html">Key</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../Assign1/Assignment1.html">Assignment 1: Flow over an obstacle and channel flow</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../solution/Assign1/Assignment1.html">Key Assign 1</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../Assign2/Assignment2.html">Assignment 2: Wind-driven channel flow and basin-scale flow</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../solution/Assign2/Assignment2.html">Key Assign 2</a></li>
-</ul>
-</li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">Assignment 3: Basin-scale flows and waves</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../solution/Assign3/Assignment3.html">Key Assign 3</a></li>
-</ul>
-</li>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../assignments/index.html">Assignments</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../Assign0/Assignment0.html">Assignment 0: dense flow over an obstacle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assign1/Assignment1.html">Assignment 1: Flow over an obstacle and channel flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assign2/Assignment2.html">Assignment 2: Wind-driven channel flow and basin-scale flow</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Assignment 3: Basin-scale flows and waves</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Assign4/Assignment4.html">Assignment 4: Basin-scale waves and overturning circulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Assign5/Assignment5.html">Assignment 5: Global overturning circulation</a></li>
+
+
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -207,7 +221,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -216,14 +230,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -313,26 +327,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -384,32 +400,32 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="assignment-3-basin-scale-flows-and-waves">
-<span id="assignment-3"></span><h1>Assignment 3: Basin-scale flows and waves<a class="headerlink" href="#assignment-3-basin-scale-flows-and-waves" title="Permalink to this heading">#</a></h1>
+<span id="assignment-3"></span><h1>Assignment 3: Basin-scale flows and waves<a class="headerlink" href="#assignment-3-basin-scale-flows-and-waves" title="Link to this heading">#</a></h1>
 <p>For this assignment you will do quantiative analysis of the basin flow (see <a class="reference internal" href="../../solution/Assign2/Assignment2.html#assignment-2"><span class="std std-ref">Assignment 2: Wind-driven channel flow and basin-scale flow</span></a>), and a qualitative analysis of planetary-scale waves in a basin.</p>
 <section id="q1-1-ekman-pumping">
-<h2>Q1.1  Ekman pumping<a class="headerlink" href="#q1-1-ekman-pumping" title="Permalink to this heading">#</a></h2>
+<h2>Q1.1  Ekman pumping<a class="headerlink" href="#q1-1-ekman-pumping" title="Link to this heading">#</a></h2>
 <p>For both the f- and beta-plane simulations (<code class="docutils literal notranslate"><span class="pre">basinfplane</span></code> and <code class="docutils literal notranslate"><span class="pre">basinbetaplane</span></code>) there should be a convergence of fluid towards the central latitude of the basin.  Show that, in steady state, this fluid is being pushed downwards at a rate expected by the wind forcing.</p>
 <section id="q1-1-a-determine-depth-of-ekman-layer">
-<h3>Q1.1.a Determine depth of Ekman layer<a class="headerlink" href="#q1-1-a-determine-depth-of-ekman-layer" title="Permalink to this heading">#</a></h3>
+<h3>Q1.1.a Determine depth of Ekman layer<a class="headerlink" href="#q1-1-a-determine-depth-of-ekman-layer" title="Link to this heading">#</a></h3>
 <p>Plot cross sections of <code class="docutils literal notranslate"><span class="pre">v(x,</span> <span class="pre">z)</span></code> at a couple of locations north and south of the central value of y, and estimate how deep the Ekman layer is. Compare with the theoretical Ekman depth.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">xarray</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">xr</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="k">def</span> <span class="nf">subplots_shared</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;constrained&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">subplots_shared</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="s1">&#39;constrained&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="n">sharex</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="n">sharey</span><span class="p">,</span> <span class="n">layout</span><span class="o">=</span><span class="n">layout</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">pcolormesh_sym</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">vbound</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">pcolormesh_sym</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">vbound</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=-</span><span class="n">vbound</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">vbound</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cmap</span><span class="p">,</span> <span class="n">rasterized</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">tohours</span><span class="p">(</span><span class="n">Time</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">tohours</span><span class="p">(</span><span class="n">Time</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">Time</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;float&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e9</span> <span class="o">/</span><span class="mi">3600</span>
 </pre></div>
 </div>
@@ -445,7 +461,7 @@ document.write(`
 <p>YOUR ANSWER HERE</p>
 </section>
 <section id="q1-1b-vertical-velocity">
-<h3>Q1.1b  Vertical velocity.<a class="headerlink" href="#q1-1b-vertical-velocity" title="Permalink to this heading">#</a></h3>
+<h3>Q1.1b  Vertical velocity.<a class="headerlink" href="#q1-1b-vertical-velocity" title="Link to this heading">#</a></h3>
 <p>Plot structure of w at base of Ekman layer, and comment on the structure.</p>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
@@ -474,7 +490,7 @@ document.write(`
 <p>YOUR ANSWER HERE</p>
 </section>
 <section id="q1-1c-compare-w-ekman-pumping">
-<h3>Q1.1c Compare w/ Ekman Pumping<a class="headerlink" href="#q1-1c-compare-w-ekman-pumping" title="Permalink to this heading">#</a></h3>
+<h3>Q1.1c Compare w/ Ekman Pumping<a class="headerlink" href="#q1-1c-compare-w-ekman-pumping" title="Link to this heading">#</a></h3>
 <p>Compare the vertical velocity, say at x=75 km to the expected Ekman pumping velocity for both the f-plane and the beta-plane solutions</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -499,7 +515,7 @@ document.write(`
 </section>
 </section>
 <section id="q1-2-sverdrup-transport">
-<h2>Q1.2 Sverdrup transport<a class="headerlink" href="#q1-2-sverdrup-transport" title="Permalink to this heading">#</a></h2>
+<h2>Q1.2 Sverdrup transport<a class="headerlink" href="#q1-2-sverdrup-transport" title="Link to this heading">#</a></h2>
 <p>Fro the beta plane, calculate the vertically integrated transport across the middle latitude as a function of x, and compare to the Sverdrup transport.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -522,7 +538,7 @@ document.write(`
 </div>
 <p>YOUR ANSWER HERE</p>
 <section id="q1-2b-now-plot-what-this-transport-looks-like-as-a-function-of-x-and-y">
-<h3>Q1.2b Now plot what this transport looks like as a function of x and y<a class="headerlink" href="#q1-2b-now-plot-what-this-transport-looks-like-as-a-function-of-x-and-y" title="Permalink to this heading">#</a></h3>
+<h3>Q1.2b Now plot what this transport looks like as a function of x and y<a class="headerlink" href="#q1-2b-now-plot-what-this-transport-looks-like-as-a-function-of-x-and-y" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
@@ -546,9 +562,9 @@ document.write(`
 </section>
 </section>
 <section id="q1-3-western-boundary-current">
-<h2>Q1.3 Western boundary current<a class="headerlink" href="#q1-3-western-boundary-current" title="Permalink to this heading">#</a></h2>
+<h2>Q1.3 Western boundary current<a class="headerlink" href="#q1-3-western-boundary-current" title="Link to this heading">#</a></h2>
 <section id="q1-3-a">
-<h3>Q1.3.a<a class="headerlink" href="#q1-3-a" title="Permalink to this heading">#</a></h3>
+<h3>Q1.3.a<a class="headerlink" href="#q1-3-a" title="Link to this heading">#</a></h3>
 <p>Plot the Sverdrup transport due to the north/south bottom stress, bearing in mind that it is quadratic with <span class="math notranslate nohighlight">\(\tau_b^y/\rho = -C_D v|v|\)</span>, where <span class="math notranslate nohighlight">\(C_D = 10^{-1}\)</span>. (This is actually an approximation - it should be <span class="math notranslate nohighlight">\(\tau_b^y/\rho = -C_D v|\mathbf{u}|\)</span>, but the x-direction velocity is relatively modest).  Compare to the volumn transport as you did above and comment.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -572,20 +588,20 @@ document.write(`
 <p>YOUR ANSWER HERE</p>
 </section>
 <section id="q1-3-b-if-return-current-on-other-side">
-<h3>Q1.3.b if return current on other side?<a class="headerlink" href="#q1-3-b-if-return-current-on-other-side" title="Permalink to this heading">#</a></h3>
+<h3>Q1.3.b if return current on other side?<a class="headerlink" href="#q1-3-b-if-return-current-on-other-side" title="Link to this heading">#</a></h3>
 <p>Comment on the sense of torque if the return current were on the other side of the basin?</p>
 <p>YOUR ANSWER HERE</p>
 </section>
 <section id="q1-3-c-east-west-flow">
-<h3>Q1.3.c East/west flow<a class="headerlink" href="#q1-3-c-east-west-flow" title="Permalink to this heading">#</a></h3>
+<h3>Q1.3.c East/west flow<a class="headerlink" href="#q1-3-c-east-west-flow" title="Link to this heading">#</a></h3>
 <p>Comment on the sense of the east/west flow in the basin in relation to the net north/south flow.</p>
 <p>YOUR ANSWER HERE</p>
 </section>
 </section>
 <section id="q2-planetary-waves-qualitative">
-<h2>Q2 Planetary waves: Qualitative<a class="headerlink" href="#q2-planetary-waves-qualitative" title="Permalink to this heading">#</a></h2>
+<h2>Q2 Planetary waves: Qualitative<a class="headerlink" href="#q2-planetary-waves-qualitative" title="Link to this heading">#</a></h2>
 <section id="q2-1-poincarre-versus-kelvin-waves">
-<h3>Q2.1 Poincarre versus Kelvin waves.<a class="headerlink" href="#q2-1-poincarre-versus-kelvin-waves" title="Permalink to this heading">#</a></h3>
+<h3>Q2.1 Poincarre versus Kelvin waves.<a class="headerlink" href="#q2-1-poincarre-versus-kelvin-waves" title="Link to this heading">#</a></h3>
 <p>Run <a class="reference download internal" download="" href="../../_downloads/133c32714ddc5b1bbe28fb0d918e8e13/Poincarre12.py"><span class="xref download myst">Poincarre12.py</span></a> and <a class="reference download internal" download="" href="../../_downloads/505af1c0f6f4dc58e7f9b214f28777c0/Kelvin40.py"><span class="xref download myst">Kelvin40.py</span></a>.  They are forced exactly the same way, by a Gaussian-shaped alternation of a wind stress at the east side of the basin. This is run in a 200-m deep ocean, with the upper 60 m at 30 degrees C, and the bottom 140 m at 10 degrees C.</p>
 <p><a class="reference download internal" download="" href="../../_downloads/133c32714ddc5b1bbe28fb0d918e8e13/Poincarre12.py"><span class="xref download myst">Poincarre12.py</span></a> is forced with a 12-h forcing period - note that the Coriolis period is <span class="math notranslate nohighlight">\(T = \frac{2\pi}{f} = 17.45 h\)</span>, so these waves are “super-inertial”.  <a class="reference download internal" download="" href="../../_downloads/505af1c0f6f4dc58e7f9b214f28777c0/Kelvin40.py"><span class="xref download myst">Kelvin40.py</span></a> is forced at 40 h, so these waves are sub-inertial.</p>
 <p>Plot some time snaps of u or v near the surface. Describe the difference between the two forcings.</p>
@@ -615,7 +631,7 @@ document.write(`
 <p>YOUR ANSWER HERE</p>
 </section>
 <section id="q2-2-rossby-waves">
-<h3>Q2.2 Rossby waves<a class="headerlink" href="#q2-2-rossby-waves" title="Permalink to this heading">#</a></h3>
+<h3>Q2.2 Rossby waves<a class="headerlink" href="#q2-2-rossby-waves" title="Link to this heading">#</a></h3>
 <p>Run <a class="reference download internal" download="" href="../../_downloads/eee107055bc72a89550232ca103cc0eb/Rossby200.py"><span class="xref download myst">Rossby200.py</span></a>, <a class="reference download internal" download="" href="../../_downloads/0c92dcbd1a9deaec66c73a36473ddff8/Rossby300.py"><span class="xref download myst">Rossby300.py</span></a>, <a class="reference download internal" download="" href="../../_downloads/1213a032f86f361ef93fbdb0e3b23ba1/Rossby400.py"><span class="xref download myst">Rossby400.py</span></a>.  These simulations are substantially larger, and have no temperature stratification - the waves excited are on the surface rather than an interface.  If the forcing is slow and large scale, we generate Rossby waves.  Here the wave maker is in the middle of the basin rather than along an edge.</p>
 <p>Compare the response of these three simulations at a few time steps</p>
 <div class="cell docutils container">
@@ -640,7 +656,7 @@ document.write(`
 <p>YOUR ANSWER HERE</p>
 </section>
 <section id="q2-2b-hovmoller">
-<h3>Q2.2b Hovmoller<a class="headerlink" href="#q2-2b-hovmoller" title="Permalink to this heading">#</a></h3>
+<h3>Q2.2b Hovmoller<a class="headerlink" href="#q2-2b-hovmoller" title="Link to this heading">#</a></h3>
 <p>Its a little hard to see the wave propagation in the above because the waves are so long relative to the basin size.  Plot each simulation using a Hovmoller diagram, probably at the middle value of y (<code class="docutils literal notranslate"><span class="pre">.isel(yt=35,</span> <span class="pre">yu=35)</span></code>).</p>
 <p>Try to interpret this - consider two things - phase speeds are set by the slope of the alternating bands.  Group speed, which is the speed energy is propagating, is set by the slope of increasing amplitude of the waves.  Try to pick these features out of the Hovmoller diagrams.</p>
 <div class="cell docutils container">
@@ -665,8 +681,6 @@ document.write(`
 <p>YOUR ANSWER HERE</p>
 </section>
 </section>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -694,14 +708,13 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../../solution/Assign2/Assignment2.html"
+       href="../Assign2/Assignment2.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
@@ -710,18 +723,15 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../../solution/Assign3/Assignment3.html"
+       href="../Assign4/Assignment4.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Assignment 3: Basin-scale flows and waves</p>
+        <p class="prev-next-title">Assignment 4: Basin-scale waves and overturning circulation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -729,6 +739,7 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -779,9 +790,10 @@ By Jody Klymak
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2025.
       <br/>
     
   </p>
@@ -805,8 +817,8 @@ By Jody Klymak
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
